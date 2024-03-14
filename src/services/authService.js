@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.changePassword = exports.recoverPassword = exports.registerRequest = exports.loginRequest = void 0;
+const client_1 = require("./client");
+const loginRequest = (login) => client_1.client.post("/login", { login });
+exports.loginRequest = loginRequest;
+const registerRequest = (user) => client_1.client.post("/register", { user });
+exports.registerRequest = registerRequest;
+const recoverPassword = (email) => client_1.client.post("recoverPassword", { email });
+exports.recoverPassword = recoverPassword;
+const changePassword = (data) => client_1.client.put("user/password", data);
+exports.changePassword = changePassword;
