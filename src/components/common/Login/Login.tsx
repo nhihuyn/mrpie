@@ -144,7 +144,7 @@ const Login: React.FC = () => {
         </motion.div>
       )}
 
-      <h2 className="text-center font-bold sm:text-5xl text-xl px-20 mb-10">{t('Login')}</h2>
+      <h2 className="text-center font-bold sm:text-5xl text-3xl px-20 mb-10">{t('Login')}</h2>
       <form onSubmit={validateForm} className="flex flex-col">
         <div className="form-group mb-6 flex flex-col">
           <label htmlFor="username" className="block mb-2">
