@@ -43,7 +43,6 @@ const DetailProduct = () => {
 
     const handleHover = (key: number) => {
         setIsHovered(false)
-        console.log("key", key)
         setActived(key)
     }
     const handleUnHover = () => {
@@ -56,14 +55,14 @@ const DetailProduct = () => {
             {
                 dumpData.map((item, index) => (
                     <Col span={6} key={index}>
-                        <div className={`relative text-center ${!isHovered && actived === item.key ? 'blur-none' : 'blur-sm'}`} onMouseOver ={() => handleHover(item.key)}  onMouseLeave={() => handleUnHover()}>
+                        <div className={`relative text-center ${!isHovered && actived === item.key ? 'blur-sm' : 'blur-none'}`} onMouseOver ={() => handleHover(item.key)}  onMouseLeave={handleUnHover}>
                             <img className="mr-auto ml-auto" src={bakery1} alt='detail-product' width={200} height={200}/>
                             <Title level={4}>{item.title}</Title>
                             <Title level={5}>{item.price}</Title>
                         </div>
                         {
                             !isHovered && actived === item.key &&
-                            <Flex className="flex justify-between w-1/2 absolute top-1/2 transform -translate-y-1/2 translate-x-1/2" onMouseOver ={() => handleHover(item.key)}  onMouseLeave={() => handleUnHover()}>
+                            <Flex className="flex justify-between w-1/2 absolute top-1/2 transform -translate-y-1/2 translate-x-1/2" onMouseOver ={() => handleHover(item.key)}  onMouseLeave={handleUnHover}>
                                 {/* link to detail product page */}
                                 <Link to="/">
                                     <Button className="bg-neutral-800 hover:!bg-[#E96161]" type="primary" shape="circle" icon={<SearchOutlined />}/>
