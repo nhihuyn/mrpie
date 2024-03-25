@@ -40,11 +40,11 @@ const Intro: React.FC = () => {
           <button onClick={() => handleTabClick("tab2")} className={`mx-4 ${activeTab === "tab2" ? "text-black border-b-2 border-black" : "text-gray-500"}`}>
             {t('Tab2')}
           </button>
-          <button onClick={() => handleTabClick("tab3")} className={`mx-4 ${activeTab === "tab3" ? "text-black border-b-2 border-black" : "text-gray-500"}`}>
+          <button onClick={() => setActiveTab("tab3")} className={`mx-4 ${activeTab === "tab3" ? "text-black border-b-2 border-black" : "text-gray-500"}`}>
             {t('Tab3')}
           </button>
         </div>
-        <hr className="tab-divider" />
+
         <div className="tab-content mt-8 ml-8 mr-8 ">
             
         {activeTab === "info" && (
