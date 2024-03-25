@@ -1,31 +1,28 @@
-import './App.css';
-import DetailProduct from './components/common/detail-product/detailProduct';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { useTranslation } from 'react-i18next';
-// import Header from './components/common/header/header';
-// import Footer from './components/common/footer/footer';
-// import Login from './components/common/Login/Login';
+
+
+import "./App.css";
+import DetailProduct from "./components/common/detail-product/detailProduct";
+import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
+import Menu from "./components/common/menu/menu";
+import Layout from "./components/Layout/layout";
+import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
+import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
-//import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
-//import Detail from './components/common/Detail/Detail';
-//import DetailEvent from './components/common/DetailEvent/DetailEvent';
-//import Intro from './components/common/Introduce/Intro';
 
 function App() {
   return (
-   /* <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<DetailProduct />}>
-        <Route index element={<DetailProduct />} />
-        <Route path="blogs" element={<DetailProduct />} />
-        <Route path="contact" element={<DetailProduct />} />
-        <Route path="*" element={<DetailProduct />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-  */
-  //<Login/>
-  <ForgotPassword/>
+    <Router>
+      <Layout>
+          <Routes>
+            <Route path="/" element={<DetailProduct/>} />
+            <Route path="/products/:productId" element={<Menu/>} />
+            <Route path="/change_password" element={<ChangePasswd/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/forgot_password" element={<ForgotPassword/>} />
+          </Routes>
+      </Layout>
+    </Router>
+
   );
 }
 
