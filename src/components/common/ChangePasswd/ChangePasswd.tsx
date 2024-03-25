@@ -88,7 +88,7 @@ const ChangePasswd: React.FC = () => {
         </motion.div>
       )}
 
-      <h2 className="text-center font-bold sm:text-4xl text-2xl  mb-10">{t('ChangePassword')}</h2>
+      <h2 className="text-center sm:text-4xl text-2xl  mb-10">{t('ChangePassword')}</h2>
       <form onSubmit={handleSubmit} className="flex flex-col text-sm">
         <div className={`form-group mt-4 mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
           <label htmlFor="newPassword" className="block mb-2"></label>
