@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { useTranslation } from 'react-i18next';
 // import Header from './components/common/header/header';
 // import Footer from './components/common/footer/footer';
-import Login from './components/common/Login/Login';
+// import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
 //import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 //import Detail from './components/common/Detail/Detail';
