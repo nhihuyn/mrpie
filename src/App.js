@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
 import Menu from "./components/common/menu/menu";
 import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
+import Login from './components/common/Login/Login';
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
             <Route path="/" element={<DetailProduct/>} />
             <Route path="/products/:productId" element={<Menu/>} />
             <Route path="/change_password" element={<ChangePasswd/>} />
+            <Route path="/login" element={<Login/>} />
           </Routes>
       </Layout>
     </Router>
+
   );
 }
 
