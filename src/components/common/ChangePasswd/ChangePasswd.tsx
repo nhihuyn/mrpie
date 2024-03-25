@@ -88,7 +88,7 @@ const ChangePasswd: React.FC = () => {
         </motion.div>
       )}
 
-      <p className="text-center sm:text-4xl text-2xl  mb-10">{t('ChangePassword')}</p>
+      <p className="text-center sm:text-4xl text-2xl mb-10">{t('ChangePassword')}</p>
       <form onSubmit={handleSubmit} className="flex flex-col text-sm">
         <div className={`form-group mt-4 mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
           <label htmlFor="newPassword" className="block mb-2"></label>
@@ -104,7 +104,7 @@ const ChangePasswd: React.FC = () => {
             iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} 
           />
           {showAlert && newPassword.trim() === '' && (
-            <p className="text-sm font-semibold text-red-400 ">{t('NewPasswordRequired')}</p>
+            <p className="text-red-500 text-sm ml-3 ">{t('NewPasswordRequired')}</p>
           )}
         </div>
         <div className={`form-group mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
@@ -121,10 +121,10 @@ const ChangePasswd: React.FC = () => {
             iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} 
           />
           {showAlert && confirmPassword.trim() === '' && (
-            <p className="text-sm font-semibold text-red-400 ">{t('ConfirmPasswordRequired')}</p>
+            <p className="text-red-500 text-sm ml-3">{t('ConfirmPasswordRequired')}</p>
           )}
           {showAlert && newPassword.trim() !== '' && confirmPassword.trim() !== '' && newPassword !== confirmPassword && (
-            <p className="text-red-500 text-sm ">{t('PasswordMismatch')}</p>
+            <p className="text-red-500 text-sm ml-3">{t('PasswordMismatch')}</p>
           )}
         </div>
         <button
