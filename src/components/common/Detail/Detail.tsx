@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import veganImage from '../../../assets/images/vegan_thaicury.png';
-import background from '../../../assets/images/background_vegan.png';
+import { vegan, bg_vegan } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -230,7 +229,7 @@ const Detail: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-200 justify-center items-center"  
-        style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', minHeight: '100vh', position: 'relative' }}>
+        style={{ backgroundImage: `url(${bg_vegan})`, backgroundSize: 'cover', minHeight: '100vh', position: 'relative' }}>
         
         <div className="w-full lg:ml-40 p-8 text-white justify-center items-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">Vegan Thai Cury</h1>
@@ -313,7 +312,7 @@ const Detail: React.FC = () => {
     </div>
 
     <div className="w-full md:w-1/2 flex flex-col items-center md:ml-20 md:mt-28 relative z-20">
-      <img src={veganImage} alt="Bánh" className="w-3/5 md:w-auto" />
+      <img src={vegan} alt="Bánh" className="w-3/5 md:w-auto" />
     </div>
   </div>
 
