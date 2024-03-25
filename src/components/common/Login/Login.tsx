@@ -144,8 +144,8 @@ const Login: React.FC = () => {
         </motion.div>
       )}
 
-      <h2 className="text-center font-bold sm:text-5xl text-3xl px-20 mb-10">{t('Login')}</h2>
-      <form onSubmit={validateForm} className="flex flex-col">
+      <h2 className="text-center font-bold sm:text-4xl text-2xl px-20 mb-10">{t('Login')}</h2>
+      <form onSubmit={validateForm} className="flex flex-col text-sm">
         <div className="form-group mb-6 flex flex-col">
           <label htmlFor="username" className="block mb-2">
             
@@ -206,15 +206,15 @@ const Login: React.FC = () => {
         <button
         id="login"
           type="submit"
-          className="w-1/2 md:w-1/3 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-xl py-3 rounded-lg transition duration-300 mb-6 flex justify-center"
+          className="sm:w-full md:w-2/5 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
           >
           {t('login')}
         </button>
 
       </form>
-      <div className="signup-link mt-2 mb-14 w-1/2 md:w-1/3 mx-auto text-center">
+      <div className="signup-link mt-2 mb-14 w-full md:w-1/3 mx-auto text-center">
         <p>
-          <a href="#" className="text-blue-600 hover:text-blue-400 text-xl ">
+          <a href="#" className="text-blue-600 hover:text-blue-400 text-lg ">
             {t('CreateAccount')}
           </a>
         </p>
