@@ -16,8 +16,6 @@
     "Store": "Cửa Hàng",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
-    "Brand": "Thương Hiệu",
-    "Info": "Thông Tin ",
     "UsernameEmpty": "Tên người dùng để trống",
     "Login":"Đăng Nhập",
     "login":"Đăng nhập",
@@ -68,6 +66,10 @@
     "Error":"Lỗi !",
     "Success":"Thành công !",
     "ErrorMessage":"Thông báo thất bại",
-    "SuccessMessage":"Thông báo thành công"
-    
+    "SuccessMessage":"Thông báo thành công",
+    "Brand": "Thương hiệu",
+    "Info": "Thông Tin ",
+    "Find a store": "Tìm Kiếm Cửa Hàng",
+    "Brand story": "Thương Hiệu",
+    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng"
 }

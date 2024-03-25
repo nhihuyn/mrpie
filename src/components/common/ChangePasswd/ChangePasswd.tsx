@@ -11,7 +11,7 @@ const ChangePasswd: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); 
+
 
   const handleChangeNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewPassword(event.target.value);
@@ -21,9 +21,6 @@ const ChangePasswd: React.FC = () => {
     setConfirmPassword(event.target.value);
   };
 
-  const handleTogglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
