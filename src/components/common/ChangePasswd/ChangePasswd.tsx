@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Alert } from 'antd';
-import { ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import { Alert, Input } from 'antd';
+import { ExclamationCircleOutlined, CheckCircleOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -11,6 +11,7 @@ const ChangePasswd: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleChangeNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewPassword(event.target.value);
@@ -20,23 +21,23 @@ const ChangePasswd: React.FC = () => {
     setConfirmPassword(event.target.value);
   };
 
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (newPassword.trim() === '' || confirmPassword.trim() === '') {
-      // Nếu có ô input rỗng, hiển thị thông báo lỗi
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
       }, 3000);
     } else if (newPassword === confirmPassword) {
-      // Thành công
       setSuccessAlert(true);
       setTimeout(() => {
         setSuccessAlert(false);
       }, 3000);
-      // Tiến hành thay đổi mật khẩu
     } else {
-      // Thất bại
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
@@ -87,54 +88,54 @@ const ChangePasswd: React.FC = () => {
         </motion.div>
       )}
 
-      <p className="text-center text-3xl md:text-4xl mb-10">{t('ChangePassword')}</p>
-      <form onSubmit={handleSubmit} className="flex flex-col">
+      <h2 className="text-center font-bold sm:text-4xl text-2xl  mb-10">{t('ChangePassword')}</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col text-sm">
         <div className={`form-group mt-4 mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
-          <input
-            type="password"
+          <label htmlFor="newPassword" className="block mb-2"></label>
+          <Input.Password
             id="newPassword"
             name="newPassword"
             value={newPassword}
             onChange={handleChangeNewPassword}
-            className={`w-full text-sm px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
+            className={`w-full px-4 py-3 border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
             placeholder={t('NewPassword')}
             minLength={7}
             maxLength={64}
-            // required
+            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} 
           />
           {showAlert && newPassword.trim() === '' && (
-            <p className="text-red-500 text-sm ml-3 ">{t('NewPasswordRequired')}</p>
+            <p className="text-sm font-semibold text-red-400 ">{t('NewPasswordRequired')}</p>
           )}
         </div>
         <div className={`form-group mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
-          <input
-            type="password"
+          <label htmlFor="confirmPassword" className="block mb-2"></label>
+          <Input.Password
             id="confirmPassword"
             name="confirmPassword"
             value={confirmPassword}
             onChange={handleChangeConfirmPassword}
-            className={`w-full text-sm px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
+            className={`w-full px-4 py-3 border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
             placeholder={t('ConfirmPassword')}
             minLength={7}
             maxLength={64}
-            // required
+            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} 
           />
           {showAlert && confirmPassword.trim() === '' && (
-            <p className="text-red-500 text-sm ml-3">{t('ConfirmPasswordRequired')}</p>
+            <p className="text-sm font-semibold text-red-400 ">{t('ConfirmPasswordRequired')}</p>
           )}
           {showAlert && newPassword.trim() !== '' && confirmPassword.trim() !== '' && newPassword !== confirmPassword && (
-            <p className="text-red-500 text-sm ml-3">{t('PasswordMismatch')}</p>
+            <p className="text-red-500 text-sm ">{t('PasswordMismatch')}</p>
           )}
         </div>
         <button
           type="submit"
-          className="w-1/2 md:w-2/5 text-base mt-8 mx-auto bg-blue-500 text-white py-2 rounded-lg transition duration-300 mb-2"
+          className="sm:w-full md:w-1/2 mt-8 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-lg py-2 px-8 rounded-lg transition duration-300 mb-2"
         >
           {t('ChangePassword')}
         </button>
       </form>
       <div className="cancel-text text-center">
-        <p><a href="#" className="hover:text-gray-600 text-gray-500 text-base">{t('Cancel')}</a></p>
+        <p><a href="#" className="hover:text-gray-600 text-gray-500 text-lg ">{t('Cancel')}</a></p>
       </div>
     </div>
   );
