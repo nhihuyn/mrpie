@@ -139,7 +139,7 @@ const Login: React.FC = () => {
              description={t('SuccessMessage')}
              type="success"
              closable
-             showIcon
+             //showIcon
           />
         </motion.div>
       )}
@@ -214,7 +214,7 @@ const Login: React.FC = () => {
       </form>
       <div className="signup-link mt-2 mb-14 w-full md:w-1/3 mx-auto text-center">
         <p>
-          <a href="#" className="text-blue-600 hover:text-blue-400 text-lg ">
+          <a href="#" className="text-blue-600 hover:text-blue-400 text-lg">
             {t('CreateAccount')}
           </a>
         </p>
