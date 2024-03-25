@@ -16,7 +16,6 @@ const ForgotPasswd: React.FC = () => {
 
     const emailInput = event.currentTarget.email as HTMLInputElement;
 
-    // Kiểm tra điều kiện và hiển thị các thông báo lỗi tương ứng
     const emailRegex = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
     if (!emailRegex.test(emailInput.value)) {
       setEmailError(true);
