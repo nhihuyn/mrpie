@@ -23,7 +23,7 @@ const Event: React.FC<CustomSliderProps> = ({ title, image, size }) => {
         >
           <img
             src={image}
-            alt="image"
+            alt="event"
             className="absolute inset-0 object-cover w-full h-full"
           />
         </div>

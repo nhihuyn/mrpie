@@ -1,38 +1,19 @@
 import "./App.css";
-// import Login from './components/Login/login';
 import DetailProduct from "./components/common/detail-product/detailProduct";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./components/common/header/header";
-import Footer from "./components/common/footer/footer";
+import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
 import Menu from "./components/common/menu/menu";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <div>
-        <Header />
-        {/* <Root /> */}
-        <Menu />
-        <Footer />
-      </div>
-    ),
-    errorElement: <div>Error</div>,
-  },
-  // {
-  //   path: '/login',
-  //   element: <Login />,
-  // },
-  {
-    path: "/products/:productId",
-    element: <DetailProduct />,
-  },
-]);
+import Layout from "./components/Layout/layout";
 
 function App() {
   return (
-    // <Provider store={store}>
-    <RouterProvider router={router} />
-    // </Provider>
+    <Router>
+      <Layout>
+          <Routes>
+            <Route path="/" element={<DetailProduct/>} />
+            <Route path="/products/:productId" element={<Menu/>} />
+          </Routes>
+      </Layout>
+    </Router>
   );
 }
 

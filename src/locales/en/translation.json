@@ -12,8 +12,9 @@
     "SausageCake": "Sausage Cake",
     "AccompanyingCake": "Accompanying Cake",
     "Store": "Store",
-    "FindStore": "Find A Store",
-    "BrandStory": "Brand Story",
     "Brand": "Brand",
-    "Info": "Info"
+    "Info": "Info",
+    "Find a store": "Find A Store",
+    "Brand story": "Brand Story",
+    "Customer service center": "Customer Service Center"
 }

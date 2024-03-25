@@ -6,6 +6,7 @@ import {
   formatMoney,
 } from "../../../utils/helpers";
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+
 interface BreadCardProps {
   data: {
     id: string;
@@ -30,7 +31,7 @@ const TagContent: React.FC<BreadCardProps> = ({ data }) => {
           <div className="w-80 h-80 ml-2  md:mr-0  ">
             <img
               src={el.images}
-              alt="image"
+              alt="img1"
               className="object-cover w-full h-full"
             />
           </div>

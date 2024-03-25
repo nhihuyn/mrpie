@@ -12,9 +12,9 @@ const SideBar: React.FC = () => {
     console.log(searching);
   };
 
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+  // const handleChange = (value: string) => {
+  //   console.log(`selected ${value}`);
+  // };
 
   const data = [
     {

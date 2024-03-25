@@ -55,37 +55,25 @@ const Footer: React.FC = () => {
       title: "Menu",
       submenu: [
         {
-          title: "New",
+          title: t("New"),
           path: `/`,
         },
         {
-          title: "Originals",
+          title: t("VegetarianCake"),
           path: `/`,
         },
         {
-          title: "Premium",
+          title: t("CakeOfDay"),
           path: `/`,
         },
         {
-          title: "Whopper & junior",
+          title: t("SaltineCrackers"),
           path: `/`,
         },
         {
-          title: "Chicken & Shrimp Burger",
+          title: t("SausageCake"),
           path: `/`,
-        },
-        {
-          title: "All day king & king morning",
-          path: `/`,
-        },
-        {
-          title: "Side",
-          path: `/`,
-        },
-        {
-          title: "Drinks & Desserts",
-          path: `/`,
-        },
+        }
       ],
     },
 
@@ -94,67 +82,47 @@ const Footer: React.FC = () => {
       title: "Store",
       submenu: [
         {
-          title: "Find a store",
+          title: t("Find a store"),
           path: `/`,
         },
       ],
     },
     {
       id: 3,
-      title: "Event",
+      title: t("Event"),
       submenu: [
         {
-          title: "Event",
+          title: t("Event"),
           path: `/`,
         },
       ],
     },
     {
       id: 4,
-      title: "Brand story",
+      title: t("Brand story"),
       submenu: [
         {
-          title: "BRAND",
+          title: t("Brand"),
           path: `/`,
-        },
-        {
-          title: "WHOPPER",
-          path: `/`,
-        },
-        {
-          title: "COMM",
-          path: `/`,
-        },
+        }
       ],
     },
     {
       id: 5,
-      title: "Customer service center",
+      title: t("Customer service center"),
       submenu: [
         {
-          title: "Announcement",
+          title: "Youtube",
           path: `/`,
         },
         {
-          title: "Burger king app usage",
+          title: "Facebook",
           path: `/`,
         },
         {
-          title: "FAQ",
+          title: "Integram",
           path: `/`,
-        },
-        {
-          title: "Inquiry",
-          path: `/`,
-        },
-        {
-          title: "Recruiting franchisees",
-          path: `/`,
-        },
-        {
-          title: "Recruitment",
-          path: `/`,
-        },
+        }
       ],
     },
   ];
