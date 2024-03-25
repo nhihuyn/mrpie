@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Breadcrumb, Timeline } from 'antd';
 import food from '../../../assets/images/food.png';
@@ -21,7 +20,7 @@ const Intro: React.FC = () => {
     setTimeout(() => {
       setActiveTab(tab);
       setIsVisible(true);
-    }, );
+    });
   };
 
   return (
@@ -47,7 +46,8 @@ const Intro: React.FC = () => {
         </div>
         <hr className="tab-divider" />
         <div className="tab-content mt-8 ml-8 mr-8 ">
-          {activeTab === "info" && (
+            
+        {activeTab === "info" && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -61,13 +61,13 @@ const Intro: React.FC = () => {
                   className="timeline-animation"
                   ref={ref}
                 >
-                  <Timeline mode="alternate" className="timeline ">
+                  <Timeline mode="alternate" className="timeline sm:ml-0">
                     <Timeline.Item label="2024-03-18">
                       <motion.div
                         initial={{ x: isVisible ? '-100%' : 0, opacity: isVisible ? 0 : 1 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col items-start"
+                        className="flex flex-col md:items-start"
                       >
                         <motion.img
                           initial={{ x: -100, opacity: 0 }}
@@ -84,9 +84,9 @@ const Intro: React.FC = () => {
                           className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 relative whitespace-normal"
                         >
                           {t('ItemDescription')}
-                      </motion.span>
-                    </motion.div>
-                  </Timeline.Item>
+                        </motion.span>
+                      </motion.div>
+                    </Timeline.Item>
                     <Timeline.Item label="2024-03-18">
                       <motion.div
                         initial={{ x: isVisible ? '100%' : 0, opacity: isVisible ? 0 : 1 }}
@@ -107,32 +107,32 @@ const Intro: React.FC = () => {
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ duration: 0.8, delay: 0.2 }}
                           className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 whitespace-normal"
-                          >
+                        >
                           {t('ItemDescription')}
-                          </motion.span>
-                        </motion.div>
-                      </Timeline.Item>
-                        <Timeline.Item label="2024-03-18">
-                          <motion.div
-                          initial={{ x: isVisible ? '-100%' : 0, opacity: isVisible ? 0 : 1 }}
+                        </motion.span>
+                      </motion.div>
+                    </Timeline.Item>
+                    <Timeline.Item label="2024-03-18">
+                      <motion.div
+                        initial={{ x: isVisible ? '-100%' : 0, opacity: isVisible ? 0 : 1 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="flex flex-col items-start"
+                      >
+                        <motion.img
+                          initial={{ x: -100, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ duration: 0.8 }}
-                          className="flex flex-col items-start"
-                          >
-                          <motion.img
-                            initial={{ x: -100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                            src={food}
-                            alt="item2"
-                            className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-4 rounded-xl"
-                          />
-                          <motion.span
-                            initial={{ x: -100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 whitespace-normal"
-                          >
+                          src={food}
+                          alt="item3"
+                          className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-4 rounded-xl"
+                        />
+                        <motion.span
+                          initial={{ x: -100, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ duration: 0.8, delay: 0.2 }}
+                          className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 whitespace-normal"
+                        >
                           {t('ItemDescription')}
                         </motion.span>
                       </motion.div>
@@ -142,82 +142,82 @@ const Intro: React.FC = () => {
               </div>
             </motion.div>
           )}
-                  {activeTab === "tab2" && (
-                      <motion.div
-                          initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.8 }}
-                          >
-                        <div>
-                          <h3>Tab 2 Content</h3>
-                          <p>Track your progress with the free "My Learning" program here at W3Schools.
-                          Log in to your account, and start earning points!
-                          This is an optional feature.
-                          You can study at W3Schools without using My Learning.
-                          </p>
-                        </div>
-                       </motion.div>
-      )}
+          {activeTab === "tab2" && (
+            <motion.div
+              initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div>
+                <h3>Tab 2 Content</h3>
+                <p>Track your progress with the free "My Learning" program here at W3Schools.
+                  Log in to your account, and start earning points!
+                  This is an optional feature.
+                  You can study at W3Schools without using My Learning.
+                </p>
+              </div>
+            </motion.div>
+          )}
 
-      {activeTab === "tab3" && (
+          {activeTab === "tab3" && (
+            <motion.div
+              initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div>
+                <h3>Tab 3 Content</h3>
+                <p>This is content for Tab 3.</p>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
+      <div className="footer-container bottom-0 w-full bg-white flex justify-center overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ x: '100vw' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1, type: 'tween', ease: 'easeInOut' }}
+          className="footer-images-container flex justify-center"
         >
-          <div>
-            <h3>Tab 3 Content</h3>
-            <p>This is content for Tab 3.</p>
+          <div className="grid grid-cols-4 items-center justify-between mt-10  bg-white p-2">
+            <motion.img
+              src={cooperate}
+              alt="image1"
+              className="footer-image mx-auto h-1/2 "
+              initial={{ opacity: 0, x: '100vw' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.5 }}
+            />
+            <motion.img
+              src={cooperate}
+              alt="image2"
+              className="footer-image mx-auto h-1/2"
+              initial={{ opacity: 0, x: '100vw' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.6 }}
+            />
+            <motion.img
+              src={cooperate}
+              alt="image3"
+              className="footer-image mx-auto h-1/2"
+              initial={{ opacity: 0, x: '100vw' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.7 }}
+            />
+            <motion.img
+              src={cooperate}
+              alt="image4"
+              className="footer-image mx-auto h-1/2"
+              initial={{ opacity: 0, x: '100vw' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.8 }}
+            />
           </div>
         </motion.div>
-      )}
-    </div>
-  </div>
-  <div className="footer-container bottom-0 w-full bg-white flex justify-center overflow-hidden">
-    <motion.div
-      initial={{ x: '100vw' }}
-      animate={{ x: 0 }}
-      transition={{ duration: 1, type: 'tween', ease: 'easeInOut' }}
-      className="footer-images-container flex justify-center"
-    >
-      <div className="grid grid-cols-4 items-center justify-between mt-10  bg-white p-2">
-        <motion.img
-          src={cooperate}
-          alt="image1"
-          className="footer-image mx-auto h-1/2 "
-          initial={{ opacity: 0, x: '100vw' }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.5 }}
-        />
-        <motion.img
-          src={cooperate}
-          alt="image2"
-          className="footer-image mx-auto h-1/2"
-          initial={{ opacity: 0, x: '100vw' }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.6 }}
-        />
-        <motion.img
-          src={cooperate}
-          alt="image3"
-          className="footer-image mx-auto h-1/2"
-          initial={{ opacity: 0, x: '100vw' }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.7 }}
-        />
-        <motion.img
-          src={cooperate}
-          alt="image4"
-          className="footer-image mx-auto h-1/2"
-          initial={{ opacity: 0, x: '100vw' }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, type: 'tween', ease: 'easeInOut', delay: 0.8 }}
-        />
       </div>
-    </motion.div>
-  </div>
-</div>
-);
+    </div>
+  );
 };
 
 export default Intro;
