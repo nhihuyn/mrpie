@@ -144,7 +144,7 @@ const Login: React.FC = () => {
         </motion.div>
       )}
 
-      <h2 className="text-center font-bold sm:text-4xl text-2xl px-20 mb-10">{t('Login')}</h2>
+      <p className="text-center sm:text-4xl text-2xl px-20 mb-10">{t('Login')}</p>
       <form onSubmit={validateForm} className="flex flex-col text-sm">
         <div className="form-group mb-6 flex flex-col">
           <label htmlFor="username" className="block mb-2">
@@ -163,7 +163,7 @@ const Login: React.FC = () => {
             ref={usernameRef}
           />
           {usernameError && (
-            <p className="text-sm font-semibold text-red-400 ">{usernameError}</p>
+            <p className="text-sm font-semibold text-red-400 ml-3 ">{usernameError}</p>
           )}
         </div>
         <div className="form-group mb-6 flex flex-col">
@@ -183,7 +183,7 @@ const Login: React.FC = () => {
             ref={passwordRef}
           />
           {passwordError && (
-            <p className="text-sm font-semibold text-red-400 ">{passwordError}</p>
+            <p className="text-sm font-semibold text-red-400 ml-3 ">{passwordError}</p>
           )}
         </div>
         <div className="form-group mb-6 flex items-center">
