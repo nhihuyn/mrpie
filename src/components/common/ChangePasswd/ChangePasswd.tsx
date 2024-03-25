@@ -87,56 +87,54 @@ const ChangePasswd: React.FC = () => {
         </motion.div>
       )}
 
-      <h2 className="text-center text-3xl px-5 md:text-3xl mb-10">{t('ChangePassword')}</h2>
+      <p className="text-center text-3xl md:text-4xl mb-10">{t('ChangePassword')}</p>
       <form onSubmit={handleSubmit} className="flex flex-col">
         <div className={`form-group mt-4 mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
-          <label htmlFor="newPassword" className="block mb-2"></label>
           <input
             type="password"
             id="newPassword"
             name="newPassword"
             value={newPassword}
             onChange={handleChangeNewPassword}
-            className={`w-full px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
+            className={`w-full text-sm px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
             placeholder={t('NewPassword')}
             minLength={7}
             maxLength={64}
             // required
           />
           {showAlert && newPassword.trim() === '' && (
-            <p className="text-red-500 text-sm ">{t('NewPasswordRequired')}</p>
+            <p className="text-red-500 text-sm ml-3 ">{t('NewPasswordRequired')}</p>
           )}
         </div>
         <div className={`form-group mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
-          <label htmlFor="confirmPassword" className="block mb-2"></label>
           <input
             type="password"
             id="confirmPassword"
             name="confirmPassword"
             value={confirmPassword}
             onChange={handleChangeConfirmPassword}
-            className={`w-full px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
+            className={`w-full text-sm px-4 py-2 border-2 rounded-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 ${showAlert ? 'border-red-500' : ''}`}
             placeholder={t('ConfirmPassword')}
             minLength={7}
             maxLength={64}
             // required
           />
           {showAlert && confirmPassword.trim() === '' && (
-            <p className="text-red-500 text-sm ">{t('ConfirmPasswordRequired')}</p>
+            <p className="text-red-500 text-sm ml-3">{t('ConfirmPasswordRequired')}</p>
           )}
           {showAlert && newPassword.trim() !== '' && confirmPassword.trim() !== '' && newPassword !== confirmPassword && (
-            <p className="text-red-500 text-sm ">{t('PasswordMismatch')}</p>
+            <p className="text-red-500 text-sm ml-3">{t('PasswordMismatch')}</p>
           )}
         </div>
         <button
           type="submit"
-          className="w-1/2 mt-8 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-1xl py-2 rounded-lg transition duration-300 mb-2"
+          className="w-1/2 md:w-2/5 text-base mt-8 mx-auto bg-blue-500 text-white py-2 rounded-lg transition duration-300 mb-2"
         >
           {t('ChangePassword')}
         </button>
       </form>
       <div className="cancel-text text-center">
-        <p><a href="#" className="hover:text-gray-600 text-gray-500 text-2xl">{t('Cancel')}</a></p>
+        <p><a href="#" className="hover:text-gray-600 text-gray-500 text-base">{t('Cancel')}</a></p>
       </div>
     </div>
   );
