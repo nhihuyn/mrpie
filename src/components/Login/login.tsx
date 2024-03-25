@@ -144,17 +144,14 @@ animate={{ opacity: 1, x: 0 }}
         </motion.div>
       )}
 
-      <h2 className="text-center font-bold sm:text-5xl px-20 mb-10">{t('Login')}</h2>
+      <h4 className="text-center font-bold text-4xl px-20 mb-10">{t('Login')}</h4>
       <form onSubmit={validateForm} className="flex flex-col">
         <div className="form-group mb-6 flex flex-col">
-          <label htmlFor="username" className="block mb-2">
-            
-          </label>
           <input
             type="text"
             id="username"
             name="username"
-            className={`w-full px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
             ${usernameError ? 'border-pink-500 text-pink-600' : ''}
             `}
             placeholder={t('Username')}
@@ -167,14 +164,11 @@ animate={{ opacity: 1, x: 0 }}
           )}
         </div>
         <div className="form-group mb-6 flex flex-col">
-          <label htmlFor="password" className="block mb-2">
-            
-          </label>
           <input
             type="password"
             id="password"
             name="password"
-            className={`w-full px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
               passwordError ? 'border-pink-500 text-pink-600' : ''
             }`}
             placeholder={t('Password')}
@@ -199,14 +193,14 @@ checked={isOrganization}
           </label>
         </div>
         <div className="forgot-password mb-6 text-right">
-          <a href="#" className="text-gray-600 hover:text-brown">
+          <a href="#" className="text-gray-500 hover:text-brown text-base">
             {t('ForgotPassword')}
           </a>
         </div>
         <button
         id="login"
           type="submit"
-          className="w-1/2 md:w-1/3 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-2xl py-3 rounded-lg transition duration-300 mb-6 flex justify-center"
+          className="w-1/2 text-base md:w-1/3 mx-auto bg-blue-500 text-white text-2xl py-3 rounded-lg transition duration-300 mb-6 flex justify-center"
           >
           {t('login')}
         </button>
@@ -214,7 +208,7 @@ checked={isOrganization}
       </form>
       <div className="signup-link mt-2 mb-14 text-center">
         <p>
-          <a href="#" className="text-blue-600 text-1xl">
+          <a href="#" className="text-blue-600 text-base">
             {t('CreateAccount')}
           </a>
         </p>
