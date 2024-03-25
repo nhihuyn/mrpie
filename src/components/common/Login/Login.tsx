@@ -163,7 +163,7 @@ const Login: React.FC = () => {
             ref={usernameRef}
           />
           {usernameError && (
-            <p className="text-sm font-semibold text-red-400 ml-3 ">{usernameError}</p>
+            <p className="text-red-500 text-sm ml-3 ">{usernameError}</p>
           )}
         </div>
         <div className="form-group mb-6 flex flex-col">
@@ -183,7 +183,7 @@ const Login: React.FC = () => {
             ref={passwordRef}
           />
           {passwordError && (
-            <p className="text-sm font-semibold text-red-400 ml-3 ">{passwordError}</p>
+            <p className="text-red-500 text-sm ml-3 ">{passwordError}</p>
           )}
         </div>
         <div className="form-group mb-6 flex items-center">
