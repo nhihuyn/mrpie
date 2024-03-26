@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Alert, Input } from 'antd';
-import { ExclamationCircleOutlined, CheckCircleOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Alert } from 'antd';
+import { ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
