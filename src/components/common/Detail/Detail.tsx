@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan } from '../../../assets/images/index';
+import { vegan, bg_vegan,badge,image_discount } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -134,6 +134,28 @@ const Detail: React.FC = () => {
 
   return (
     <div className="bg-orange-100 min-h-screen">
+
+{count < 2 && (
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 200 }}
+          transition={{ duration: 0.8 }}
+          className="fixed top-10 right-2 md:right-10 z-50"
+        >
+          <Alert
+            message={
+              <span>
+                <ExclamationCircleOutlined style={{ color: 'orange' }} /> {t('Warning')}{' '}
+              </span>
+            }
+            description={t('AddMoreProductsForDiscount')}
+            type="warning"
+            closable
+          />
+        </motion.div>
+      )}
+
      {showAlert && (
   <motion.div
     initial={{ opacity: 0, x: 200 }} 
@@ -324,9 +346,27 @@ const Detail: React.FC = () => {
       <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
     </div>
 
-    <div className="w-full md:w-1/2 flex flex-col items-center md:ml-20 md:mt-28 relative z-20">
-      <img src={vegan} alt="Bánh" className="w-3/5 md:w-auto" />
+  <div className="lg:mr-40 p-8 text-white justify-center items-center relative">
+  <div className="flex justify-center md:justify-end">
+    <div className="flex flex-col items-end relative">
+      <img src={vegan} alt="Bánh" className="relative z-10" />
+      <div className="absolute top-0 right-0 md:top-auto md:right-auto md:mt-10 md:mr-2 z-20">
+        <div className="relative w-20 h-20 ">
+          <img src={badge} alt="Discount" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 flex justify-center items-center">
+            <span className="text-yellow-300 text-lg font-bold italic">20%</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <div className="flex flex-col items-end">
+      <img src={image_discount} alt="Lightning" className="relative z-10" />
+      <div className="absolute top-0 right-0 md:top-auto md:right-auto md:mt-10 md:mr-2 z-20">
+        
+      </div>
+    </div>
+  </div>
+  </div> 
   </div>
 
   <div className="py-4 px-8 md:py-8 md:px-48">
@@ -357,7 +397,7 @@ const Detail: React.FC = () => {
           </div>
           <div className="flex flex-col md:flex-row md:col-span-1">
             <div className="mb-6 md:mr-4">
-              <p className="text-sm mb-2">{t('Username')}</p>
+              <p className="text-sm mb-2">{t('usernamereview')}</p>
               <input type="text" className="p-2 border border-gray-300 rounded-md w-full " value={userName} onChange={(e) => setUserName(e.target.value)} />
             </div>
             <div className="mb-6 ">
