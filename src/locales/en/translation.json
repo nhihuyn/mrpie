@@ -67,7 +67,21 @@
     "SuccessMessage":"Success Message",
     "Find a store": "Find A Store",
     "Brand story": "Brand Story",
-    "Customer service center": "Customer Service Center"
+    "Customer service center": "Customer Service Center",
+    "Email": "Email",
+    "RetypePassword": "Retype password",
+    "Email valid (example@gmail.com)": "Email valid (example@gmail.com)",
+    "Not space character": "Not valid space character",
+    "Retype password match": "Password not match",
+    "Input from 2 to 64 character": "Input from 2 to 64 character",
+    "Input from 7 to 64 character": "Input from 7 to 64 character",
+    "Valid phonenumber": "Valid phone number",
+    "Fullname": "Fullname",
+    "Business name": "Business name",
+    "Personal": "Personal",
+    "Business": "Business",
+    "Register": "Register",
+    "Already have account": "Already have account ?"
 }
 
 
