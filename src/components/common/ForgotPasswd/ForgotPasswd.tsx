@@ -42,8 +42,8 @@ const ForgotPasswd: React.FC = () => {
   };
 
   return (
-    <div className="forgot-password-container mx-auto max-w-xl mt-40 px-5">
-      <p className="text-center mb-10 text-3xl md:text-4xl">{t('PasswordRetrieval')}</p>
+    <div className="forgot-password-container mx-auto max-w-xl mt-32 mb-14 px-5">
+      <p className="text-center mb-10 text-3xl">{t('PasswordRetrieval')}</p>
       <form onSubmit={handleSubmit} className="flex flex-col text-sm">
         <div className={`form-group mb-6 mt-4 px-5 flex flex-col ${emailError ? 'border-red-500' : ''}`}>
           <label htmlFor="email" className="block mb-2"></label>
@@ -51,7 +51,7 @@ const ForgotPasswd: React.FC = () => {
             type="email"
             id="email"
             name="email"
-            className={`sm:w-full px-2 py-3 text-sm border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${emailError ? 'border-red-500' : ''}`}
+            className={`sm:w-full text-sm px-2 py-3 text-sm border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${emailError ? 'border-red-500' : ''}`}
             placeholder={t('EmailAddress')}
           />
           {emailError && (
@@ -60,12 +60,12 @@ const ForgotPasswd: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="sm:w-full md:w-1/2 mx-auto mb-0 mt-4 bg-blue-500 hover:bg-gray-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center">
+          className="sm:w-full md:w-1/2 mx-auto mb-0 mt-4 bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center">
           {t('ResetPassword')}
         </button>
 
-        <div className="signup-link mt-6 text-center">
-          <p><a href="#" className="text-gray-400 hover:text-gray-700 text-lg">{t('BackToLogin')}</a></p>
+        <div className="signup-link mt-2 text-center">
+          <p><a href="/login" className="text-base text-gray-400 hover:text-gray-700">{t('BackToLogin')}</a></p>
         </div>
       </form>
 
