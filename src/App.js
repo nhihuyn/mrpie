@@ -9,6 +9,7 @@ import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
 import RegisterForm from "./components/common/register/register";
+import Checkout from "./components/common/checkout/checkout";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
     //       </Routes>
     //   </Layout>
     // </Router>
-    <RegisterForm/>
+    // <RegisterForm/>
+    <Checkout/>
 
   );
 }
