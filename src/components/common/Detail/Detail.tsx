@@ -21,9 +21,8 @@ const Detail: React.FC = () => {
   const [showReviewSuccessAlert, setShowReviewSuccessAlert] = useState(false);
   const [showFavoriteAlert, setShowFavoriteAlert] = useState(false);
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
+  const [selectedCakeType, setSelectedCakeType] = useState<string | null>(null);
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: boolean}>({
     S: false,
     M: false,
@@ -60,25 +59,38 @@ const Detail: React.FC = () => {
     setSelectedSizes(newSelectedSizes);
   };
 
+  const handleCakeTypeSelect = (cakeType: string) => {
+    setSelectedCakeType(cakeType);
+  };
+
   const handleAddToCart = () => {
-    if (!selectedCategory || !selectedSize) {
+    if (!selectedSize || !selectedCakeType) {
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
       }, 2000);
     } else {
-      setShowSuccessAlert(true);
-      setSelectedSizes({
-        S: false,
-        M: false,
-        L: false,
-        J: false
-      });
-      setTimeout(() => {
-        setShowSuccessAlert(false);
-      }, 3000);
+      let allSizesSelected = Object.values(selectedSizes).some(size => size === true);
+      if (allSizesSelected) {
+        setShowSuccessAlert(true);
+        setSelectedSizes({
+          S: false,
+          M: false,
+          L: false,
+          J: false
+        });
+        setTimeout(() => {
+          setShowSuccessAlert(false);
+        }, 3000);
+      } else {
+        setShowAlert(true);
+        setTimeout(() => {
+          setShowAlert(false);
+        }, 2000);
+      }
     }
   };
+  
 
   const handleReviewSubmit = () => {
     let reviewValid = true;
@@ -263,6 +275,7 @@ const Detail: React.FC = () => {
                   label: t('ColdCakes'),
                 }
               ]}
+              onChange={(value) => handleCakeTypeSelect(value)}
             />
           </div>
 
