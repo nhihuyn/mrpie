@@ -21,7 +21,8 @@
     "UsernameEmpty": "Tên người dùng để trống",
     "Login":"Đăng Nhập",
     "login":"Đăng nhập",
-    "Username": "Tên người dùng",
+    "Username": "Tài khoản",
+    "usernamereview":"Tên người dùng",
     "Password": "Mật khẩu",
     "ForgotPassword": " Quên mật khẩu ?",
     "Organization": "Tổ chức",
@@ -70,4 +71,7 @@
     "ErrorMessage":"Thông báo thất bại",
     "SuccessMessage":"Thông báo thành công"
     
+    
 }
+
+

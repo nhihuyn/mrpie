@@ -347,22 +347,22 @@ const Detail: React.FC = () => {
         </>
       )}
 
-    {activeTab === "review" && (
+{activeTab === "review" && (
       <>
         <h2 className="text-xl md:text-2xl mb-6">{t('AddYourComment')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="md:col-span-2 flex items-center mb-6">
             <p className="sm:text-sm mr-4 mb-2 md:mb-0">{t('YourRating')}:</p>
             <Rate allowHalf onChange={setRating} value={rating} className="mr-4" />
           </div>
           <div className="flex flex-col md:flex-row md:col-span-1">
             <div className="mb-6 md:mr-4">
-              <p className="text-sm mb-2">{t('Username')}</p>
-              <input type="text" className="p-2 border border-gray-300 rounded-md w-full" value={userName} onChange={(e) => setUserName(e.target.value)} />
+              <p className="text-sm mb-2">{t('usernamereview')}</p>
+              <input type="text" className="p-2 border border-gray-300 rounded-md w-full " value={userName} onChange={(e) => setUserName(e.target.value)} />
             </div>
-            <div className="mb-6 md:mr-4">
+            <div className="mb-6 ">
               <p className="text-sm mb-2">{t('PhoneNumber')}</p>
-              <input type="tel" className="p-2 border border-gray-300 rounded-md w-full" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+              <input type="tel" className="p-2 border border-gray-300 rounded-md w-full " value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
             </div>
           </div>
           <div className="md:col-span-2 mb-6">
