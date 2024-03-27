@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Breadcrumb, Timeline } from 'antd';
+import React, { useState, useEffect, } from 'react';
+import { Breadcrumb} from 'antd';
 import food from '../../../assets/images/food.png';
 import cooperate from '../../../assets/images/cooperate.png';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
+
 const Intro: React.FC = () => {
   const [activeTab, setActiveTab] = useState("info");
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
+  //const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -49,115 +50,124 @@ const Intro: React.FC = () => {
             
         {activeTab === "info" && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            >
+            initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
               <div className="timeline-container">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  className="timeline-animation"
-                  ref={ref}
-                >
-                  <Timeline mode="alternate" className="timeline sm:ml-0">
-                    <Timeline.Item label="2024-03-18">
-                      <motion.div
-                        initial={{ x: isVisible ? '-100%' : 0, opacity: isVisible ? 0 : 1 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="flex flex-col md:items-start"
-                      >
-                        <motion.img
-                          initial={{ x: -100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8 }}
-                          src={food}
-                          alt="item1"
-                          className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-4 relative rounded-xl"
-                        />
-                        <motion.span
-                          initial={{ x: -100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                          className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 relative whitespace-normal"
-                        >
-                          {t('ItemDescription')}
-                        </motion.span>
-                      </motion.div>
-                    </Timeline.Item>
-                    <Timeline.Item label="2024-03-18">
-                      <motion.div
-                        initial={{ x: isVisible ? '100%' : 0, opacity: isVisible ? 0 : 1 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="flex flex-col items-end"
-                      >
-                        <motion.img
-                          initial={{ x: 100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8 }}
-                          src={food}
-                          alt="item2"
-                          className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-4 rounded-xl"
-                        />
-                        <motion.span
-                          initial={{ x: 100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                          className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 whitespace-normal"
-                        >
-                          {t('ItemDescription')}
-                        </motion.span>
-                      </motion.div>
-                    </Timeline.Item>
-                    <Timeline.Item label="2024-03-18">
-                      <motion.div
-                        initial={{ x: isVisible ? '-100%' : 0, opacity: isVisible ? 0 : 1 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="flex flex-col items-start"
-                      >
-                        <motion.img
-                          initial={{ x: -100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8 }}
-                          src={food}
-                          alt="item3"
-                          className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mb-4 rounded-xl"
-                        />
-                        <motion.span
-                          initial={{ x: -100, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                          className="text-left w-full sm:w-1/2 md:w-1/2 lg:w-1/2 whitespace-normal"
-                        >
-                          {t('ItemDescription')}
-                        </motion.span>
-                      </motion.div>
-                    </Timeline.Item>
-                  </Timeline>
-                </motion.div>
+              <div className="container">
+          <div
+            className="flex flex-col md:grid grid-cols-8 mx-auto p-2 text-black"
+          >
+          <motion.div
+            initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex md:contents"
+          >
+            {/*Right*/}
+            <div className="flex md:contents ">
+              <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                <div className="h-full w-6 flex items-center justify-center">
+                  <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
+                </div>
+                <div
+                  className="w-6 h-6 absolute top-20 -mt-24 rounded-full bg-white border-4 border-blue-500 "
+                ></div>
               </div>
+              <div
+                className="col-start-6 col-end-9 px-2 rounded-xl mr-auto "
+              >
+                <div className="absolute w-3 h-3 text-black rounded-full mt-1.5 items-end "></div>
+                <time className="mb-1 text-sm font-normal leading-none text-black ">March 2022</time>
+                <img src={food} alt="item2" className="w-full 2 mb-4 mt-1 rounded-xl" /> 
+                <p className="text-left w-full  whitespace-normal ">
+                 {t('ItemDescription')}
+                  </p>
+
+              </div>
+            </div>
             </motion.div>
-          )}
-          {activeTab === "tab2" && (
+
+
+              {/*Left*/}
             <motion.div
-              initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div>
-                <h3>Tab 2 Content</h3>
-                <p>Track your progress with the free "My Learning" program here at W3Schools.
-                  Log in to your account, and start earning points!
-                  This is an optional feature.
-                  You can study at W3Schools without using My Learning.
-                </p>
+            initial={{ opacity: 100, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-row-reverse md:contents"
+          >
+            <div className="flex flex-row-reverse md:contents">
+              <div
+                className=" col-start-2 col-end-5 p-2 rounded-xl mt-20 "
+              >
+                <div className="absolute text-right w-3 h-3 rounded-full mt-10 "></div>
+                <time className="mb-1  col-start-4 text-sm leading-none text-black">March 2023</time>
+                <img src={food} alt="item2" className="w-full mb-4 rounded-xl" /> 
+                  <p className="text-left w-full  whitespace-normal">
+                  {t('ItemDescription')}
+                 </p>
+
               </div>
+
+              <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                <div className="h-full w-6 flex items-center justify-center">
+                  <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
+                </div>
+                <div
+                  className="w-6 h-6 absolute top-1/2 -mt-24 rounded-full bg-white border-4 border-blue-500"
+                ></div>
+              </div>
+            </div>
+            </motion.div>
+
+           {/*Right*/}
+           <motion.div
+            initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex md:contents"
+          >
+            <div className="flex md:contents">
+              <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                <div className="h-full w-6 flex items-center justify-center">
+                  <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
+                </div>
+                <div
+                  className="w-6 h-6 absolute top-1/2 -mt-24 rounded-full bg-white border-4 border-blue-500"
+                ></div>
+              </div>
+              <div
+                className=" col-start-6 col-end-9 p-2 rounded-xl mt-20 mr-auto "
+              >
+                <div className="absolute w-3 h-3 rounded-full mt-4 "></div>
+                  <time className=" text-sm font-normal leading-none text-black">March 2022</time>
+                    <img src={food} alt="item2" className="w-full mt-5 mb-4 rounded-xl" /> 
+                      <p className="text-left w-full  whitespace-normal">
+                       {t('ItemDescription')}
+                      </p>
+              </div>
+            </div>
+            </motion.div>                
+          </div>
+        </div>
+        </div>
             </motion.div>
           )}
+         {activeTab === "tab2" && (
+          <motion.div
+          initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          >
+           <div>
+            <h3>Tab 3 Content</h3>
+            <p>This is content for Tab 2.</p>
+          </div>
+
+         </motion.div>
+        )}
+
 
           {activeTab === "tab3" && (
             <motion.div
