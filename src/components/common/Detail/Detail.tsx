@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan,badge,} from '../../../assets/images/index';
+import { vegan, bg_vegan,badge} from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -361,7 +361,7 @@ const DetailEvent: React.FC = () => {
     </div>
     <div className="flex flex-col items-end">
     <ThunderboltOutlined className="text-yellow-300 " style={{ fontSize: '100px'}} />
-    <div className="absolute top-0 right-0 md:mt-10 md:mr-2 z-20">
+    <div className="absolute top-0 right-0  md:mt-10 md:mr-2 z-20">
         
       </div>
     </div>
