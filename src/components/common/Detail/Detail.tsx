@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
-import { HeartOutlined, ExclamationCircleOutlined, RightOutlined } from '@ant-design/icons';
+import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan,badge,image_discount } from '../../../assets/images/index';
+import { vegan, bg_vegan,badge,} from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 
-const Detail: React.FC = () => {
+const DetailEvent: React.FC = () => {
   const { t } = useTranslation();
 
   const [count, setCount] = useState(1);
@@ -346,22 +346,22 @@ const Detail: React.FC = () => {
       <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
     </div>
 
-  <div className="lg:mr-40 p-8 text-white justify-center items-center relative">
+    <div className="lg:mr-40 p-8 text-white justify-center items-center relative">
   <div className="flex justify-center md:justify-end">
     <div className="flex flex-col items-end relative">
-      <img src={vegan} alt="Bánh" className="relative z-10" />
-      <div className="absolute top-0 right-0 md:top-auto md:right-auto md:mt-10 md:mr-2 z-20">
+      <img src={vegan} alt="Bánh" className="relative z-10 w-2/3" />
+      <div className="absolute top-0 right-0 md:mt-10 md:mr-2 z-20">
         <div className="relative w-20 h-20 ">
           <img src={badge} alt="Discount" className="w-full h-full object-cover" />
           <div className="absolute inset-0 flex justify-center items-center">
-            <span className="text-yellow-300 text-lg font-bold italic">20%</span>
+          <span className="text-yellow-300 text-lg italic" style={{ fontFamily: 'Shadows Into Light' }}>20% off</span>
           </div>
         </div>
       </div>
     </div>
     <div className="flex flex-col items-end">
-      <img src={image_discount} alt="Lightning" className="relative z-10" />
-      <div className="absolute top-0 right-0 md:top-auto md:right-auto md:mt-10 md:mr-2 z-20">
+    <ThunderboltOutlined className="text-yellow-300 " style={{ fontSize: '100px'}} />
+    <div className="absolute top-0 right-0 md:mt-10 md:mr-2 z-20">
         
       </div>
     </div>
@@ -421,4 +421,4 @@ const Detail: React.FC = () => {
 );
 };
 
-export default Detail;
+export default DetailEvent;
