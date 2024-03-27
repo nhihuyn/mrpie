@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 
+
 const Intro: React.FC = () => {
   const [activeTab, setActiveTab] = useState("info");
   const [isVisible, setIsVisible] = useState(false);
@@ -92,14 +93,14 @@ const Intro: React.FC = () => {
 
               {/*Left*/}
             <motion.div
-            initial={{ opacity: 100, y: 0 }}
+            initial={{ opacity: -100, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-row-reverse md:contents"
           >
             <div className="flex flex-row-reverse md:contents">
               <div
-                className=" col-start-2 col-end-5 p-2 rounded-xl mt-20 "
+                className=" col-start-6 col-end-9 p-2 rounded-xl mt-20 "
               >
                 <div className="absolute text-right w-3 h-3 rounded-full mt-10 "></div>
                 <time className="mb-1  col-start-4 text-sm leading-none text-black">March 2023</time>
