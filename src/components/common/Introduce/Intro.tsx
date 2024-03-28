@@ -11,7 +11,7 @@ const Intro: React.FC = () => {
   const [activeTab, setActiveTab] = useState("info");
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation();
-  //const ref = useRef<HTMLDivElement>(null);
+  
 
   useEffect(() => {
     setIsVisible(true);
@@ -24,6 +24,11 @@ const Intro: React.FC = () => {
       setIsVisible(true);
     });
   };
+  const animateItem = (index: number, delay: number) => ({
+    initial: { opacity: 0, x: 100 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 1, type: 'tween', ease: 'easeInOut', delay },
+  });
 
   return (
     <div className="intro-container bg-orange-100 min-h-screen">
@@ -58,104 +63,88 @@ const Intro: React.FC = () => {
             <div className="timeline-container">
               <div className="container">
           <div
-            className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-black"
+            className="flex flex-col md:grid grid-cols-10  mx-auto p-2 text-black"
           >
-         <motion.div
-            initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex md:contents"
-          >
+          
             {/*Right*/}
             <div className="flex md:contents ">
-              <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+              <div className="col-start-6 col-end-7 mr-10 md:mx-auto relative">
                 <div className="h-full w-6 flex items-center justify-center">
                   <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
                 </div>
                 
                 <div
-                  className="w-6 h-6 absolute top-20 -mt-24 rounded-full bg-white border-4 border-blue-500 "
+                  className="w-6 h-6 absolute top-20 -mt-20 rounded-full bg-white border-4 border-blue-500 "
                 ></div>
                 
               </div>
-              
-              <div
-                className="col-start-6 col-end-9 px-2 rounded-xl mr-auto "
-              >               
-                <div className="absolute w-3 h-3 text-black rounded-full mt-1.5 items-end "></div>
+            <motion.div {...animateItem(1, 0.2)} className="flex md:contents">
+              <div className="col-start-7 mt-1 col-end-10 px-2 rounded-xl mr-auto ">               
                 <time className="mb-1 text-sm font-normal leading-none text-black ">March 2022</time>
-                <img src={food} alt="item2" className="w-full 2 mb-4 mt-1 rounded-xl" /> 
-                <p className="text-left w-full  whitespace-normal ">
+                <img src={food} alt="item2" className="w-full mb-2 mt-8 rounded-xl" /> 
+                <p className="text-left w-full mb-8 whitespace-normal ">
                  {t('ItemDescription')}
                   </p>
                 
               </div>
+              </motion.div>
             </div>
-            </motion.div>
+            
 
 
               {/*Left*/}
-            <motion.div
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-row-reverse md:contents"
-          >
+              
             <div className="flex flex-row-reverse md:contents">
-              <div className=" col-start-2 col-end-5 p-2 rounded-xl mt-20 ">
-                <div className="absolute text-right w-3 h-3 rounded-full mt-10 "></div>
+            <motion.div {...animateItem(2, window.innerWidth > 768 ? 0.4 : 0.5)} className="flex md:contents">
+              <div className=" col-start-3 col-end-6 p-2 rounded-xl lg:mt-14 md:mt-13 mt-8 ">
                 
-                <time className="mb-1  col-start-4 text-sm leading-none text-black">March 2023</time>
-                <img src={food} alt="item2" className="w-full mb-4 rounded-xl" /> 
-                  <p className="text-left w-full  whitespace-normal">
+                <time className="mb-1 md:mt-2 text-sm flex items-start md:justify-end leading-none text-black">March 2023</time>
+                <img src={food} alt="item2" className="w-full lg:mt-14 md:mt-10 mt-8 mb-2 rounded-xl" /> 
+                  <p className="text-left w-full mb-10 whitespace-normal">
                   {t('ItemDescription')}
                  </p>
-
               </div>
+              </motion.div>
 
-              <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+              <div className="col-start-6 col-end-7 md:mx-auto relative mr-10">
                 <div className="h-full w-6 flex items-center justify-center">
                   <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
                 </div>
                 <div
-                  className="w-6 h-6 absolute top-1/2 -mt-24 rounded-full bg-white border-4 border-blue-500"
+                  className="w-6 h-6 absolute top-1/3 xl:-mt-24 -mt-20 rounded-full bg-white border-4 border-blue-500"
                 ></div>
               </div>
             </div>
-            </motion.div>
+            
 
            {/*Right*/}
-           <motion.div
-            initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex md:contents"
-          >
-            <div className="flex md:contents">
-              <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+           
+           <div className="flex md:contents ">
+              <div className="col-start-6 col-end-7 mr-10 md:mx-auto relative">
                 <div className="h-full w-6 flex items-center justify-center">
                   <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
                 </div>
+                
                 <div
-                  className="w-6 h-6 absolute top-1/2 -mt-24 rounded-full bg-white border-4 border-blue-500"
+                  className="w-6 h-6 absolute top-20 -mt-20 rounded-full bg-white border-4 border-blue-500 "
                 ></div>
+                
               </div>
-              <div
-                className=" col-start-6 col-end-9 p-2 rounded-xl mt-20 mr-auto "
-              >
-                <div className="absolute w-3 h-3 rounded-full mt-4 "></div>
-                  <time className=" text-sm font-normal leading-none text-black">March 2022</time>
-                    <img src={food} alt="item2" className="w-full mt-5 mb-4 rounded-xl" /> 
-                      <p className="text-left w-full  whitespace-normal">
-                       {t('ItemDescription')}
-                      </p>
+            <motion.div {...animateItem(1, 0.8)} className="flex md:contents">
+              <div className="col-start-7 mt-1 col-end-10 px-2 rounded-xl mr-auto ">               
+                <time className="mb-1  text-sm font-normal leading-none text-black ">March 2022</time>
+                <img src={food} alt="item2" className="w-full 2 mb-2 mt-10 rounded-xl" /> 
+                <p className="text-left w-full mb-8 whitespace-normal ">
+                 {t('ItemDescription')}
+                  </p>
+                
               </div>
+              </motion.div>
             </div>
-            </motion.div>                
           </div>
         </div>
         </div>
-        </motion.div>
+      </motion.div>
             
           )}
          {activeTab === "tab2" && (
