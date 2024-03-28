@@ -16,7 +16,8 @@
     "Info": "Info",
     "UsernameEmpty": "Username is Empty",
     "Login":"Login",
-    "Username": "User name",
+    "login":"login",
+    "Username": "Username",
     "Password": "Password",
     "ForgotPassword": " Forgot Password ?",
     "Organization": "Organization",
@@ -68,5 +69,4 @@
     "Brand story": "Brand Story",
     "Customer service center": "Customer Service Center"
 }
-
 
