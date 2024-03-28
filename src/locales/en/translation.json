@@ -12,14 +12,12 @@
     "SausageCake": "Sausage Cake",
     "AccompanyingCake": "Accompanying Cake",
     "Store": "Store",
-    "FindStore": "Find A Store",
-    "BrandStory": "Brand Story",
     "Brand": "Brand",
     "Info": "Info",
     "UsernameEmpty": "Username is Empty",
     "Login":"Login",
     "login":"login",
-    "Username": "Username",
+    "Username": "User name",
     "Password": "Password",
     "ForgotPassword": " Forgot Password ?",
     "Organization": "Organization",
@@ -67,5 +65,8 @@
     "Error":"Error !",
     "Success":"Success !",
     "ErrorMessage":"Error Message",
-    "SuccessMessage":"Success Message"
+    "SuccessMessage":"Success Message",
+    "Find a store": "Find A Store",
+    "Brand story": "Brand Story",
+    "Customer service center": "Customer Service Center"
 }

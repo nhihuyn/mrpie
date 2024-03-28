@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan,badge} from '../../../assets/images/index';
+import { vegan, bg_vegan,badge } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -346,13 +346,13 @@ const DetailEvent: React.FC = () => {
       <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
     </div>
 
-    <div className="lg:mr-40 p-8 text-white justify-center items-center relative">
+    <div className="lg:mr-40 md:p-8 text-white justify-center items-center relative">
   <div className="flex justify-center md:justify-end">
     <div className="flex flex-col items-end relative">
       <img src={vegan} alt="Bánh" className="relative z-10 w-2/3" />
-      <div className="absolute top-0 right-0 md:mt-10 md:mr-2 z-20">
+      <div className="absolute top-0 right-0 xl:mt-10 xl:mr-2 z-20">
         <div className="relative w-20 h-20 ">
-          <img src={badge} alt="Discount" className="w-full h-full object-cover" />
+          <img src={badge} alt="Discount" className=" object-cover" />
           <div className="absolute inset-0 flex justify-center items-center">
           <span className="text-yellow-300 text-lg italic" style={{ fontFamily: 'Shadows Into Light' }}>20% off</span>
           </div>

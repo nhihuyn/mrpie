@@ -32,8 +32,8 @@
     "PasswordRetrieval":"Lấy Lại Mật Khẩu",
     "ResetPassword": "Lấy lại mật khẩu",
     "BackToLogin":"Đăng nhập trở lại",
-    "UsernameTooLong":"Tên người dùng quá dài",
-    "UsernameInvalidCharacters":"Tên người dùng không hợp lệ",
+    "UsernameTooLong":"Tài khoản quá dài",
+    "UsernameInvalidCharacters":"Tài khoản không hợp lệ",
     "PasswordEmpty": "Mật khẩu không được để trống",
     "PasswordTooLong": "Mật khẩu quá dài",
     "LoginSuccess":"Đăng nhập thành công",
@@ -70,6 +70,9 @@
     "Error":"Lỗi !",
     "Success":"Thành công !",
     "ErrorMessage":"Thông báo thất bại",
-    "SuccessMessage":"Thông báo thành công"
-    
+    "SuccessMessage":"Thông báo thành công",
+    "Find a store": "Tìm Kiếm Cửa Hàng",
+    "Brand story": "Thương Hiệu",
+    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng"
+
 }

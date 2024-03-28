@@ -1,9 +1,26 @@
-import './App.css';
-import Detail from './components/common/Detail/Detail';
+
+import "./App.css";
+
+import DetailEvent from './components/common/Detail/Detail';
 
 function App() {
   return (
-    <Detail />
+    /*
+    <Router>
+     <Layout>
+          <Routes>
+            <Route path="/" element={<DetailProduct/>} />
+            <Route path="/products/:productId" element={<Menu/>} />
+            <Route path="/change_password" element={<ChangePasswd/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/forgot_password" element={<ForgotPassword/>} />
+            <Route path="/detailEvent" element={<DetailEvent/>} />
+          </Routes>
+      </Layout>
+    </Router>
+    */
+   <DetailEvent />
+
   );
 }
 
