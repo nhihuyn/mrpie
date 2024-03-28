@@ -1,13 +1,20 @@
 
-import "./App.css";
 
+
+import "./App.css";
+import DetailProduct from "./components/common/detail-product/detailProduct";
+import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
+import Menu from "./components/common/menu/menu";
+import Layout from "./components/Layout/layout";
+import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
+import Login from './components/common/Login/Login';
+import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
 import DetailEvent from './components/common/Detail/Detail';
 
 function App() {
   return (
-    /*
     <Router>
-     <Layout>
+      <Layout>
           <Routes>
             <Route path="/" element={<DetailProduct/>} />
             <Route path="/products/:productId" element={<Menu/>} />
@@ -18,8 +25,6 @@ function App() {
           </Routes>
       </Layout>
     </Router>
-    */
-   <DetailEvent />
 
   );
 }

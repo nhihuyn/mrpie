@@ -23,6 +23,8 @@
     "login":"Đăng nhập",
     "Username": "Tài khoản",
     "usernamereview":"Tên người dùng",
+    "UsernameEmpty": "Tài khoản không được để trống",
+    "Username": "Tài khoản",
     "Password": "Mật khẩu",
     "ForgotPassword": " Quên mật khẩu ?",
     "Organization": "Tổ chức",
