@@ -50,17 +50,17 @@ const Intro: React.FC = () => {
         <div className="tab-content mt-8 ml-8 mr-8 ">
             
         {activeTab === "info" && (
-            <motion.div
-            initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+          <motion.div
+          initial={{ opacity: 0, x: isVisible ? 100 : 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
           >
-              <div className="timeline-container">
+            <div className="timeline-container">
               <div className="container">
           <div
-            className="flex flex-col md:grid grid-cols-8 mx-auto p-2 text-black"
+            className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-black"
           >
-          <motion.div
+         <motion.div
             initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,20 +72,23 @@ const Intro: React.FC = () => {
                 <div className="h-full w-6 flex items-center justify-center">
                   <div className="h-full w-1 bg-gray-400 pointer-events-none"></div>
                 </div>
+                
                 <div
                   className="w-6 h-6 absolute top-20 -mt-24 rounded-full bg-white border-4 border-blue-500 "
                 ></div>
+                
               </div>
+              
               <div
                 className="col-start-6 col-end-9 px-2 rounded-xl mr-auto "
-              >
+              >               
                 <div className="absolute w-3 h-3 text-black rounded-full mt-1.5 items-end "></div>
                 <time className="mb-1 text-sm font-normal leading-none text-black ">March 2022</time>
                 <img src={food} alt="item2" className="w-full 2 mb-4 mt-1 rounded-xl" /> 
                 <p className="text-left w-full  whitespace-normal ">
                  {t('ItemDescription')}
                   </p>
-
+                
               </div>
             </div>
             </motion.div>
@@ -93,16 +96,15 @@ const Intro: React.FC = () => {
 
               {/*Left*/}
             <motion.div
-            initial={{ opacity: -100, y: 0 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-row-reverse md:contents"
           >
             <div className="flex flex-row-reverse md:contents">
-              <div
-                className=" col-start-6 col-end-9 p-2 rounded-xl mt-20 "
-              >
+              <div className=" col-start-2 col-end-5 p-2 rounded-xl mt-20 ">
                 <div className="absolute text-right w-3 h-3 rounded-full mt-10 "></div>
+                
                 <time className="mb-1  col-start-4 text-sm leading-none text-black">March 2023</time>
                 <img src={food} alt="item2" className="w-full mb-4 rounded-xl" /> 
                   <p className="text-left w-full  whitespace-normal">
@@ -126,7 +128,7 @@ const Intro: React.FC = () => {
            <motion.div
             initial={{ opacity: 0, x: isVisible ? -100 : 0 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="flex md:contents"
           >
             <div className="flex md:contents">
@@ -153,7 +155,8 @@ const Intro: React.FC = () => {
           </div>
         </div>
         </div>
-            </motion.div>
+        </motion.div>
+            
           )}
          {activeTab === "tab2" && (
           <motion.div
