@@ -1,6 +1,3 @@
-
-
-
 import "./App.css";
 import DetailProduct from "./components/common/detail-product/detailProduct";
 import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
@@ -20,8 +17,7 @@ function App() {
             <Route path="/products/:productId" element={<Menu/>} />
             <Route path="/change_password" element={<ChangePasswd/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/forgot_password" element={<ForgotPassword/>} />
-            <Route path="/detailEvent" element={<DetailEvent/>} />
+            <Route path="/detail" element={<DetailEvent/>} />  
           </Routes>
       </Layout>
     </Router>

@@ -271,14 +271,7 @@ const DetailEvent: React.FC = () => {
 
           <div className="flex items-center mb-6">
             <p className="text-sm md:text-base mr-2">{t('Phân loại')}:</p>
-            {/* <select 
-              className="bg-gray-200 text-black p-2 px-6 rounded-md mr-4"
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-                <option value="">{t('SelectCakeType')}</option>
-                <option value="category1">{t('HotCakes')}</option>
-                <option value="category2">{t('ColdCakes')}</option>
-            </select> */}
+            
             <Select
               style={{ width: 200 }}
               placeholder={t('SelectCakeType')}
