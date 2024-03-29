@@ -16,10 +16,13 @@
     "Store": "Cửa Hàng",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
-    "UsernameEmpty": "Tài khoản không được để trống",
+    "Brand": "Thương Hiệu",
+    "Info": "Thông Tin ",
+    "UsernameEmpty": "Tên người dùng để trống",
     "Login":"Đăng Nhập",
     "login":"Đăng nhập",
     "Username": "Tài khoản",
+    "usernamereview":"Tên người dùng",
     "Password": "Mật khẩu",
     "ForgotPassword": " Quên mật khẩu ?",
     "Organization": "Tổ chức",
@@ -91,3 +94,4 @@
     "Already have account": "Bạn đã có tài khoản?"
 
 }
+
