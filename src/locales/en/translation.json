@@ -17,7 +17,8 @@
     "Info": "Info",
     "UsernameEmpty": "Username is Empty",
     "Login":"Login",
-    "Username": "User name",
+    "login":"login",
+    "Username": "Username",
     "Password": "Password",
     "ForgotPassword": " Forgot Password ?",
     "Organization": "Organization",
@@ -55,6 +56,7 @@
     "SubmitComment":"Submit Comment",
     "PleaseSelectCakeAndSize":"Please Select Cake And Size",
     "ProductAddedToFavorites":"Product Added To Favorites",
+    "AddMoreProductsForDiscount":"Add 1 More Product For Discount",
     "ProductAddedToCart":"Product Added To Cart",
     "YourRating":"Your Rating",
     "InvalidOrEmptyReviewInformation":"Invalid Or Empty Review Information",
@@ -70,7 +72,20 @@
     "Customer service center": "Customer Service Center",
     "AllEvent":"All Event",
     "OngoingEvent":"Ongoing Event", 
-    "EndedEvent":"Ended Event"
+    "EndedEvent":"Ended Event",
+    "Email": "Email",
+    "RetypePassword": "Retype password",
+    "Email valid (example@gmail.com)": "Email valid (example@gmail.com)",
+    "Not space character": "Not valid space character",
+    "Retype password match": "Password not match",
+    "Input from 2 to 64 character": "Input from 2 to 64 character",
+    "Input from 7 to 64 character": "Input from 7 to 64 character",
+    "Valid phonenumber": "Valid phone number",
+    "Fullname": "Fullname",
+    "Business name": "Business name",
+    "Personal": "Personal",
+    "Business": "Business",
+    "Register": "Register",
+    "Already have account": "Already have account ?"
 }
-
 

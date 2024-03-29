@@ -18,7 +18,9 @@
     "NewStore":"Cửa hàng mới",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
-    "UsernameEmpty": "Tài khoản không được để trống",
+    "Brand": "Thương Hiệu",
+    "Info": "Thông Tin ",
+    "UsernameEmpty": "Tên người dùng để trống",
     "Login":"Đăng Nhập",
     "login":"Đăng nhập",
     "Username": "Tài khoản",
@@ -59,6 +61,7 @@
     "ReviewContent":"Nội dung bình luận",
     "SubmitComment":"Gửi bình luận",
     "PleaseSelectCakeAndSize":"Vui lòng chọn loại bánh và kích thước",
+    "AddMoreProductsForDiscount":"Mua thêm 1 sản phẩm để đủ điều kiện nhận ưu đãi",
     "ProductAddedToFavorites":"Sản phẩm thêm vào mục yêu thích",
     "ProductAddedToCart":"Đã thêm vào giỏ hàng",
     "YourRating":"Đánh giá của bạn",
@@ -70,14 +73,26 @@
     "Success":"Thành công !",
     "ErrorMessage":"Thông báo thất bại",
     "SuccessMessage":"Thông báo thành công",
-    "Brand": "Thương hiệu",
-    "Info": "Thông Tin ",
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
     "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
     "AllEvent":"Tất cả",
     "OngoingEvent":"Đang diễn ra",
-    "EndedEvent":"Đã kết thúc"
-    
-
+    "EndedEvent":"Đã kết thúc",
+    "Email": "Email",
+    "RetypePassword": "Nhập lại mật khẩu",
+    "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
+    "Not space character": "Không kí tự khoảng trắng",
+    "Retype password match": "Mật khẩu trùng khớp",
+    "Input from 2 to 64 character": "Nhập từ 2 đến 64 ký tự",
+    "Input from 7 to 64 character": "Nhập từ 7 đến 64 ký tự",
+    "Valid phonenumber": "Số điện thoại phù hợp",
+    "Fullname": "Họ và tên",
+    "Business name": "Tên tổ chức",
+    "Personal": "Cá nhân",
+    "Business": "Tổ chức",
+    "Register": "Đăng Ký",
+    "Already have account": "Bạn đã có tài khoản?"
 }
+
+

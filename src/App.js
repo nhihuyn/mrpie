@@ -7,10 +7,13 @@ import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
-import Detail from './components/common/Detail/Detail';
-import DetailEvent from "./components/common/DetailEvent/DetailEvent";
-import Intro from "./components/common/Introduce/Intro";
-import Event from "./components/common/EventMenu/Event";
+import RegisterForm from "./components/common/register/register";
+import Checkout from "./components/common/checkout/checkout";
+import Mainpage from "./components/common/mainpage/mainpage";
+import Header from "./components/common/header/header";
+import Intro from './components/common/Introduce/Intro';
+import DetailEvent from './components/common/Detail/Detail';
+
 
 function App() {
   return (
@@ -23,14 +26,14 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
             <Route path="/menu" element={<Menu/>} />
-            <Route path="/detail" element={<Detail/>} />
             <Route path="/detailEvent" element={<DetailEvent/>} />
-            <Route path="/intro" element={<Intro/>} />
             <Route path="/eventmenu" element={<Event/>} />
+            <Route path="/intro" element={<Intro/>} />
+            <Route path="/detail" element={<DetailEvent/>} /> 
+            <Route path="/mainpage" element={<Mainpage/>} />
           </Routes>
-      </Layout>
+     </Layout>
     </Router>
-
   );
 }
 
