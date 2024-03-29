@@ -12,6 +12,7 @@
     "SausageCake": "Sausage Cake",
     "AccompanyingCake": "Accompanying Cake",
     "Store": "Store",
+    "NewStore":"New Store",
     "Brand": "Brand",
     "Info": "Info",
     "UsernameEmpty": "Username is Empty",
@@ -66,7 +67,10 @@
     "SuccessMessage":"Success Message",
     "Find a store": "Find A Store",
     "Brand story": "Brand Story",
-    "Customer service center": "Customer Service Center"
+    "Customer service center": "Customer Service Center",
+    "AllEvent":"All Event",
+    "OngoingEvent":"Ongoing Event", 
+    "EndedEvent":"Ended Event"
 }
 
 

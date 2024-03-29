@@ -6,6 +6,7 @@
     "Menu": "Thực đơn",
     "Contact": "Liên hệ",
     "Event": "Sự kiện",
+    "EVENT": "SỰ KIỆN",
     "AboutMe": "Giới thiệu",
     "New": "Bánh Mới",
     "VegetarianCake": "Bánh Chay",
@@ -14,12 +15,14 @@
     "SausageCake": "Bánh Xúc Xích",
     "AccompanyingCake": "Bánh Ăn Kèm",
     "Store": "Cửa Hàng",
+    "NewStore":"Cửa hàng mới",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
     "UsernameEmpty": "Tài khoản không được để trống",
     "Login":"Đăng Nhập",
     "login":"Đăng nhập",
     "Username": "Tài khoản",
+    "usernamereview":"Tên người dùng",
     "Password": "Mật khẩu",
     "ForgotPassword": " Quên mật khẩu ?",
     "Organization": "Tổ chức",
@@ -71,6 +74,10 @@
     "Info": "Thông Tin ",
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
-    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng"
+    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
+    "AllEvent":"Tất cả",
+    "OngoingEvent":"Đang diễn ra",
+    "EndedEvent":"Đã kết thúc"
+    
 
 }
