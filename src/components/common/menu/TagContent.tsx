@@ -43,7 +43,7 @@ const TagContent: React.FC<TagContentProps> = ({ data }) => {
             checked={selectedTags.includes(tagObject.title)}
             onChange={(checked) => handleChange(tagObject.title, checked)}
             key={tagObject.title}
-            className=" border-2 border-[#D9D9D9] text-xl rounded-md text-semibold  mt-4 cursor-pointer "
+            className=" border-2 border-[#D9D9D9] text-base rounded-md text-semibold  mt-4 cursor-pointer "
           >
             {tagObject.title}
           </Tag.CheckableTag>

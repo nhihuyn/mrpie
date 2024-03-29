@@ -11,6 +11,7 @@ import PhoneNumField from "./components/phoneNumField";
 
 
 import "./register.css";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   const { t } = useTranslation();
@@ -104,7 +105,7 @@ const RegisterForm = () => {
   );
 
   return (
-    <div>
+    <div className="mb-8">
       {/* Manage Error Notification */}
       <div
         className={`mt-5 absolute right-0  ${
@@ -200,9 +201,11 @@ const RegisterForm = () => {
           <div className="mt-6 flex justify-center items-center">
             <p>
               {t("Already have account")}
-              <span className="text-md font-bold text-[#1890FF] cursor-pointer">
-                <a> {t("Login")}</a>
-              </span>
+              <Link to="/login" >
+                <span className="text-md font-bold text-[#1890FF] cursor-pointer">
+                  <a> {t("Login")}</a>
+                </span>
+              </Link>
             </p>
           </div>
         </form>

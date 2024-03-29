@@ -3,6 +3,7 @@ import { Alert } from 'antd';
 import { ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const { t } = useTranslation();
@@ -203,20 +204,20 @@ const Login: React.FC = () => {
             {t('ForgotPassword')}
           </a>
         </div>
-        <button
-          id="login"
-          type="submit"
-          className="w-1/2 md:w-2/5 mx-auto bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
-          >
-          {t('Login')}
-        </button>
-
+          <button
+            id="login"
+            type="submit"
+            className="w-1/2 md:w-2/5 mx-auto bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
+            >
+            {t('Login')}
+          </button>
       </form>
       <div className="signup-link mt-2 w-full md:w-1/3 mx-auto text-center">
         <p>
-          <a href="#" className="text-blue-400 hover:text-blue-600 text-base">
-            {t('CreateAccount')}
-          </a>
+          <Link to="/register" className="text-blue-400 hover:text-blue-600 text-base">
+              {t('CreateAccount')}
+          </Link>
+          
         </p>
       </div>
     </div>

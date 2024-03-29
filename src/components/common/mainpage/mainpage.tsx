@@ -26,6 +26,8 @@ import mobileThumbnel from "../../../assets/images/Mobile.svg";
 import motorBikeThumbnel from "../../../assets/images/DeliveryThumbnel.svg";
 import pizza from "../../../assets/images/pizza.jpg";
 import bread from "../../../assets/images/bread.jpg";
+import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 const Mainpage = () => {
   return (
@@ -216,15 +218,21 @@ const Mainpage = () => {
               <div className="relative z-0 w-full">
                 <img src={pizza} className="item_img rounded-xl group group-hover:opacity-10" />
                 <div className="absolute flex flex-row justify-around icon_center w-full group-hover:opacity-10">
-                  <span className="flex justify-center items-center rounded-full bg-black hover:bg-[#E96161] w-8 h-8  ">
-                    <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faMagnifyingGlass} />
-                  </span>
-                  <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
-                    <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faHeart} />
-                  </span>
-                  <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
-                    <FontAwesomeIcon size="lg" style={{color:"#FFFFFF"}} icon={faCartShopping} />
-                  </span>
+                  <Link to="/detail">
+                    <span className="flex justify-center items-center rounded-full bg-black hover:bg-[#E96161] w-8 h-8  ">
+                      <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faMagnifyingGlass} />
+                    </span>
+                  </Link>
+                  <Link to="/detail">
+                    <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
+                      <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faHeart} />
+                    </span>
+                  </Link>
+                  <Link to="/checkout">
+                    <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
+                      <FontAwesomeIcon size="lg" style={{color:"#FFFFFF"}} icon={faCartShopping} />
+                    </span>
+                  </Link>
                 </div>
               </div>
 

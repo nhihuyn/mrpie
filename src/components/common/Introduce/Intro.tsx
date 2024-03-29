@@ -52,13 +52,13 @@ const Intro: React.FC = () => {
   });
 
   return (
-    <div className="intro-container bg-orange-100 min-h-screen">
+    <div className="intro-container bg-[#F2EBE6] min-h-screen">
       <div className="breadcrumb-container bg-black text-white p-4">
       <p>{t('Home')} <RightOutlined className="text-sm"/> <strong> {t('Introduction')} </strong></p>
       </div>
       <div className="title-container">
-        <h1 className="mt-8 ml-10">{t('INTRODUCTION')}</h1>
-        <div className="tab-container flex justify-start mt-8 ml-8">
+        <h1 className="mt-8 ml-10 text-2xl">{t('INTRODUCTION')}</h1>
+        <div className="tab-container flex justify-start mt-8 ml-8 text-base">
           <button onClick={() => handleTabClick("info")} className={`mx-4 ${activeTab === "info" ? "text-black border-b-2 border-black" : "text-gray-500"}`}>
             {t('Info')}
           </button>

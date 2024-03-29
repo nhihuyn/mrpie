@@ -13,6 +13,7 @@ import Mainpage from "./components/common/mainpage/mainpage";
 import Header from "./components/common/header/header";
 import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
+import Event from "./components/common/event/Event";
 
 
 function App() {
@@ -20,17 +21,21 @@ function App() {
     <Router>
       <Layout>
           <Routes>
-            <Route path="/" element={<DetailProduct/>} />
+            <Route path="/" element={<Mainpage/>} />
             <Route path="/products/:productId" element={<Menu/>} />
             <Route path="/change_password" element={<ChangePasswd/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
             <Route path="/menu" element={<Menu/>} />
             <Route path="/detailEvent" element={<DetailEvent/>} />
             <Route path="/eventmenu" element={<Event/>} />
             <Route path="/intro" element={<Intro/>} />
+            <Route path="/contact" element={<Intro/>} />
             <Route path="/detail" element={<DetailEvent/>} /> 
-            <Route path="/mainpage" element={<Mainpage/>} />
+            <Route path="/menu" element={<Menu/>} /> 
+            <Route path="/checkout" element={<Checkout/>} /> 
+            <Route path="/event" element={<Event/>} /> 
           </Routes>
      </Layout>
     </Router>
