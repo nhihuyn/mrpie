@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         {
           title: t("SausageCake"),
           path: `/`,
-        }
+        },
       ],
     },
 
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
         {
           title: t("Brand"),
           path: `/`,
-        }
+        },
       ],
     },
     {
@@ -120,9 +120,9 @@ const Footer: React.FC = () => {
           path: `/`,
         },
         {
-          title: "Integram",
+          title: "Instagram",
           path: `/`,
-        }
+        },
       ],
     },
   ];
