@@ -6,6 +6,7 @@ import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
+import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
             <Route path="/products/:productId" element={<Menu/>} />
             <Route path="/change_password" element={<ChangePasswd/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/forgot_password" element={<ForgotPassword/>} />
+            <Route path="/intro" element={<Intro/>} />
             <Route path="/detail" element={<DetailEvent/>} />  
           </Routes>
       </Layout>

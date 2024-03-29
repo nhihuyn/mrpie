@@ -17,7 +17,7 @@
     "UsernameEmpty": "Username is Empty",
     "Login":"Login",
     "login":"login",
-    "Username": "User name",
+    "Username": "Username",
     "Password": "Password",
     "ForgotPassword": " Forgot Password ?",
     "Organization": "Organization",
@@ -84,5 +84,4 @@
     "Register": "Register",
     "Already have account": "Already have account ?"
 }
-
 
