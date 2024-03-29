@@ -13,6 +13,7 @@ import Header from "./components/common/header/header";
 import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
 import Event from "./components/common/event/Event";
+import Contact from "./components/common/contact/Contact";
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -49,11 +50,12 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
-            <Route path="/contact" element={<Intro/>} />
+            {/* <Route path="/contact" element={<Intro/>} /> */}
             <Route path="/detail" element={<DetailEvent/>} /> 
             <Route path="/menu" element={<Menu/>} /> 
             <Route path="/checkout" element={<Checkout/>} /> 
             <Route path="/event" element={<Event/>} /> 
+            <Route path="/contact" element={<Contact/>} /> 
           </Routes>
      </Layout>
     </Router>
