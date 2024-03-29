@@ -1,5 +1,3 @@
-
-
 import "./App.css";
 import DetailProduct from "./components/common/detail-product/detailProduct";
 import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
@@ -12,6 +10,8 @@ import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/mainpage";
 import Header from "./components/common/header/header";
+import Intro from './components/common/Introduce/Intro';
+import DetailEvent from './components/common/Detail/Detail';
 
 function App() {
   return (
@@ -23,13 +23,12 @@ function App() {
             <Route path="/change_password" element={<ChangePasswd/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
+            <Route path="/intro" element={<Intro/>} />
+            <Route path="/detail" element={<DetailEvent/>} /> 
             <Route path="/mainpage" element={<Mainpage/>} />
           </Routes>
      </Layout>
     </Router>
-   
-    
-    
   );
 }
 
