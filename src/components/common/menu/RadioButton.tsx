@@ -24,7 +24,7 @@ const RadioButton: React.FC = () => {
       }}
     >
       <Radio.Group
-        size="large"
+        size="small"
         onChange={onChange}
         value={value}
         className="ml-8 mt-2"
@@ -32,24 +32,24 @@ const RadioButton: React.FC = () => {
         <Space
           direction="vertical"
           className="text-2xl font-semibold"
-          size="large"
+          size="middle"
         >
-          <Radio value={1} className="text-xl" defaultChecked={true}>
+          <Radio value={1} className="text-base" defaultChecked={true}>
             Bánh trong ngày
           </Radio>
-          <Radio value={2} className="text-xl">
+          <Radio value={2} className="text-base">
             Bánh ngọt
           </Radio>
-          <Radio value={3} className="text-xl">
+          <Radio value={3} className="text-base">
             Bánh mặn
           </Radio>
-          <Radio value={4} className="text-xl">
+          <Radio value={4} className="text-base">
             Bánh chay
           </Radio>
-          <Radio value={5} className="text-xl">
+          <Radio value={5} className="text-base">
             Bánh xúc xích
           </Radio>
-          <Radio value={6} className="text-xl">
+          <Radio value={6} className="text-base">
             Bánh ăn kèm
           </Radio>
         </Space>

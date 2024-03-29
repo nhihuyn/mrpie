@@ -6,6 +6,7 @@ import {
   formatMoney,
 } from "../../../utils/helpers";
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 interface BreadCardProps {
   data: {
@@ -36,7 +37,7 @@ const TagContent: React.FC<BreadCardProps> = ({ data }) => {
             />
           </div>
           <div className="md:gap-4  md:ml-[80px] ml-2 md:w-auto w-80 mt-4   flex justify-start flex-col ">
-            <span className="font-bold md:text-4xl text-2xl ">{el.title}</span>
+            <span className="font-bold md:text-3xl text-2xl ">{el.title}</span>
             <span className="flex text-xl mt-2 mb-2">
               {renderStarFromNumber(el.Ratings, 24)}
             </span>
@@ -59,39 +60,41 @@ const TagContent: React.FC<BreadCardProps> = ({ data }) => {
             </div>
             <div className="mt-4 md:flex gap-4 items-center ">
               <div className="md:flex hidden">
+                <Link to="/detail">
                 <button
                   className="
-            text-white 
-            flex 
-            
-            items-center 
-            justify-center
-           
-            font-semibold
-            px-4 py-3 
-            rounded-3xl
-            relative overflow-hidden 
-          bg-[#FF4D4F] 
-            shadow-lg 
-            transition-all 
-            before:absolute 
-            before:bottom-0 
-            before:left-0 
-            before:top-0 
-            before:z-0 
-            before:h-full 
-            before:w-0
-          before:bg-red-500 
-            before:transition-all 
-            before:duration-500 
-          hover:text-white 
-          hover:shadow-red-400 
-            hover:before:left-0 
-            hover:before:w-full
-            text-lg"
+                      text-white 
+                      flex 
+                      
+                      items-center 
+                      justify-center
+                    
+                      font-semibold
+                      px-4 py-3 
+                      rounded-3xl
+                      relative overflow-hidden 
+                    bg-[#FF4D4F] 
+                      shadow-lg 
+                      transition-all 
+                      before:absolute 
+                      before:bottom-0 
+                      before:left-0 
+                      before:top-0 
+                      before:z-0 
+                      before:h-full 
+                      before:w-0
+                    before:bg-red-500 
+                      before:transition-all 
+                      before:duration-500 
+                    hover:text-white 
+                    hover:shadow-red-400 
+                      hover:before:left-0 
+                      hover:before:w-full
+                      text-lg"
                 >
-                  <span className="relative">Thêm giỏ hàng</span>
+                  <span className="relative">Xem thêm</span>
                 </button>
+                </Link>
               </div>
 
               <div className="flex gap-2">
