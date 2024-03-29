@@ -15,8 +15,8 @@ const SizeButton: React.FC<TagContentProps> = ({ datetime }) => {
     <div className="bg-[#F9E8DC] border-[#F9E8DC] p-4">
       <span className="text-black">Sản Phẩm này cần đặt trước</span>
       <div className="border-2 text-zinc-500 flex items-center justify-center gap-4 rounded-lg mt-4">
-        <span className="">{datetime}</span>
-        <ClockCircleOutlined />
+        <span className="text-black">{datetime}</span>
+        <ClockCircleOutlined className="text-black"/>
       </div>
     </div>
   );
@@ -71,7 +71,7 @@ const SizeButton: React.FC<TagContentProps> = ({ datetime }) => {
           </Button>
         </div>
         <div
-          className={`border-4  border-black ${
+          className={`border-4 border-black ${
             selectedButton === "L" ? "border-red-500" : "hover:border-[#D31313]"
           }`}
         >
