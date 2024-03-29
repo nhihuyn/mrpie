@@ -75,6 +75,23 @@
     "SuccessMessage":"Thông báo thành công",
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
-    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng"
+    "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
+
+    "Email": "Email",
+
+    "RetypePassword": "Nhập lại mật khẩu",
+    "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
+    "Not space character": "Không kí tự khoảng trắng",
+    "Retype password match": "Mật khẩu trùng khớp",
+    "Input from 2 to 64 character": "Nhập từ 2 đến 64 ký tự",
+    "Input from 7 to 64 character": "Nhập từ 7 đến 64 ký tự",
+    "Valid phonenumber": "Số điện thoại phù hợp",
+    "Fullname": "Họ và tên",
+    "Business name": "Tên tổ chức",
+    "Personal": "Cá nhân",
+    "Business": "Tổ chức",
+    "Register": "Đăng Ký",
+
+    "Already have account": "Bạn đã có tài khoản?"
 
 }
