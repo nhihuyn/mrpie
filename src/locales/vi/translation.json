@@ -6,8 +6,11 @@
     "Menu": "Thực đơn",
     "Contact": "Liên hệ",
     "Event": "Sự kiện",
+    "EVENT": "SỰ KIỆN",
+    "Promotion":"TÊN SỰ KIỆN PROMOTION",
     "AboutMe": "Giới thiệu",
     "New": "Bánh Mới",
+    "Detail":"Chi tiết",
     "VegetarianCake": "Bánh Chay",
     "CakeOfDay": "Bánh Trong Ngày",
     "SaltineCrackers": "Bánh Mặn",
@@ -74,9 +77,7 @@
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
     "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
-
     "Email": "Email",
-
     "RetypePassword": "Nhập lại mật khẩu",
     "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
     "Not space character": "Không kí tự khoảng trắng",
@@ -89,7 +90,6 @@
     "Personal": "Cá nhân",
     "Business": "Tổ chức",
     "Register": "Đăng Ký",
-
     "Already have account": "Bạn đã có tài khoản?"
 }
 

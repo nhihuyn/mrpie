@@ -12,6 +12,7 @@ import Mainpage from "./components/common/mainpage/mainpage";
 import Header from "./components/common/header/header";
 import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
+import Promotion from "./components/common/Promotion/promotion";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/intro" element={<Intro/>} />
             <Route path="/detail" element={<DetailEvent/>} /> 
             <Route path="/mainpage" element={<Mainpage/>} />
+            <Route path="/promotion" element={<Promotion/>} /> 
           </Routes>
      </Layout>
     </Router>
