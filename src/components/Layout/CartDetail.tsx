@@ -1,33 +1,26 @@
 import React, { FunctionComponent } from "react";
+import { useTranslation } from 'react-i18next';
+import { RightOutlined } from '@ant-design/icons';
 import BackGroundColor from "../../components/common/P10/BackGroundColor";
 import TotalPrice from "../../components/common/P10//TotalPrice";
 import ShoppingCartSummary from "../../components/common/P10//ShoppingCartSummary";
 
 const CartDetail: FunctionComponent = () => {
+  const { t } = useTranslation();
   return (
-    <div className="w-full relative bg-character-primaryinverse flex flex-col items-end justify-start px-0 pb-[42.2px] box-border gap-[26px] tracking-[normal] text-center text-xs text-character-primaryinverse font-footnote-system-monospace">
-      {/* <div className="w-[23px] h-1.5 bg-hitbox hidden flex-col items-center justify-center">
-        <div className="rounded-[100px] bg-polar-green-6 h-4 overflow-hidden shrink-0 hidden flex-row items-center justify-center py-0 px-1 box-border">
-          <div className="h-5 w-2 relative leading-[20px] flex items-end justify-center shrink-0">
-            11
-          </div>
-        </div>
-      </div> */}
-      {/* <BackGroundColor /> */}
-      <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-2.5 box-border max-w-full text-left text-sm font-body-regular">
-        <div className="flex-1 bg-gray-100 flex flex-row items-start justify-start pt-[15px] px-[42px] pb-[7px] box-border max-w-full mq450:pl-5 mq450:pr-5 mq450:box-border">
-          <div className="h-12 w-[1200px] relative bg-gray-100 hidden max-w-full" />
-          <div className="h-[26px] w-full pl-14 relative leading-[22px] font-medium inline-block shrink-0 z-[1]">
-            Giỏ hàng
-          </div>
-        </div>
+    
+    <div className="intro-container  min-h-screen">
+      <div className="breadcrumb-container bg-black text-sm text-white p-4">
+      <p>{t('Home')}</p>
       </div>
+      <div className="title-container">
+        <h1 className="mt-8 ml-10 text-2xl">{t('GIỎ HÀNG MUA SẮM')}</h1>
+        
+      
       <section className="w-full flex flex-row items-start justify-end py-0 px-[31px] box-border max-w-full text-left text-[24px] text-black font-body-regular">
         <div className="flex-1 flex flex-col items-start justify-start max-w-full">
           <div className="self-stretch flex flex-row items-start justify-between pt-0 px-0 pb-2.5 gap-[20px] mq750:flex-wrap">
-            <h2 className="m-0 pl-2 h-[46px] w-[274px] relative text-inherit leading-[22px] font-medium font-inherit inline-block shrink-0 mq450:text-[19px] mq450:leading-[18px]">
-              Giỏ hàng mua sắm
-            </h2>
+            
             <div className="w-[141px] flex flex-col items-start justify-start pt-10 px-0 pb-0 box-border text-xl">
               <h3 className="m-0 self-stretch h-[43px] relative text-inherit leading-[22px] font-medium font-inherit inline-block shrink-0 mq450:text-base mq450:leading-[18px]">
                 2 sản phẩm
@@ -68,6 +61,8 @@ const CartDetail: FunctionComponent = () => {
         </div>
       </section>
     </div>
+  </div>
+  
   );
 };
 

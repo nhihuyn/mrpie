@@ -15,30 +15,6 @@ import DetailEvent from './components/common/Detail/Detail';
 import Event from "./components/common/event/Event";
 import CartDetail from "./components/Layout/CartDetail"
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//       <Route element={<AuthLayout />}>
-//           <Route element={<RrotectedLayout />}>
-//               <Route path="/" element={<MainLayout />}>
-//                   <Route index element={<Navigate to="/dashboard" />} />
-//                   <Route path="dashboard" element={<Dashboard />} />
-//                   <Route path="projects" element={<Projects />} />
-//                   <Route path="users" element={<Users />} />
-//                   <Route path="notifications" element={<Notification />} />
-//                   <Route path="settings" element={<Settings />} />
-//                   <Route
-//                       path="*"
-//                       element={<Navigate to="/dashboard" replace={true} />}
-//                   />
-//               </Route>
-//           </Route>
-//           <Route path="/signup" element={<Signup />} />
-//           <Route path="/login" element={<Login />} />
-//       </Route>,
-//   ),
-//   {},
-// )
-
 function App() {
   return (
     <Router>
