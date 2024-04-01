@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 
 const BackGroundColor: FunctionComponent = () => {
   return (
@@ -8,7 +8,8 @@ const BackGroundColor: FunctionComponent = () => {
           <img
             className="absolute top-[0px] left-[0px] w-full h-full object-cover hidden"
             alt=""
-            src="
+            src=""
+          />
           <img
             className="absolute top-[0px] left-[0px] w-full h-full object-cover z-[1]"
             alt=""

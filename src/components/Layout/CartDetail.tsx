@@ -1,19 +1,19 @@
-import { FunctionComponent } from "react";
-import BackGroundColor from "../components/BackGroundColor";
-import TotalPrice from "../components/TotalPrice";
-import ShoppingCartSummary from "../components/ShoppingCartSummary";
+import React, { FunctionComponent } from "react";
+import BackGroundColor from "../../components/common/P10/BackGroundColor";
+import TotalPrice from "../../components/common/P10//TotalPrice";
+import ShoppingCartSummary from "../../components/common/P10//ShoppingCartSummary";
 
 const CartDetail: FunctionComponent = () => {
   return (
-    <div className="w-full relative bg-character-primaryinverse flex flex-col items-end justify-start pt-7 px-0 pb-[42.2px] box-border gap-[26px] tracking-[normal] text-center text-xs text-character-primaryinverse font-footnote-system-monospace">
-      <div className="w-[23px] h-1.5 bg-hitbox hidden flex-col items-center justify-center">
+    <div className="w-full relative bg-character-primaryinverse flex flex-col items-end justify-start px-0 pb-[42.2px] box-border gap-[26px] tracking-[normal] text-center text-xs text-character-primaryinverse font-footnote-system-monospace">
+      {/* <div className="w-[23px] h-1.5 bg-hitbox hidden flex-col items-center justify-center">
         <div className="rounded-[100px] bg-polar-green-6 h-4 overflow-hidden shrink-0 hidden flex-row items-center justify-center py-0 px-1 box-border">
           <div className="h-5 w-2 relative leading-[20px] flex items-end justify-center shrink-0">
             11
           </div>
         </div>
-      </div>
-      <BackGroundColor />
+      </div> */}
+      {/* <BackGroundColor /> */}
       <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-2.5 box-border max-w-full text-left text-sm font-body-regular">
         <div className="flex-1 bg-gray-100 flex flex-row items-start justify-start pt-[15px] px-[42px] pb-[7px] box-border max-w-full mq450:pl-5 mq450:pr-5 mq450:box-border">
           <div className="h-12 w-[1200px] relative bg-gray-100 hidden max-w-full" />

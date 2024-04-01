@@ -13,6 +13,7 @@ import Header from "./components/common/header/header";
 import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
 import Event from "./components/common/event/Event";
+import CartDetail from "./components/Layout/CartDetail"
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
@@ -54,6 +55,7 @@ function App() {
             <Route path="/menu" element={<Menu/>} /> 
             <Route path="/checkout" element={<Checkout/>} /> 
             <Route path="/event" element={<Event/>} /> 
+            <Route path="/cart" element={<CartDetail/>} /> 
           </Routes>
      </Layout>
     </Router>
