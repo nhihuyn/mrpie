@@ -50,12 +50,12 @@ const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false
               </svg>
             </span>
             <span className="text-md font-bold text-[#2B2F72] mb-2">
-              {location}
+              {location='Hai Bà Trưng, Quận 1,TP.HCM'}
             </span>
             
           </div>
         
-          <div className="flex items-center justify-center ">
+          <div className="flex items-center justify-center">
         <span className="gap-4 mb-4">
           <svg
             width="30"
