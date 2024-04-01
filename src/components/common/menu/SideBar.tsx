@@ -12,10 +12,6 @@ const SideBar: React.FC = () => {
     console.log(searching);
   };
 
-  // const handleChange = (value: string) => {
-  //   console.log(`selected ${value}`);
-  // };
-
   const data = [
     {
       id: "1",
@@ -37,7 +33,7 @@ const SideBar: React.FC = () => {
 
   return (
     <div className="w-full h-full   ">
-      <Title level={3} className="ml-8 mt-8  text-md">
+      <Title level={4} className="ml-8 mt-8  text-md">
         SEARCH
       </Title>
       <div className="mt-5 mr-8 ml-3">
@@ -51,13 +47,13 @@ const SideBar: React.FC = () => {
         />
       </div>
       <div className="mt-14">
-        <Title className="ml-8 mt-8" level={3}>
+        <Title className="ml-8 mt-8" level={4}>
           CATEGORIES
         </Title>
         <RadioButton />
       </div>
       <div className="mt-4 ml-8 gap-3  ">
-        <Title level={3}>TAG</Title>
+        <Title level={4}>TAG</Title>
         <TagContent data={data} />
       </div>
     </div>

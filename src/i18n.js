@@ -30,7 +30,7 @@ i18n
             translation: common_vi
           }
       },
-      lng: "vi", // if you're using a language detector, do not define the lng option
+      lng: "en", // if you're using a language detector, do not define the lng option
       fallbackLng: "en",
   
       interpolation: {
