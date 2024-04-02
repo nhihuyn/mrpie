@@ -27,8 +27,6 @@ import Map from "./components/Map.tsx";
 import { Link } from "react-router-dom";
 
 
-
-
 const Mainpage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isIconShowUp, setIsIconShowUp] = useState(false);
@@ -254,6 +252,7 @@ const Mainpage = () => {
                       onMouseLeave={() => setIsHovered(false)}
                       className="absolute flex flex-row justify-around icon_center w-full"
                     >
+                      <Link to="/detail">
                       <span className="flex justify-center items-center rounded-full bg-black w-8 h-8 p-1 hover:bg-[#E96161]">
                         <FontAwesomeIcon
                           size="xl"
@@ -261,6 +260,9 @@ const Mainpage = () => {
                           icon={faMagnifyingGlass}
                         />
                       </span>
+                      </Link>
+                      
+                      <Link to="/detail">
                       <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
                         <FontAwesomeIcon
                           size="xl"
@@ -268,6 +270,9 @@ const Mainpage = () => {
                           icon={faHeart}
                         />
                       </span>
+                      </Link>
+                      
+                      <Link to="/checkout">
                       <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
                         <FontAwesomeIcon
                           size="lg"
@@ -275,6 +280,9 @@ const Mainpage = () => {
                           icon={faCartShopping}
                         />
                       </span>
+
+                      </Link>
+                      
                     </div>
                   )}
                 </div>
@@ -371,122 +379,6 @@ const Mainpage = () => {
             </div>
           </div>
         </div>
-      </div>
-
-
-      {/* Product introduce */}
-      <div className="w-full py-12">
-        {/* Heading Title */}
-        <div className="flex justify-center items-center w-full flex-col">
-          <h3 className="text-3xl font-bold text-black">Sản phẩm bán chạy</h3>
-          <span className="bg-black w-32 h-1 block mt-2"></span>
-        </div>
-
-        {/* List Product */}
-        <div className="w-full h-full flex justify-center items-center py-12">
-          <div className="container grid w-full h-full p-8">
-            <div className="item ">
-              <div className="relative z-0 w-full">
-                <img src={pizza} className="item_img rounded-xl group group-hover:opacity-10" />
-                <div className="absolute flex flex-row justify-around icon_center w-full group-hover:opacity-10">
-                  <Link to="/detail">
-                    <span className="flex justify-center items-center rounded-full bg-black hover:bg-[#E96161] w-8 h-8  ">
-                      <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faMagnifyingGlass} />
-                    </span>
-                  </Link>
-                  <Link to="/detail">
-                    <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
-                      <FontAwesomeIcon size="xl" style={{color:"#FFFFFF"}} icon={faHeart} />
-                    </span>
-                  </Link>
-                  <Link to="/checkout">
-                    <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8 ">
-                      <FontAwesomeIcon size="lg" style={{color:"#FFFFFF"}} icon={faCartShopping} />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Pizza
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={bread} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Bread
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={pizza} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Pizza
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={bread} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Bread
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={pizza} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Pizza
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={bread} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Bread
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={pizza} className="item_img rounded-xl" />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Pizza
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-
-            <div className="item">
-              <img src={bread} className="item_img rounded-xl " />
-              <p className="font-bold text-xl text-center text-black mt-1">
-                Mr.Pie Bread
-              </p>
-              <p className="font-medium text-md text-center text-black mt-1">
-                42.000 - 45.000
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       <div className="w-full h-96">

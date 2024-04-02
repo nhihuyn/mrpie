@@ -1,6 +1,12 @@
 import React from "react";
-import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  MarkerF,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import { color } from "d3-color";
+import "./Map.css";
 
 const containerStyle = {
   width: "100%",
@@ -8,17 +14,14 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 10.8049719,
-  lng: 106.7289974,
-  
+  lat: 10.8050719,
+  lng: 106.7295974,
 };
 
-const position ={
-    
-
+const position = {
   lat: 10.805065922763571,
   lng: 106.72940337570378,
-}
+};
 
 const Map = () => {
   const { isLoaded } = useJsApiLoader({
@@ -44,12 +47,15 @@ const Map = () => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      
-      zoom={6}
+      zoom={15}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <MarkerF position={position} title="Mr.Pie"  />
+      <MarkerF
+        position={position}
+        options={{ label: { text: "Mr.Pie", className: "map-marker " } }}
+      />
+
       <></>
     </GoogleMap>
   ) : (
