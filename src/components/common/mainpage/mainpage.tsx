@@ -24,13 +24,16 @@ import {
   smallFacebookLogo,
 } from "../../../assets/images/index.ts";
 import Map from "./components/Map.tsx";
+import Chatbox from "../chatbox/chatbox.tsx";
 import { Link } from "react-router-dom";
 
 const Mainpage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isIconShowUp, setIsIconShowUp] = useState(false);
+  
+
   return (
-    <>
+    <div className="relative">
       {/* Mainpage content */}
       <div className="w-full h-full bg-[#F2EBE6] px-0 lg:px-12">
         {/* Carousel introduce */}
@@ -204,11 +207,7 @@ const Mainpage = () => {
             {/* Right content */}
             <div className="  relative z-0  w-1/2 h-full bg-[#B08972] flex flex-col justify-end items-end">
               <div className="  h-full w-full flex flex-col items-center justify-end">
-                <img
-                  src={motorbike}
-                  alt=""
-                  className=""
-                />
+                <img src={motorbike} alt="" className="" />
               </div>
               <div className="absolute z-50 top-0 bottom-0 left-0 right-0 w-full md:w-1/2 h-2/3 md:h-full flex flex-col justify-start md:justify-center items-start ml-4 p-3 my-3 lg:my-0 lg:p-0">
                 <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white ">
@@ -387,7 +386,9 @@ const Mainpage = () => {
       <div className="w-full h-96">
         <Map />
       </div>
-    </>
+
+      <Chatbox/>
+    </div>
   );
 };
 
