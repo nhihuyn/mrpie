@@ -4,6 +4,7 @@
     "Introduction": "Giới thiệu",
     "INTRODUCTION":"GIỚI THIỆU",
     "Menu": "Thực đơn",
+    "Cart":"Giỏ hàng",
     "Contact": "Liên hệ",
     "Event": "Sự kiện",
     "AboutMe": "Giới thiệu",
@@ -47,10 +48,19 @@
     "PasswordMismatch":"Mật khẩu không khớp",
     "ProductDescriptionShort":"Mô tả sản phẩm ngắn gọn",
     "SelectCakeType":"Chọn loại bánh",
+    "CakeType":"Phân loại bánh",
     "HotCakes":"Bánh nóng",
     "ColdCakes":"Bánh lạnh",
     "Size":"Kích thước",
     "AddToCart":"Thêm vào giỏ hàng",
+    "ShoppingCart":"Giỏ hàng mua sắm",
+    "Item":"Sản phẩm",
+    "EmptyCart":"Giỏ hàng trống",
+    "DetailItems":"CHI TIẾT SẢN PHẨM",
+    "Quantity":"SỐ LƯỢNG",
+    "Price":"GIÁ",
+    "TempCart":"TẠM TÍNH",
+    "TotalCart":"TỔNG CỘNG",
     "Description":"MÔ TẢ",
     "Reviews":"ĐÁNH GIÁ",
     "ProductInformation":"Thông tin mô tả",
@@ -66,6 +76,7 @@
     "InvalidOrEmptyReviewInformation":"Thông tin chưa hợp lệ hoặc bị bỏ trống",
     "CommentHasBeenSubmitted":"Bình luận đã được gửi",
     "ItemDescription":"Chúng tôi cung cấp đa dạng sản phẩm bánh pie tươi, nướng mới hằng ngày với kích thước bánh",
+    "Delete":"Xóa",
     "Cancel":"Hủy",
     "Error":"Lỗi !",
     "Success":"Thành công !",
@@ -74,9 +85,7 @@
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
     "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
-
     "Email": "Email",
-
     "RetypePassword": "Nhập lại mật khẩu",
     "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
     "Not space character": "Không kí tự khoảng trắng",
@@ -89,7 +98,6 @@
     "Personal": "Cá nhân",
     "Business": "Tổ chức",
     "Register": "Đăng Ký",
-
     "Already have account": "Bạn đã có tài khoản?"
 }
 

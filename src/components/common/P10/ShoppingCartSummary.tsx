@@ -1,76 +1,168 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
+import food from '../../../assets/images/food.png';
+import { useTranslation } from 'react-i18next';
+import './cart.css';
 
-const ShoppingCartSummary: FunctionComponent = () => {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+interface Props {
+  products: Product[];
+  onRemoveProduct: (productId: number) => void; 
+  updateTotalPrice: (totalPrice: number) => void; 
+}
+
+const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProduct, updateTotalPrice }) => {
+  
+  const [activeButton, setActiveButton] = useState(null);
+  const [counts, setCounts] = useState<{ [key: number]: number }>(() => {
+    const initialCounts: { [key: number]: number } = {};
+    products.forEach(product => {
+      initialCounts[product.id] = 1;
+    });
+    return initialCounts;
+  });
+  const backgroundColors = ["bg-blue-50", "bg-yellow-50", "bg-green-50", "bg-red-50"];
+
+  const { t } = useTranslation();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isFirstPage, setIsFirstPage] = useState(true); 
+  const productsPerPage = 4;
+
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const handleIncreaseCount = (productId: number) => {
+    setCounts(prevCounts => ({
+      ...prevCounts,
+      [productId]: (prevCounts[productId] || 1) + 1
+    }));
+  };
+
+  const handleDecreaseCount = (productId: number) => {
+    if (counts[productId] && counts[productId] > 1) {
+      setCounts(prevCounts => ({
+        ...prevCounts,
+        [productId]: prevCounts[productId] - 1
+      }));
+    }
+  };
+
+  useEffect(() => {
+    let totalPrice = 0;
+    if (products.length > 0) {
+      totalPrice = products.reduce((total, product) => total + (product.price * (counts[product.id] || product.quantity)), 0);
+    }
+    updateTotalPrice(totalPrice); 
+  }, [products, counts, updateTotalPrice]);
+
+  const handleClick = (buttonNumber) => {
+    setActiveButton(buttonNumber);
+    setCurrentPage(buttonNumber);
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleRemoveProduct = (productId: number) => {
+    onRemoveProduct(productId);
+    const updatedProducts = products.filter(product => product.id !== productId);
+    const newTotalPages = Math.ceil(updatedProducts.length / productsPerPage);
+    if (updatedProducts.length === 0) {
+      setCurrentPage(1);
+      setActiveButton(1);
+    } else if (newTotalPages < totalPages && currentPage > newTotalPages) {
+      setCurrentPage(newTotalPages);
+      setActiveButton(newTotalPages);
+    }
+  };
+
+  const renderButton = (buttonNumber, buttonText) => (
+    <button
+      key={buttonNumber}
+      className={`px-2 ${activeButton === buttonNumber ? 
+        'hover:text-blue-400 border border-blue-500 text-blue-500' : isFirstPage && buttonNumber === 1 ?
+        'border border-blue-500 text-blue-500' : ''}`} 
+      onClick={() => handleClick(buttonNumber)}
+    >
+      {buttonText}
+    </button>
+  );
+
+  useEffect(() => {
+    setIsFirstPage(currentPage === 1); 
+  }, [currentPage]);
+
   return (
-    <div className="self-stretch flex flex-row items-start justify-end py-0 px-[58px] text-center text-sm text-character-primary-85 font-body-regular mq450:pl-5 mq450:pr-5 mq450:box-border">
-      <div className="w-[276px] flex flex-col items-start justify-start gap-[28.9px]">
-        <div className="self-stretch flex flex-row items-start justify-end">
-          <div className="w-[168px] flex flex-row items-start justify-start">
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start p-1.5">
-              <img
-                className="h-3 w-3 relative overflow-hidden shrink-0"
-                loading="lazy"
-                alt=""
-                src="/left.svg"
-              />
-            </div>
-            <div className="flex-1 rounded-sm overflow-hidden flex flex-row items-start justify-start py-px px-[7px] text-primary-6 border-[1px] border-solid border-primary-6">
-              <div className="w-2 relative leading-[22px] font-medium inline-block shrink-0 min-w-[8px]">
-                1
+    <div className="shopping-cart-summary relative">
+      <div className="product-details ">
+      {currentProducts.map((product, index) => (
+              <div key={product.id} 
+                  className={`product-item items-center grid grid-cols-2 md:grid-cols-4 md:ml-10 md:mr-10 py-10 border-b font-bold border-gray-200
+                             ${backgroundColors[index % backgroundColors.length]}`}>
+              
+                <div className="product-info flex items-center">
+                  <img src={food} alt={product.name} className="w-2/5 h-2/5 md:w-1/3 md:h-1/3 mr-2 " />
+                  <div  >
+                    <p className=" md:mb-3 test-base">{product.name}</p>
+                    <p className=" md:mb-3 test-base">{t('CakeType')}</p>
+                    <button onClick={() => handleRemoveProduct(product.id)} 
+                    className="text-red-500 hover:text-red-200 ">{t('Delete')}</button>
+                  </div>
+                </div>
+
+                <div className="flex justify-center mb-2 rounded-3xl">
+                  <button onClick={() => handleDecreaseCount(product.id)} 
+                   className="p-2 bg-red-400 hover:bg-red-400 rounded-l-full text-white block w-8">-</button>
+
+                  <input type="text" className="w-10 bg-red-400 border-2 border-red-800 text-center text-white"
+                   value={counts[product.id] || 1} readOnly />
+
+                  <button onClick={() => handleIncreaseCount(product.id)} 
+                  className="p-2 bg-red-400 hover:bg-red-400 rounded-r-full text-white block w-8">+</button>
+                </div>
+                
+                <p className=" text right md:text-center mb-2 mobile-hidden">{product.price.toLocaleString()} vnd</p>
+                <p className="text-center mb-2 mobile-hidden">{(product.price * (counts[product.id] || 1)).toLocaleString()} vnd</p>
+                
+
+                <div className="text-right col-span-2 mb-2 md:text-center md:col-span-1 mr-4">
+                {/*Ở màn hình mobile thì sẽ hiển thị thêm nội dung*/}
+                <p className=" desktop-hidden">{t('Price')}: {product.price.toLocaleString()} vnd</p>
+                <p className=" desktop-hidden">{t('TotalCart')}: {(product.price * (counts[product.id] || 1)).toLocaleString()} vnd</p>
               </div>
             </div>
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start py-px px-2">
-              <div className="w-2 relative leading-[22px] inline-block min-w-[8px]">
-                2
-              </div>
-            </div>
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start py-px px-2">
-              <div className="w-2 relative leading-[22px] inline-block min-w-[8px]">
-                3
-              </div>
-            </div>
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start py-px px-2">
-              <div className="w-2 relative leading-[22px] inline-block min-w-[8px]">
-                4
-              </div>
-            </div>
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start py-px px-2">
-              <div className="w-2 relative leading-[22px] inline-block min-w-[8px]">
-                5
-              </div>
-            </div>
-            <div className="rounded-sm overflow-hidden flex flex-row items-start justify-start p-1.5">
-              <img
-                className="h-3 w-3 relative overflow-hidden shrink-0"
-                loading="lazy"
-                alt=""
-                src="/right.svg"
-              />
-            </div>
-          </div>
+            ))}
+
+         <div className="flex justify-center md:justify-end mb-4 md:mr-20 mt-10">
+           <button className="mr-2" onClick={prevPage}>&lt;</button>
+            {renderButton(1, '1')}
+            {renderButton(2, '2')}
+            {renderButton(3, '3')}
+            {renderButton(4, '4')}
+            {renderButton(5, '5')}
+            <button className="ml-2" onClick={nextPage}>&gt;</button>
+         </div>
         </div>
-        <div className="w-[265px] relative text-xl leading-[22px] text-black text-left inline-block mq450:text-base mq450:leading-[18px]">
-          <p className="m-0">Tạm tính: 180.000 vnd</p>
-          <p className="m-0">&nbsp;</p>
-          <p className="m-0">
-            <b>{`Tổng cộng: 180.000 vnd `}</b>
-          </p>
-        </div>
-        <div className="w-[231px] flex flex-row items-start justify-start py-0 px-0.5 box-border">
-          <button className="cursor-pointer py-[7.4px] px-5 bg-dust-red-4 flex-1 rounded-11xl shadow-[0px_2px_0px_rgba(0,_0,_0,_0.04)] overflow-hidden flex flex-row items-start justify-center gap-[10px] z-[1] border-[1px] border-solid border-character-danger">
-            <div className="h-3.5 bg-hitbox overflow-hidden hidden flex-col items-center justify-center">
-              <img
-                className="w-3.5 h-3.5 relative overflow-hidden shrink-0 object-cover"
-                alt=""
-              />
-            </div>
-            <div className="w-[57px] relative text-sm leading-[24px] font-semibold font-body-regular text-character-primaryinverse text-center inline-block min-w-[57px]">
-              Đặt hàng
-            </div>
-          </button>
-        </div>
+
+        
       </div>
-    </div>
   );
 };
 
