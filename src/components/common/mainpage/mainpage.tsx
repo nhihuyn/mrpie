@@ -26,7 +26,6 @@ import {
 import Map from "./components/Map.tsx";
 import { Link } from "react-router-dom";
 
-
 const Mainpage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isIconShowUp, setIsIconShowUp] = useState(false);
@@ -204,8 +203,12 @@ const Mainpage = () => {
             </div>
             {/* Right content */}
             <div className="  relative z-0  w-1/2 h-full bg-[#B08972] flex flex-col justify-end items-end">
-              <div className=" h-full w-full flex flex-col  justify-end">
-                <img src={motorbike} alt="" className="max-h-full" />
+              <div className="  h-full w-full flex flex-col items-center justify-end">
+                <img
+                  src={motorbike}
+                  alt=""
+                  className=""
+                />
               </div>
               <div className="absolute z-50 top-0 bottom-0 left-0 right-0 w-full md:w-1/2 h-2/3 md:h-full flex flex-col justify-start md:justify-center items-start ml-4 p-3 my-3 lg:my-0 lg:p-0">
                 <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white ">
@@ -226,7 +229,9 @@ const Mainpage = () => {
         <div className="w-full py-12">
           {/* Heading Title */}
           <div className="flex justify-center items-center w-full flex-col">
-            <h3 className="text-2xl md:text-3xl font-bold text-black">Sản phẩm bán chạy</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-black">
+              Sản phẩm bán chạy
+            </h3>
             <span className="bg-black w-32 h-1 block mt-2"></span>
           </div>
 
@@ -253,36 +258,34 @@ const Mainpage = () => {
                       className="absolute flex flex-row justify-around icon_center w-full"
                     >
                       <Link to="/detail">
-                      <span className="flex justify-center items-center rounded-full bg-black w-8 h-8 p-1 hover:bg-[#E96161]">
-                        <FontAwesomeIcon
-                          size="xl"
-                          style={{ color: "#FFFFFF" }}
-                          icon={faMagnifyingGlass}
-                        />
-                      </span>
+                        <span className="flex justify-center items-center rounded-full bg-black w-8 h-8 p-1 hover:bg-[#E96161]">
+                          <FontAwesomeIcon
+                            size="xl"
+                            style={{ color: "#FFFFFF" }}
+                            icon={faMagnifyingGlass}
+                          />
+                        </span>
                       </Link>
-                      
-                      <Link to="/detail">
-                      <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
-                        <FontAwesomeIcon
-                          size="xl"
-                          style={{ color: "#FFFFFF" }}
-                          icon={faHeart}
-                        />
-                      </span>
-                      </Link>
-                      
-                      <Link to="/checkout">
-                      <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
-                        <FontAwesomeIcon
-                          size="lg"
-                          style={{ color: "#FFFFFF" }}
-                          icon={faCartShopping}
-                        />
-                      </span>
 
+                      <Link to="/detail">
+                        <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
+                          <FontAwesomeIcon
+                            size="xl"
+                            style={{ color: "#FFFFFF" }}
+                            icon={faHeart}
+                          />
+                        </span>
                       </Link>
-                      
+
+                      <Link to="/checkout">
+                        <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
+                          <FontAwesomeIcon
+                            size="lg"
+                            style={{ color: "#FFFFFF" }}
+                            icon={faCartShopping}
+                          />
+                        </span>
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -382,7 +385,7 @@ const Mainpage = () => {
       </div>
 
       <div className="w-full h-96">
-        <Map/>
+        <Map />
       </div>
     </>
   );
