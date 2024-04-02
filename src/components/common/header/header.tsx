@@ -10,7 +10,7 @@ import {
   ShopbagOutline
 } from 'antd-mobile-icons'
 
-import LogoIcon from '../../../assets/images/logo.png';
+import { logo } from '../../../assets/images/index';
 import { Badge, TabBar } from 'antd-mobile'
 import { useTranslation } from 'react-i18next';
 
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
   return (
     <Layout>
     <HeaderAnt className="hidden md:flex items-center bg-white py-5">
-      <img src={LogoIcon} alt='logo' className="w-12 h-12"/>
+      <img src={logo} alt='logo' className="w-12 h-12"/>
       <Menu className="w-full text-base" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
       <div className="flex">
         <UserOutlined className="mr-5 text-2xl"/>

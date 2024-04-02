@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import deliveryIcon from "../../../assets/images/delivery.svg";
-import moneyIcon from "../../../assets/images/shop.svg";
-import qrCode from "../../../assets/images/QRcode.svg";
-import bread from "../../../assets/images/bread.jpg";
-import pizza from "../../../assets/images/pizza.jpg";
-
 import { ConfigProvider, Button } from "antd";
+import { pizza,bread,deliveryIcon,moneyIcon,qrCode } from "../../../assets/images/index";
 
 import "./checkout.css";
 
