@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import {  CaretDownOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Layout } from 'antd';
@@ -19,33 +20,58 @@ const { Header: HeaderAnt } = Layout;
 
 
 const Header: React.FC = () => {
+  const location = useLocation();
+
+  const getKeyFromPathname = (pathname) => {
+    switch (pathname) {
+      case '/':
+        return 'home';
+      case '/about':
+        return 'about';
+      case '/menu':
+        return 'menu';
+      case '/event':
+        return 'event';
+      case '/contact':
+        return 'contact';
+      default:
+        return 'home';
+    }
+  };
+  const selectedKey = getKeyFromPathname(location.pathname);
+
   const { t } = useTranslation();
-  const items: MenuProps['items'] = [
+  const items = [
     {
       label: t('Home'),
-      key: '1',
-      itemIcon: <CaretDownOutlined />
+      key: 'home',
+      itemIcon: <CaretDownOutlined />,
+      path: '/'
       
     },
     {
       label: t('Menu'),
-      key: '2',
+      key: 'menu',
       itemIcon: <CaretDownOutlined />,
+      path: '/menu'
     },
     {
       label: t('Contact'),
-      key: '3',
+      key: 'contact',
       itemIcon: <CaretDownOutlined />,
+      path: '/contact'
     },
     {
       label: t('Event'),
-      key: '4',
+      key: 'event',
       itemIcon: <CaretDownOutlined />,
+      path: '/event'
     },
     {
       label: t('AboutMe'),
-      key: '5',
+      key: 'aboutMe',
       itemIcon: <CaretDownOutlined />,
+      path: '/about'
     },
   ];
 
@@ -55,6 +81,7 @@ const Header: React.FC = () => {
       title: t('Home'),
       icon: <UnorderedListOutline />,
       badge: Badge.dot,
+      path: '/'
     },
     {
       key: '2',
@@ -89,18 +116,33 @@ const Header: React.FC = () => {
 
   return (
     <Layout>
-    <HeaderAnt className="hidden md:flex items-center bg-white py-5">
-      <img src={logo} alt='logo' className="w-12 h-12"/>
-      <Menu className="w-full text-base" onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+
+    <HeaderAnt className="hidden md:flex items-center bg-white py-12 border-b-solid" style={{ borderBottom: '1px solid #eaeaea'}}>
+      <Link to={"/"}><img src={logo} alt='logo' className="w-20 h-30"/></Link>
+      <Menu className="w-full text-lg" onClick={onClick} selectedKeys={[selectedKey]} mode="horizontal">
+        {
+            items.map((item, key) => (
+              <Menu.Item key={item.key}>
+                <Link to={item.path}>{item.label}</Link>
+              </Menu.Item>
+            
+          ))
+        }
+      </Menu>
+
       <div className="flex">
-        <UserOutlined className="mr-5 text-2xl"/>
-        <ShoppingCartOutlined className='text-2xl'/>
+        <Link to={"/login"}>
+          <UserOutlined className="mr-5 text-2xl text-black"/>
+        </Link>
+        <Link to={"/"}>
+          <ShoppingCartOutlined className="text-2xl text-black"/>
+        </Link>
       </div>
     </HeaderAnt>
     <div className='md:hidden'>
         <TabBar>
           {tabs.map(item => (
-            <TabBar.Item key={item?.key} icon={item?.icon} title={item?.title} />
+              <TabBar.Item key={item?.key} icon={item?.icon} title={item?.title} />
           ))}
         </TabBar>
       </div>
