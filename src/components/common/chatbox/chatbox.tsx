@@ -23,7 +23,7 @@ const Chatbox = () => {
         <div className="relative  mt-4 size-10 md:size-12 ring-4 ring-red-700 bg-white rounded-full flex justify-center items-center shadow-lg cursor-pointer" onClick={openChatbox}>
           <img src={robot} className="size-7 md:size-8" />
         </div>
-        {isOpenChatbox && (<div className=" absolute top-0 mt-[122px] mr-6">
+        {isOpenChatbox && (<div className="sticky top-0 mt-2 mr-6">
           <div className=" w-72 md:w-80 h-80 md:h-96 bg-white rounded-xl">
             {/* Header chatbox */}
             <div className="w-full h-1/6 bg-white flex justify-start items-center rounded-xl">
