@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 interface CustomSliderProps {
   title: string;
   image: string;
-  size: string;
+  size: Number;
   IsStore:boolean;
   location:string;
   IsEvent:boolean;
@@ -16,15 +16,11 @@ interface CustomSliderProps {
 const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false,location,IsEvent = false }) => {
   return (
     <div
-      className={`bg-[#F0FDFF] h-full ${
-        size === "big" ? "w-[700px]" : "w-[300px]"
-      }`}
+      className={`bg-[#F0FDFF] h-full w-[${size}px]`}
     >
       <div className="relative">
         <div
-          className={`shadow-2xl h-80 relative overflow-hidden image-slider ${
-            size === "small" ? "w-[300px]" : "w-[700px]"
-          }`}
+          className={`shadow-2xl h-80 relative overflow-hidden image-slider w-[${size}px]`}
         >
           <img
             src={image}
@@ -54,7 +50,7 @@ const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false
               </svg>
             </span>
             <span className="text-md font-bold text-[#2B2F72] mb-2">
-              {location='Hai Bà Trưng, Quận 1,TP.HCM'}
+              {location}
             </span>
             
           </div>

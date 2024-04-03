@@ -1,0 +1,13 @@
+@media screen and (max-width: 640px) {
+    .product-item .mobile-hidden {
+      display: none; 
+    }
+  }
+  
+  @media screen and (min-width: 641px) {
+    .product-item .desktop-hidden {
+      display: none; 
+      
+    }
+  }
+  

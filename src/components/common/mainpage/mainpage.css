@@ -4,8 +4,8 @@ iframe {
 }
 
 .container {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  
+
   column-gap: 30px;
   row-gap: 25px;
   justify-content: stretch;
@@ -32,6 +32,16 @@ iframe {
   filter: blur(4px);
 }
 
-.showUpIcon{
-  
+
+.child_element:hover > .parent_element{
+  filter: blur(4px);
+}
+
+#first_sibling:hover + #second_sibling {
+  opacity: 0.3;
+  filter: blur(4px);
+}
+
+.blur {
+  filter: blur(4px);
 }

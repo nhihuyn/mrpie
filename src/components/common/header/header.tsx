@@ -11,7 +11,7 @@ import {
   ShopbagOutline
 } from 'antd-mobile-icons'
 
-import LogoIcon from '../../../assets/images/logo.png';
+import { logo } from '../../../assets/images/index';
 import { Badge, TabBar } from 'antd-mobile'
 import { useTranslation } from 'react-i18next';
 
@@ -116,8 +116,9 @@ const Header: React.FC = () => {
 
   return (
     <Layout>
+
     <HeaderAnt className="hidden md:flex items-center bg-white py-12 border-b-solid" style={{ borderBottom: '1px solid #eaeaea'}}>
-      <Link to={"/"}><img src={LogoIcon} alt='logo' className="w-20 h-30"/></Link>
+      <Link to={"/"}><img src={logo} alt='logo' className="w-20 h-30"/></Link>
       <Menu className="w-full text-lg" onClick={onClick} selectedKeys={[selectedKey]} mode="horizontal">
         {
             items.map((item, key) => (
@@ -128,6 +129,7 @@ const Header: React.FC = () => {
           ))
         }
       </Menu>
+
       <div className="flex">
         <Link to={"/login"}>
           <UserOutlined className="mr-5 text-2xl text-black"/>

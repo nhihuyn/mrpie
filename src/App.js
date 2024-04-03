@@ -14,6 +14,9 @@ import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/mainpage";
 import Header from "./components/common/header/header";
 import DetailEvent from './components/common/Detail/Detail';
+import Promotion from "./components/common/Promotion/promotion";
+import Event from "./components/common/event/Event";
+import CartDetail from "./components/common/P10/CartDetail"
 
 
 function App() {
@@ -31,9 +34,12 @@ function App() {
             <Route path="/eventmenu" element={<Event/>} />
             <Route path="/contact" element={<Intro/>} />
             <Route path="/detail" element={<DetailEvent/>} /> 
+            <Route path="/mainpage" element={<Mainpage/>} />
+            <Route path="/promotion" element={<Promotion/>} /> 
             <Route path="/menu" element={<Menu/>} /> 
             <Route path="/checkout" element={<Checkout/>} /> 
             <Route path="/event" element={<Event/>} /> 
+            <Route path="/cart" element={<CartDetail/>} /> 
           </Routes>
      </Layout>
     </Router>
