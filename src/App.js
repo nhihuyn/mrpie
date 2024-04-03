@@ -10,7 +10,7 @@ import Intro from "./components/common/Introduce/Intro";
 import EventMenu from "./components/common/EventMenu/Event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
-import Mainpage from "./components/common/mainpage/mainpage";
+import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
 import CartDetail from "./components/common/P10/CartDetail"
@@ -30,7 +30,7 @@ function App() {
             <Route path="/intro" element={<Intro/>} />
             <Route path="/eventmenu" element={<EventMenu/>} />
             <Route path="/contact" element={<Intro/>} />
-            <Route path="/detail" element={<DetailEvent/>} /> 
+            <Route path="/detail/:productId" element={<DetailEvent/>} /> 
             <Route path="/mainpage" element={<Mainpage/>} />
             <Route path="/promotion" element={<Promotion/>} /> 
             <Route path="/menu" element={<Menu/>} /> 

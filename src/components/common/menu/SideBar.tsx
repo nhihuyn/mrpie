@@ -52,7 +52,7 @@ const SideBar: React.FC = () => {
         </Title>
         <RadioButton />
       </div>
-      <div className="mt-4 ml-8 gap-3  ">
+      <div className="mt-14 ml-8 gap-3  ">
         <Title level={4}>TAG</Title>
         <TagContent data={data} />
       </div>

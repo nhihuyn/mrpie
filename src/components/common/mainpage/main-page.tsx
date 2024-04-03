@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 
-import { Typography, Carousel, Button } from 'antd'
+import { Carousel } from 'antd'
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,20 +22,10 @@ import {
 } from "../../../assets/images/index.ts";
 
 import Chatbox from "../chatbox/chatbox.tsx";
-import Map from "./components/Map.tsx";
+import Map from "./components/map.tsx";
 import DetailProduct from "../detail-product/detailProduct.tsx";
 
-import "./mainpage.css";
-
-
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+import "./main-page.css";
 
 const BEST_SELLER = [
   {
@@ -75,8 +65,6 @@ const BEST_SELLER = [
     eventTitle: '30%'
   }
 ]
-
-const { Title } = Typography;
 
 const Mainpage = () => {
   const { t } = useTranslation();

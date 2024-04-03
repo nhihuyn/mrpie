@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 interface CustomSliderProps {
   title: string;
   image: string;
-  size: Number;
-  IsStore:boolean;
-  location:string;
-  IsEvent:boolean;
+  size?: Number;
+  IsStore?:boolean;
+  location?:string;
+  IsEvent?:boolean;
 }
 
-const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false,location,IsEvent = false }) => {
+const Event: React.FC<CustomSliderProps> = ({ title, image, size = 100,IsStore = false,location,IsEvent = false }) => {
   return (
     <div
-      className={`bg-[#F0FDFF] h-full w-[${size}px]`}
+      className={`bg-[#F0FDFF] h-full w-[${size}px] rounded-lg`}
     >
       <div className="relative">
         <div
