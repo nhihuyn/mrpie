@@ -142,7 +142,7 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
                 <p className="text-center mb-2 mobile-hidden">{(product.price * (counts[product.id] || 1)).toLocaleString()} vnd</p>
                 
 
-                <div className="text-right col-span-2 mb-2 md:text-center md:col-span-1 mr-4">
+                <div className="text-right col-span-2 md:text-center md:col-span-1 mr-4">
                 {/*Ở màn hình mobile thì sẽ hiển thị thêm nội dung*/}
                 <p className=" desktop-hidden">{t('Price')}: {product.price.toLocaleString()} vnd</p>
                 <p className=" desktop-hidden">{t('TotalCart')}: {(product.price * (counts[product.id] || 1)).toLocaleString()} vnd</p>
