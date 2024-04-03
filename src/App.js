@@ -14,6 +14,7 @@ import Intro from './components/common/Introduce/Intro';
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
 import Event from "./components/common/event/Event";
+import CartDetail from "./components/common/P10/CartDetail"
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/menu" element={<Menu/>} /> 
             <Route path="/checkout" element={<Checkout/>} /> 
             <Route path="/event" element={<Event/>} /> 
+            <Route path="/cart" element={<CartDetail/>} /> 
           </Routes>
      </Layout>
     </Router>
