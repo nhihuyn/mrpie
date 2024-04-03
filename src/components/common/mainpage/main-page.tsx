@@ -22,7 +22,7 @@ import {
 } from "../../../assets/images/index.ts";
 
 import Chatbox from "../chatbox/chatbox.tsx";
-import Map from "./components/map.tsx";
+import Map from "./components/Map.tsx";
 import DetailProduct from "../detail-product/detailProduct.tsx";
 
 import "./main-page.css";
