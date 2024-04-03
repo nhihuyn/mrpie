@@ -1,10 +1,10 @@
 import React, { useState, useEffect, } from 'react';
-import { Breadcrumb} from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import food from '../../../assets/images/food.png';
 import cooperate from '../../../assets/images/cooperate.png';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,10 +54,20 @@ const Intro: React.FC = () => {
   return (
 
     <div className="intro-container bg-[#F2EBE6] min-h-screen">
-
       <div className="breadcrumb-container bg-black text-white p-4">
-      <p>{t('Home')} <RightOutlined className="text-sm"/> <strong> {t('Introduction')} </strong></p>
+      
+          <Link to="/mainpage" className="text-white hover:text-gray-300">
+            {t('Home')}
+          </Link>
+          <RightOutlined className="text-sm" />
+          <strong> 
+            <Link to="/intro" className="text-white hover:text-gray-300">
+              {t('Introduction')}
+            </Link>
+          </strong>
       </div>
+
+      
       <div className="title-container">
 
         <h1 className="mt-8 ml-10 text-2xl">{t('INTRODUCTION')}</h1>

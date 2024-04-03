@@ -29,7 +29,7 @@ const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false
           />
         </div>
         <div className="flex justify-center absolute -bottom-4 left-0 right-0">
-          <Link to="/event">
+          <Link to="/promotion">
             <Button className="h-10 w-32 text-white font-semibold flex items-center justify-center shadow-3xl bg-gradient-to-r from-[#EBA2D0]  to-[#CA8EEE] rounded-3xl px-4 py-2">
               More Detail
             </Button>
