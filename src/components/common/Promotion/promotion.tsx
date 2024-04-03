@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { RightOutlined, DownOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import promotion from '../../../assets/images/promotion.jpg';
+import { Link } from 'react-router-dom';
+
 
 
 const Promotion: React.FC = () => {
@@ -12,7 +14,13 @@ const Promotion: React.FC = () => {
 
     <div className="intro-container min-h-screen">
       <div className="breadcrumb-container bg-black text-white p-4">
-        <p>{t('Home')} <RightOutlined className="text-sm" /> {t('Event')} <RightOutlined className="text-sm" /> <strong> {t('Detail')} </strong></p>
+      <Link to="/mainpage" className='text-white hover:text-gray-300'>{t('Home')}</Link> 
+      <RightOutlined  />
+      <Link to="/eventmenu" className='text-white'>{t('Event')}</Link> 
+      <RightOutlined /> 
+      <strong>
+      <Link to="/promotion" className='text-white'>{t('Detail')}</Link> 
+      </strong>
       </div>
 
       <div className="title-container relative">

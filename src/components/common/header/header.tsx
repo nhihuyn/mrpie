@@ -65,7 +65,7 @@ const Header: React.FC = () => {
       label: t('Event'),
       key: 'event',
       itemIcon: <CaretDownOutlined />,
-      path: '/event'
+      path: '/eventmenu'
     },
     {
       label: t('AboutMe'),

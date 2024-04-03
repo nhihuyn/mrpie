@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { RightOutlined, DownOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import EventList from './EventList';
 import Store from './Store';
 
 const Eventmenu: React.FC = () => {
   const [activeTab, setActiveTab] = useState("event");
   const [isVisible, setIsVisible] = useState(false);
-  const [activeSubTab, setActiveSubTab] = useState("AllEvent");
+  const [activeSubTab, setActiveSubTab] = useState("all");
   const [showScrollButton, setShowScrollButton] = useState(false);
   const { t } = useTranslation();
 
@@ -16,6 +17,8 @@ const Eventmenu: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
    
   }, []);
+
+  
 
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
@@ -50,7 +53,16 @@ const Eventmenu: React.FC = () => {
   return (
     <div className="intro-container min-h-screen">
       <div className="breadcrumb-container bg-black text-white p-4">
-        <p>{t('Home')} <RightOutlined className="text-sm" /> <strong> {t('Event')} </strong></p>
+      
+          <Link to="/mainpage" className="text-white hover:text-gray-300">
+            {t('Home')}
+          </Link>
+          <RightOutlined className="text-sm" />
+          <strong> 
+            <Link to="/eventmenu" className="text-white hover:text-gray-300">
+              {t('Event')}
+            </Link>
+          </strong>
       </div>
 
       <div className="title-container relative">
