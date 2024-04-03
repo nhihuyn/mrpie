@@ -1,6 +1,5 @@
 
 import "./App.css";
-import DetailProduct from "./components/common/detail-product/detailProduct";
 import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
 import Menu from "./components/common/menu/menu";
 import Layout from "./components/Layout/layout";
@@ -12,10 +11,8 @@ import Event from "./components/common/EventMenu/Event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/mainpage";
-import Header from "./components/common/header/header";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
-
 import CartDetail from "./components/common/P10/CartDetail"
 
 

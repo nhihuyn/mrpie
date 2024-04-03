@@ -1,80 +1,135 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Carousel } from "@material-tailwind/react";
-import "./mainpage.css";
+import React from "react";
+import { useTranslation } from 'react-i18next';
+
+import { Typography, Carousel, Button } from 'antd'
+import { RightOutlined, LeftOutlined } from '@ant-design/icons'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsUp,
   faArrowRight,
-  faUser,
-  faMagnifyingGlass,
-  faCartShopping,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
-
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import {
   pizza,
-  bread,
   facebookLogo,
   instagramLogo,
   youtubeLogo,
-  Mobile,
+  mobile,
   motorbike,
   smallYoutubeLogo,
-  smallFacebookLogo,
 } from "../../../assets/images/index.ts";
-import Map from "./components/Map.tsx";
+
 import Chatbox from "../chatbox/chatbox.tsx";
-import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import Map from "./components/Map.tsx";
+import DetailProduct from "../detail-product/detailProduct.tsx";
+
+import "./mainpage.css";
+
+
+const contentStyle: React.CSSProperties = {
+  margin: 0,
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
+
+const BEST_SELLER = [
+  {
+    key: 1,
+    title: 'Pie Tao',
+    price: '42.000',
+    bestPrice: '45.000',
+    img: pizza,
+    description: 'Pie Tao',
+    eventTitle: '30%'
+  },
+  {
+    key: 2,
+    title: 'Pie Tao',
+    price: '42.000',
+    bestPrice: '45.000',
+    img: pizza,
+    description: 'Pie Tao',
+    eventTitle: '30%'
+  },
+  {
+    key: 3,
+    title: 'Pie Tao',
+    price: '42.000',
+    bestPrice: '45.000',
+    img: pizza,
+    description: 'Pie Tao',
+    eventTitle: ''
+  },
+  {
+    key: 4,
+    title: 'Pie Tao',
+    price: '42.000',
+    bestPrice: '45.000',
+    img: pizza,
+    description: 'Pie Tao',
+    eventTitle: '30%'
+  }
+]
+
+const { Title } = Typography;
 
 const Mainpage = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isIconShowUp, setIsIconShowUp] = useState(false);
   const { t } = useTranslation();
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
+  const next = () => {
+    carouselRef.next();
+  };
+
+  const prev = () => {
+    carouselRef.prev();
+  };
+
+  let carouselRef;
+  
 
   return (
     <div className="relative">
       {/* Mainpage content */}
-      <div className="w-full h-full bg-[#F2EBE6] px-0 lg:px-12">
+      <div className="w-full h-50 bg-[#F2EBE6] px-0 lg:px-12">
         {/* Carousel introduce */}
-        <Carousel
-          loop
-          autoplay
-          transition={{ duration: 1 }}
-          className="w-full h-[520px]"
-          navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-              {new Array(length).fill("").map((_, i) => (
-                <span
-                  key={i}
-                  className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                    activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-                  }`}
-                  onClick={() => setActiveIndex(i)}
-                />
-              ))}
-            </div>
-          )}
-          placeholder="image"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-            alt="image 1"
-            className="h-full w-full object-cover"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-            alt="image 2"
-            className="h-full w-full object-cover"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-            alt="image 3"
-            className="h-full w-full object-cover"
-          />
-        </Carousel>
-
+        <Carousel afterChange={(e) => console.log(e)} {...settings} ref={ref => (carouselRef = ref)}>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+              alt="banner 1"
+              className="h-50 w-full object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+              alt="banner 2"
+              className="h-50 w-full object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+              alt="banner 3"
+              className="h-50 w-full object-cover"
+            />
+          </div>
+      </Carousel>
+        <LeftOutlined onClick={prev} className="absolute text-white text-4xl top-[100px] sm:top-[380px]" />
+        <RightOutlined onClick={next} className="absolute text-white text-4xl top-[100px] right-[10px] sm:top-[380px] sm:right-[50px]"  />
+        
         {/* Video introduce */}
         <iframe
           width={"100%"}
@@ -95,11 +150,8 @@ const Mainpage = () => {
               {/* Item Youtube  */}
               <div className="flex flex-col justify-center items-center lg:flex-row ">
                 {/* Logo brand */}
-                <div
-                  className="flex justify-center items-center bg-white size-16 lg:size-28 rounded-xl shadow-lg
-                "
-                >
-                  <img src={youtubeLogo} alt="" className="size-2/3" />
+                <div className="flex justify-center items-center bg-white size-16 lg:size-28 rounded-xl shadow-lg">
+                  <img src={youtubeLogo} alt="youtube" className="size-2/3" />
                 </div>
 
                 {/* Content */}
@@ -122,13 +174,11 @@ const Mainpage = () => {
               {/* Item Facebook */}
               <div className="flex flex-col justify-center items-center lg:flex-row">
                 {/* Logo brand */}
-                <div
-                  className="flex justify-center items-center bg-white size-16 lg:size-28 rounded-xl shadow-lg
-                "
+                <div className="flex justify-center items-center bg-white size-16 lg:size-28 rounded-xl shadow-lg"
                 >
                   <img
                     src={facebookLogo}
-                    alt=""
+                    alt="facebook logo"
                     className="rounded-xl w-full h-full"
                   />
                 </div>
@@ -139,11 +189,6 @@ const Mainpage = () => {
                     FACEBOOK
                   </p>
                   <div className="bg-white w-full h-6 rounded-md flex items-center justify-center p-2 mt-2">
-                    {/* <img
-                    src={smallFacebookLogo}
-                    alt="Logo youtube"
-                    className="w-5 h-5 rounded-sm"
-                  /> */}
                     <FontAwesomeIcon
                       icon={faThumbsUp}
                       className="size-3 lg:size-5 rounded-sm"
@@ -160,7 +205,7 @@ const Mainpage = () => {
                   className="flex justify-center items-center bg-white size-16 lg:size-28 rounded-xl shadow-lg
                 "
                 >
-                  <img src={instagramLogo} alt="" className="w-2/3 h-2/3" />
+                  <img src={instagramLogo} alt="instagram logo" className="w-2/3 h-2/3" />
                 </div>
 
                 {/* Content */}
@@ -199,8 +244,8 @@ const Mainpage = () => {
 
               <div className="w-full md:w-1/2 h-1/2 sm:h-2/3 md:h-full flex justify-center items-center">
                 <img
-                  src={Mobile}
-                  alt=""
+                  src={mobile}
+                  alt="mobile"
                   className="min-w-28 w-1/2 md:w-[90%] h-[90%]"
                 />
               </div>
@@ -208,7 +253,7 @@ const Mainpage = () => {
             {/* Right content */}
             <div className="  relative z-0  w-1/2 h-full bg-[#B08972] flex flex-col justify-end items-end">
               <div className="  h-full w-full flex flex-col items-center justify-end">
-                <img src={motorbike} alt="" className="" />
+                <img src={motorbike} alt="motorbike" className="" />
               </div>
               <div className="absolute z-50 top-0 bottom-0 left-0 right-0 w-full md:w-1/2 h-2/3 md:h-full flex flex-col justify-start md:justify-center items-start ml-4 p-3 my-3 lg:my-0 lg:p-0">
                 <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white ">
@@ -234,139 +279,11 @@ const Mainpage = () => {
             </h3>
             <span className="bg-black w-32 h-1 block mt-2"></span>
           </div>
-
-          {/* List Product */}
+          
+           {/* List Product */}
+          <DetailProduct data={BEST_SELLER}/>
+         
           <div className="w-full h-full flex flex-col justify-center items-center py-6 md:py-12">
-            {/* Products */}
-            <div className="container grid grid-cols-2 md:grid-cols-4  grid-rows-4 md:grid-rows-2 gap-x-8 gap-y-7 w-full h-full p-8">
-              <div
-                className="item relative z-0"
-                onMouseEnter={() => setIsIconShowUp(true)}
-                onMouseLeave={() => setIsIconShowUp(false)}
-              >
-                <div className="w-full relative">
-                  <img
-                    src={pizza}
-                    className={`parent_element item_img rounded-xl ${
-                      isHovered ? "blur" : ""
-                    }`}
-                  />
-                  {isIconShowUp && (
-                    <div
-                      onMouseEnter={() => setIsHovered(true)}
-                      onMouseLeave={() => setIsHovered(false)}
-                      className="absolute flex flex-row justify-around icon_center w-full"
-                    >
-                      <Link to="/detail">
-                        <span className="flex justify-center items-center rounded-full bg-black w-8 h-8 p-1 hover:bg-[#E96161]">
-                          <FontAwesomeIcon
-                            size="xl"
-                            style={{ color: "#FFFFFF" }}
-                            icon={faMagnifyingGlass}
-                          />
-                        </span>
-                      </Link>
-
-                      <Link to="/detail">
-                        <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
-                          <FontAwesomeIcon
-                            size="xl"
-                            style={{ color: "#FFFFFF" }}
-                            icon={faHeart}
-                          />
-                        </span>
-                      </Link>
-
-                      <Link to="/checkout">
-                        <span className="flex justify-center items-center rounded-full hover:bg-[#E96161] bg-black w-8 h-8">
-                          <FontAwesomeIcon
-                            size="lg"
-                            style={{ color: "#FFFFFF" }}
-                            icon={faCartShopping}
-                          />
-                        </span>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Pizza
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={bread} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Bread
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={pizza} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Pizza
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={bread} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Bread
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={pizza} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Pizza
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={bread} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Bread
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={pizza} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Pizza
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-
-              <div className="item">
-                <img src={pizza} className="item_img rounded-xl" />
-                <p className="font-bold text-xl text-center text-black mt-1">
-                  Mr.Pie Pizza
-                </p>
-                <p className="font-medium text-md text-center text-black mt-1">
-                  42.000 - 45.000
-                </p>
-              </div>
-            </div>
 
             {/* Find Shop */}
             <div className="bg-white w-full flex justify-center items-center flex-col p-8">
