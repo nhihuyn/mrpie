@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       label: t('AboutMe'),
       key: 'aboutMe',
       itemIcon: <CaretDownOutlined />,
-      path: '/about'
+      path: '/aboutMe'
     },
   ];
 
@@ -112,6 +112,7 @@ const Header: React.FC = () => {
     console.log('click ', e);
     setCurrent(e.key);
   };
+  console.log(current)
 
 
   return (

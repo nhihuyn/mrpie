@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { RightOutlined, DownOutlined } from '@ant-design/icons';
+import React from 'react';
+import { RightOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import promotion from '../../../assets/images/promotion.jpg';
 import { Link } from 'react-router-dom';

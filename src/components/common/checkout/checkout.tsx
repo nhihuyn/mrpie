@@ -42,6 +42,8 @@ const Checkout: React.FC = () => {
     }
   };
 
+  console.log(setCurrentStep)
+
   return (
     <div className="h-full md:h-dvh w-full bg-[#F2EBE6]">
       <div className=" w-full   h-1/5  flex justify-center items-center">
@@ -151,7 +153,7 @@ const Checkout: React.FC = () => {
             </div>
 
             <div className="w-full flex justify-center items-center flex-col">
-              <img src={qrCode} alt="QrCode image" />
+              <img src={qrCode} alt="QrCode" />
               <p className="text-xl font-bold">Mr.Pie QRcode</p>
             </div>
           </div>
@@ -173,7 +175,7 @@ const Checkout: React.FC = () => {
                     <img
                       src={bread}
                       className="w-20 h-20 rounded-xl"
-                      alt="Bread Image"
+                      alt="Bread"
                     />
                     <div className="flex flex-col justify-between ml-12 h-20">
                       <p className="font-semibold text-md md:text-lg">
@@ -190,7 +192,7 @@ const Checkout: React.FC = () => {
                     <img
                       src={pizza}
                       className="w-20 h-20 rounded-xl"
-                      alt="Bread Image"
+                      alt="Bread"
                     />
                     <div className="flex flex-col justify-between ml-12 h-20">
                       <p className="font-semibold text-md md:text-lg">

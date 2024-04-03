@@ -12,8 +12,8 @@ interface BreadCardProps {
     key: number;
     title: string;
     ratings: number;
-    price: number;
-    bestPrice: number;
+    price: string;
+    bestPrice: string;
     description: string;
     size?: string;
     img: string;
@@ -48,14 +48,15 @@ const BreadCard: React.FC<BreadCardProps> = ({ data }) => {
             </span>
 
             <div className="mt-3">
-              <ul className="list-square text-sm text-gray-500">
+              {/* <ul className="list-square text-sm text-gray-500">
                 {el.description?.length > 1 &&
                   el?.description?.map((e, i) => (
                     <li className="leading-6" key={i}>
                       {e}
                     </li>
                   ))}
-              </ul>
+              </ul> */}
+              <p>{el.description}</p>
             </div>
             <div className="md:mt-4 mt-2 w-40">
               <SizeButton datetime={el.time} />
