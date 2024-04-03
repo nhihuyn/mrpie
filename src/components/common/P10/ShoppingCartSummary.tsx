@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import food from '../../../assets/images/food.png';
 import { useTranslation } from 'react-i18next';
+import { Pagination } from "antd";
 import './cart.css';
 
 interface Product {
@@ -18,7 +19,7 @@ interface Props {
 
 const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProduct, updateTotalPrice }) => {
   
-  const [activeButton, setActiveButton] = useState(null);
+  
   const [counts, setCounts] = useState<{ [key: number]: number }>(() => {
     const initialCounts: { [key: number]: number } = {};
     products.forEach(product => {
@@ -26,12 +27,11 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
     });
     return initialCounts;
   });
-  const backgroundColors = ["bg-blue-50", "bg-yellow-50", "bg-green-50", "bg-red-50"];
+  const backgroundColors = ["bg-blue-50", "bg-yellow-50"];
 
   const { t } = useTranslation();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isFirstPage, setIsFirstPage] = useState(true); 
-  const productsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1); 
+  const productsPerPage = 2;
 
   const totalPages = Math.ceil(products.length / productsPerPage);
 
@@ -63,51 +63,22 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
     updateTotalPrice(totalPrice); 
   }, [products, counts, updateTotalPrice]);
 
-  const handleClick = (buttonNumber) => {
-    setActiveButton(buttonNumber);
-    setCurrentPage(buttonNumber);
-  };
-
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
 
   const handleRemoveProduct = (productId: number) => {
     onRemoveProduct(productId);
     const updatedProducts = products.filter(product => product.id !== productId);
     const newTotalPages = Math.ceil(updatedProducts.length / productsPerPage);
     if (updatedProducts.length === 0) {
-      setCurrentPage(1);
-      setActiveButton(1);
+      setCurrentPage(1);  
     } else if (newTotalPages < totalPages && currentPage > newTotalPages) {
-      setCurrentPage(newTotalPages);
-      setActiveButton(newTotalPages);
+      setCurrentPage(newTotalPages);   
     }
   };
 
-  const renderButton = (buttonNumber, buttonText) => (
-    <button
-      key={buttonNumber}
-      className={`px-2 ${activeButton === buttonNumber ? 
-        'hover:text-blue-400 border border-blue-500 text-blue-500' : isFirstPage && buttonNumber === 1 ?
-        'border border-blue-500 text-blue-500' : ''}`} 
-      onClick={() => handleClick(buttonNumber)}
-    >
-      {buttonText}
-    </button>
-  );
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
-  useEffect(() => {
-    setIsFirstPage(currentPage === 1); 
-  }, [currentPage]);
 
   return (
     <div className="shopping-cart-summary relative">
@@ -118,10 +89,10 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
                              ${backgroundColors[index % backgroundColors.length]}`}>
               
                 <div className="product-info flex items-center">
-                  <img src={food} alt={product.name} className="w-2/5 h-2/5 md:w-1/3 md:h-1/3 mr-2 " />
+                  <img src={food} alt={product.name} className="w-1/3 h-1/3 mr-2 " />
                   <div  >
-                    <p className=" md:mb-3 test-base">{product.name}</p>
-                    <p className=" md:mb-3 test-base">{t('CakeType')}</p>
+                    <p className=" lg:mb-3 test-base">{product.name}</p>
+                    <p className=" lg:mb-3 test-base">{t('CakeType')}</p>
                     <button onClick={() => handleRemoveProduct(product.id)} 
                     className="text-red-500 hover:text-red-200 ">{t('Delete')}</button>
                   </div>
@@ -129,13 +100,13 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
 
                 <div className="flex justify-center mb-2 rounded-3xl">
                   <button onClick={() => handleDecreaseCount(product.id)} 
-                   className="p-2 bg-red-400 hover:bg-red-400 rounded-l-full text-white block w-8">-</button>
+                   className="p-2 bg-red-400 hover:bg-red-200 rounded-l-full text-white block w-8">-</button>
 
                   <input type="text" className="w-10 bg-red-400 border-2 border-red-800 text-center text-white"
                    value={counts[product.id] || 1} readOnly />
 
                   <button onClick={() => handleIncreaseCount(product.id)} 
-                  className="p-2 bg-red-400 hover:bg-red-400 rounded-r-full text-white block w-8">+</button>
+                  className="p-2 bg-red-400 hover:bg-red-200 rounded-r-full text-white block w-8">+</button>
                 </div>
                 
                 <p className=" text right md:text-center mb-2 mobile-hidden">{product.price.toLocaleString()} vnd</p>
@@ -151,13 +122,12 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
             ))}
 
          <div className="flex justify-center md:justify-end mb-4 md:mr-20 mt-10">
-           <button className="mr-2" onClick={prevPage}>&lt;</button>
-            {renderButton(1, '1')}
-            {renderButton(2, '2')}
-            {renderButton(3, '3')}
-            {renderButton(4, '4')}
-            {renderButton(5, '5')}
-            <button className="ml-2" onClick={nextPage}>&gt;</button>
+         <Pagination
+            current={currentPage}
+            total={products.length}
+            pageSize={productsPerPage}
+            onChange={handlePageChange}
+          />
          </div>
         </div>
 
