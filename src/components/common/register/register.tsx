@@ -4,7 +4,7 @@ import { Radio } from "antd";
 import { useTranslation } from "react-i18next";
 
 import UsernameField from "./components/UsernameField";
-import PasswordField from "./components/PasswordField";
+import PasswordField from "./components/passwordField";
 import EmailField from "./components/EmailField";
 import FullnameField from "./components/FullnameField";
 import PhoneNumField from "./components/PhoneNumField";

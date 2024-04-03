@@ -8,7 +8,7 @@ import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
 import Intro from "./components/common/Introduce/Intro";
 import Event from "./components/common/EventMenu/Event";
-import RegisterForm from "./components/common/Register/Register";
+import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
