@@ -137,7 +137,7 @@ const DetailEvent: React.FC = () => {
   return (
     <div className="bg-orange-100 min-h-screen">
 
-{count < 2 && (
+      {count < 2 && (
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
@@ -159,25 +159,25 @@ const DetailEvent: React.FC = () => {
       )}
 
      {showAlert && (
-  <motion.div
-    initial={{ opacity: 0, x: 200 }} 
-    animate={{ opacity: 1, x: 0 }} 
-    exit={{ opacity: 0, x: 200 }} 
-    transition={{ duration: 0.8 }} 
-    className="fixed top-10 right-2 md:right-10 z-50"
-  >
-    <Alert
-      message={
-        <span>
-          <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
-        </span>
-      }
-      description={t('PleaseSelectCakeAndSize')}
-      type="error"
-      closable
-      onClose={() => setShowAlert(false)}
-    />
-  </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 200 }} 
+        animate={{ opacity: 1, x: 0 }} 
+        exit={{ opacity: 0, x: 200 }} 
+        transition={{ duration: 0.8 }} 
+        className="fixed top-10 right-2 md:right-10 z-50"
+      >
+        <Alert
+          message={
+            <span>
+              <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
+            </span>
+          }
+          description={t('PleaseSelectCakeAndSize')}
+          type="error"
+          closable
+          onClose={() => setShowAlert(false)}
+        />
+      </motion.div>
 )}
 
 

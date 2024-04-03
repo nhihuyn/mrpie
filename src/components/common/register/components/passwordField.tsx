@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { getClassName, getIcon } from "../../../../utils/utils.form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-regular-svg-icons";
+import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
 
 const PasswordField = ({
   status,
@@ -83,9 +84,11 @@ const PasswordField = ({
           {/* Show or hidden password value */}
           <div className="absolute top-1 right-4 text-lg cursor-pointer">
             {showPassword === false ? (
-              <FontAwesomeIcon icon={faEyeSlash} onClick={togglePassword} />
+              <EyeInvisibleOutlined  onClick={togglePassword} />
+              // <FontAwesomeIcon icon={faEyeSlash} onClick={togglePassword} />
             ) : (
-              <FontAwesomeIcon icon={faEye} onClick={togglePassword} />
+              <EyeOutlined  onClick={togglePassword} />
+              // <FontAwesomeIcon icon={faEye} onClick={togglePassword} />
             )}
           </div>
         </div>
