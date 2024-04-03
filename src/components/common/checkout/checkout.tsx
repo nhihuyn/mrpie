@@ -1,28 +1,32 @@
 import React, { useState } from "react";
-import { TiTick } from "react-icons/ti";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { ConfigProvider, Button } from "antd";
-import { pizza,bread,deliveryIcon,moneyIcon,qrCode } from "../../../assets/images/index";
-
 import "./checkout.css";
+import { CheckOutlined, ArrowLeftOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
+
+import {
+  pizza,
+  bread,
+  deliveryIcon,
+  moneyIcon,
+  qrCode,
+} from "../../../assets/images/index";
+
+
 
 const Checkout: React.FC = () => {
+  const { t } = useTranslation();
   const steps = [
-    "Kiểm tra giỏ hàng",
-    "Tiến hành thanh toán",
-    "Phương thức thanh toán",
-    "Trạng thái đơn hàng",
+    t("Check shopping cart"),
+    t("Proceed with payment"),
+    t("Payment Methods"),
+    t("Order status"),
   ];
 
-  const feeShippingStatus = [
-    "Miễn Phí",
-    "10.000 VND"
-  ]
+  const feeShippingStatus = [t('Free'), "10.000 VND"];
 
   const [currentStep, setCurrentStep] = useState(3);
   const [currentMethod, setCurrentMethod] = useState(1);
-  const [feeShipping,setFeeShipping] = useState("Miễn Phí");
-  
+  const [feeShipping, setFeeShipping] = useState("Miễn Phí");
 
   const selectMethod1 = () => {
     if (currentMethod !== 1) {
@@ -52,9 +56,17 @@ const Checkout: React.FC = () => {
                 } `}
               >
                 <div className="step">
-                  {i + 1 < currentStep ? <TiTick size={24} /> : i + 1}
+                  {i + 1 < currentStep ? (
+                    <CheckOutlined
+                      style={{ fontSize: "20px", fontWeight: "bold" }}
+                    />
+                  ) : (
+                    i + 1
+                  )}
                 </div>
-                <p className="text-black font-semibold p-1 md:p-0 text-center text-md ">{step}</p>
+                <p className="text-black font-semibold mt-1 p-2 md:p-0 text-center text-md ">
+                  {step}
+                </p>
               </div>
             ))}
           </div>
@@ -64,8 +76,16 @@ const Checkout: React.FC = () => {
         <div className=" w-full md:w-2/3 h-full flex justify-center items-center ">
           <div className="bg-white w-[95%] h-[95%] rounded-xl p-4">
             <div className="w-full  flex items-center border-b-2 ">
-              <AiOutlineArrowLeft className="text-2xl cursor-pointer mr-4 "></AiOutlineArrowLeft>
-              <h1 className="font-bold text-2xl py-1">Thanh toán</h1>
+              <ArrowLeftOutlined
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "26px",
+                  cursor: "pointer",
+                  marginRight: "6px",
+                }}
+              />
+
+              <h1 className="font-bold text-2xl py-1">{t("Payment")}</h1>
             </div>
 
             {/* Div card method payment */}
@@ -80,7 +100,7 @@ const Checkout: React.FC = () => {
                 >
                   <img src={moneyIcon} className="w-1/3" alt="Money icon" />
                   <p className="p-4 text-black font-semibold text-md ">
-                    Nhận món tại cửa hàng
+                    {t("Receive your order at the store")}
                   </p>
                   <span
                     className={`hidden justify-center items-center absolute w-8 h-8 bg-[#779CFE] rounded-full top-0 right-0 translate-x-2 -translate-y-2 ${
@@ -88,7 +108,13 @@ const Checkout: React.FC = () => {
                     }`}
                     id="icon"
                   >
-                    <TiTick className="text-white" size={24} />
+                    <CheckOutlined
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    />
                   </span>
                 </div>
                 {/* Ahamove ship*/}
@@ -104,7 +130,7 @@ const Checkout: React.FC = () => {
                     alt="Ahamove icon"
                   />
                   <p className="p-4  text-black font-semibold text-md ">
-                    Nhận món qua Ahamove
+                    {t("Receive orders via Ahamove")}
                   </p>
                   <span
                     className={`hidden justify-center items-center absolute w-8 h-8 bg-[#779CFE] rounded-full top-0 right-0 translate-x-2 -translate-y-2 ${
@@ -112,7 +138,13 @@ const Checkout: React.FC = () => {
                     }`}
                     id="icon"
                   >
-                    <TiTick className="text-white" size={24} />
+                    <CheckOutlined
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    />
                   </span>
                 </div>
               </div>
@@ -131,7 +163,7 @@ const Checkout: React.FC = () => {
                 {/* Header Kiem tra don hang */}
                 <div className="w-full  flex items-center border-b-2 ">
                   <h2 className="font-bold text-2xl py-2 ml-2">
-                    Kiểm tra đơn hàng
+                    {t("Check your order")}
                   </h2>
                 </div>
 
@@ -147,70 +179,56 @@ const Checkout: React.FC = () => {
                       <p className="font-semibold text-md md:text-lg">
                         Bread 4P's
                       </p>
-                      <p className="text-sm md:text-md">Số lượng: 1</p>
+                      <p className="text-sm md:text-md">{t("Order Quantity")}: 1</p>
                       <p className="font-semibold text-md md:text-lg">
                         10.000 VND
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center mt-4">
+                  <div className="flex items-center  mt-2">
                     <img
                       src={pizza}
                       className="w-20 h-20 rounded-xl"
                       alt="Bread Image"
                     />
                     <div className="flex flex-col justify-between ml-12 h-20">
-                      <p className="font-semibold text-md ">
-                        Cheese Pizza 4P's
+                      <p className="font-semibold text-md md:text-lg">
+                        Pizza 4P's
                       </p>
-                      <p className="text-sm md:text-md">Số lượng: 1</p>
-                      <p className="font-semibold text-md ">45.000 VND</p>
+                      <p className="text-sm md:text-md">{t("Order Quantity")}: 1</p>
+                      <p className="font-semibold text-md md:text-lg">
+                        10.000 VND
+                      </p>
                     </div>
                   </div>
 
                   <div className="w-full flex flex-col mt-6">
                     <div className="flex justify-between items-center">
                       <p className="text-black font-bold text-sm">
-                        Giá trị đơn hàng
+                        {t("Order cost")}
                       </p>
                       <p className="text-black font-bold text-sm">65.000 VND</p>
                     </div>
                     <div className="flex justify-between items-center mt-1">
                       <p className="text-black font-bold text-sm">
-                        Phí vận chuyển
+                        {t("Shipping fee")}
                       </p>
-                      <p className="text-black font-bold text-sm">{feeShipping}</p>
+                      <p className="text-black font-bold text-sm">
+                        {feeShipping}
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="w-full  border-t-2 mt-2 p-3">
                   <div className="flex justify-between items-center ">
-                    <p className="font-bold text-2xl text-black">Tổng tiền</p>
-                    <p className="font-bold text-md">65.000 VND</p>
+                    <p className="font-bold text-2xl text-black">
+                      {t("Total")}
+                    </p>
+                    <p className="font-bold text-xl">65.000 VND</p>
                   </div>
                 </div>
-
-                {/* <ConfigProvider
-                  theme={{
-                    token: {},
-                    components: {
-                      Button: {
-                        defaultBorderColor: "#000000",
-                        defaultHoverBorderColor: "#000000",
-                        defaultActiveColor: "#000000",
-                        defaultActiveBorderColor: "#FFFFFF",
-                        textHoverBg: "#000000",
-                        contentFontSize: 15,
-                        defaultColor: "#000000",
-                        defaultHoverColor: "#000000",
-                      },
-                    },
-                  }}
-                >
-                  <Button>My Button</Button>
-                </ConfigProvider> */}
               </div>
             </div>
 
@@ -219,7 +237,7 @@ const Checkout: React.FC = () => {
                 {/* Header thông tin nhận hàng */}
                 <div className="w-full  flex items-center border-b-2 ">
                   <h2 className="font-bold text-xl py-1 ml-2 ">
-                    Thông tin vận chuyển
+                    {t("Shipping information")}
                   </h2>
                 </div>
 
@@ -229,7 +247,7 @@ const Checkout: React.FC = () => {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-black font-bold text-sm">
-                          Địa chỉ nhận hàng
+                          {t("Address")}
                         </p>
                       </div>
 
@@ -241,15 +259,17 @@ const Checkout: React.FC = () => {
                     </div>
                     <div className="flex justify-between items-center mt-1">
                       <p className="text-black font-bold text-sm">
-                        Số điện thoại
+                        {t("PhoneNumber")}
                       </p>
                       <p className="text-black text-[12px]">0835771575</p>
                     </div>
                     <div className="flex justify-between items-center mt-1">
                       <p className="text-black font-bold text-sm">
-                        Trạng thái đơn hàng
+                        {t("Order status")}
                       </p>
-                      <p className="text-black font-bold text-sm">Đang xử lí</p>
+                      <p className="text-black font-bold text-sm">
+                        {t("Processing")}
+                      </p>
                     </div>
                   </div>
                 </div>
