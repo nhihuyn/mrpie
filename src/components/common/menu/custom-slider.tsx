@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+
 import { Carousel } from "antd";
-import Event from "./Event";
-import image1 from "../../../assets/images/bakery1.png";
-import image2 from "../../../assets/images/bakery1.png";
-import image3 from "../../../assets/images/bakery1.png";
-import image4 from "../../../assets/images/bakery1.png";
-import image5 from "../../../assets/images/bakery1.png";
-import image6 from "../../../assets/images/bakery1.png";
+
+import Event from "./event";
+
+import { bakery1 } from "../../../assets/images";
+
 export default function CustomSlider() {
   const data = [
-    { id: 11, title: "event1", image: image1 },
-    { id: 21, title: "event2", image: image2 },
-    { id: 31, title: "event3", image: image3 },
-    { id: 41, title: "event4", image: image5 },
-    { id: 21, title: "event4", image: image6 },
-    { id: 32, title: "event4", image: image4 },
+    { id: 11, title: "event1", image: bakery1 },
+    { id: 21, title: "event2", image: bakery1 },
+    { id: 31, title: "event3", image: bakery1 },
+    { id: 41, title: "event4", image: bakery1 },
+    { id: 21, title: "event4", image: bakery1 },
+    { id: 32, title: "event4", image: bakery1 },
   ];
   const [previousSlide, setPreviousSlide] = useState(
     data[data.length - 1].image
@@ -39,7 +38,7 @@ export default function CustomSlider() {
                 .title
             }
             image={previousSlide}
-            size="small"
+            // size="small"
           />
         </div>
         <div className="w-[700px] sm:ml-14 hidden   ml-0 mr-0 lg:block ">
@@ -50,13 +49,13 @@ export default function CustomSlider() {
                   // id={el.id}
                   title={el.title}
                   image={el.image}
-                  size="big"
+                  // size="big"
                 />
               </div>
             ))}
           </Carousel>
         </div>
-        <div className="  w-[300px] ml-16 lg:hidden ">
+        <div className="w-[300px] ml-16 lg:hidden ">
           <Carousel autoplay>
             {data.map((el, index) => (
               <div className="" key={el.id}>
@@ -64,7 +63,7 @@ export default function CustomSlider() {
                   // id={el.id}
                   title={el.title}
                   image={el.image}
-                  size="small"
+                  // size="small"
                 />
               </div>
             ))}

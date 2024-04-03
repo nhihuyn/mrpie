@@ -3,14 +3,14 @@ import { Alert, Space } from "antd"; // Import Ant Design components
 import { Radio } from "antd";
 import { useTranslation } from "react-i18next";
 
-import UsernameField from "./components/usernameField";
-import PasswordField from "./components/passwordField";
-import EmailField from "./components/emailField";
-import FullnameField from "./components/fullnameField";
-import PhoneNumField from "./components/phoneNumField";
+import UsernameField from "./components/UsernameField";
+import PasswordField from "./components/PasswordField";
+import EmailField from "./components/EmailField";
+import FullnameField from "./components/FullnameField";
+import PhoneNumField from "./components/PhoneNumField";
 
 
-import "./register.css";
+import "./Register.css";
 import { Link } from "react-router-dom";
 
 const RegisterForm = () => {

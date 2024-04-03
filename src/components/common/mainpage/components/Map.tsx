@@ -1,12 +1,11 @@
 import React from "react";
 import {
   GoogleMap,
-  Marker,
   MarkerF,
   useJsApiLoader,
 } from "@react-google-maps/api";
-import { color } from "d3-color";
-import "./Map.css";
+
+import "./map.css";
 
 const containerStyle = {
   width: "100%",
@@ -42,6 +41,7 @@ const Map = () => {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
+  console.log(map)
 
   return isLoaded ? (
     <GoogleMap
