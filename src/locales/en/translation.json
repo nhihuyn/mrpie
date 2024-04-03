@@ -55,6 +55,7 @@
     "SubmitComment":"Submit Comment",
     "PleaseSelectCakeAndSize":"Please Select Cake And Size",
     "ProductAddedToFavorites":"Product Added To Favorites",
+    "AddMoreProductsForDiscount":"Add 1 More Product For Discount",
     "ProductAddedToCart":"Product Added To Cart",
     "YourRating":"Your Rating",
     "InvalidOrEmptyReviewInformation":"Invalid Or Empty Review Information",
@@ -81,7 +82,30 @@
     "Personal": "Personal",
     "Business": "Business",
     "Register": "Register",
-    "Already have account": "Already have account ?"
+    "Already have account": "Already have account ?",
+    "Easy to use and user friendly": "Easy to use and user friendly",
+    "Fast delivery": "Fast delivery",
+    "Save costs and experience good service": "Save costs and experience good service",
+    "Selling products": "Selling products",
+    "Search for nearby stores": "Search for nearby stores",
+    "Mr.Pie store is nearby!": "Mr.Pie store is nearby!",
+    "Search": "Search",
+
+
+    "Check shopping cart": "Check shopping cart",
+    "Proceed with payment": "Proceed with payment",
+    "Payment Methods": "Payment Methods",
+    "Order status": "Order status",
+    "Free": "Free",
+    "Payment": "Payment",
+    "Receive orders via Ahamove": "Receive orders via Ahamove",
+    "Check your order": "Check your order",
+    "Order cost": "Order cost",
+    "Quantity": "Quantity",
+    "Shipping fee": "Shipping fee",
+    "Total": "Total",
+    "Shipping information": "Shipping information",
+    "Address": "Address",
+    "Processing": "Processing",
+    "Receive your order at the store": "Receive your order at the store"
 }
-
-
