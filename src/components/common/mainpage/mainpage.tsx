@@ -26,11 +26,12 @@ import {
 import Map from "./components/Map.tsx";
 import Chatbox from "../chatbox/chatbox.tsx";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Mainpage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isIconShowUp, setIsIconShowUp] = useState(false);
-  
+  const { t } = useTranslation();
 
   return (
     <div className="relative">
@@ -188,7 +189,7 @@ const Mainpage = () => {
                   MR.PIE APP MOBILE
                 </h1>
                 <p className="font-bold text-lg md:text-lg lg:text-2xl text-white mt-2 md:mt-4">
-                  Dễ dàng sử dụng thân thiện với người dùng
+                  {t('Easy to use and user friendly')}
                 </p>
 
                 <span className="flex justify-center items-center rounded-full bg-white size-8 lg:size-12 mt-2">
@@ -211,10 +212,10 @@ const Mainpage = () => {
               </div>
               <div className="absolute z-50 top-0 bottom-0 left-0 right-0 w-full md:w-1/2 h-2/3 md:h-full flex flex-col justify-start md:justify-center items-start ml-4 p-3 my-3 lg:my-0 lg:p-0">
                 <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white ">
-                  Giao hàng nhanh chóng
+                  {t('Fast delivery')}
                 </h1>
                 <p className="font-bold text-lg md:text-lg lg:text-2xl text-white mt-2 md:mt-4">
-                  Tiết kiệm chi phí và trải nghiệm dịch vụ tốt
+                  {t('Save costs and experience good service')}
                 </p>
                 <span className="flex justify-center items-center rounded-full bg-white size-8 lg:size-12 mt-2">
                   <FontAwesomeIcon size="xl" icon={faArrowRight} />
@@ -229,7 +230,7 @@ const Mainpage = () => {
           {/* Heading Title */}
           <div className="flex justify-center items-center w-full flex-col">
             <h3 className="text-2xl md:text-3xl font-bold text-black">
-              Sản phẩm bán chạy
+              {t('Selling products')}
             </h3>
             <span className="bg-black w-32 h-1 block mt-2"></span>
           </div>
@@ -370,13 +371,13 @@ const Mainpage = () => {
             {/* Find Shop */}
             <div className="bg-white w-full flex justify-center items-center flex-col p-8">
               <h2 className="font-bold text-2xl md:text-3xl text-black mt-4">
-                Tìm kiếm cửa hàng gần đây
+                {t('Search for nearby stores')}
               </h2>
               <p className="font-bold text-lg md:text-xl text-black mt-2">
-                Cửa hàng Mr.Pie gần đây!
+                {t('Mr.Pie store is nearby!')}
               </p>
               <button className="mt-4 shadow bg-[#FF4D4F] hover:bg-[#ed8283] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded">
-                Tìm kiếm
+                {t('Search')}
               </button>
             </div>
           </div>
