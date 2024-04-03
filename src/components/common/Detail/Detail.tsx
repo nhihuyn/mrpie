@@ -1,14 +1,15 @@
 
 import React, { useState } from 'react';
-import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan,badge } from '../../../assets/images/index';
+import { vegan, bg_vegan } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
 const DetailEvent: React.FC = () => {
+
   const { t } = useTranslation();
 
   const [count, setCount] = useState(1);
@@ -272,7 +273,7 @@ const DetailEvent: React.FC = () => {
 
           <div className="flex items-center mb-6">
             <p className="text-sm md:text-base mr-2">{t('Phân loại')}:</p>
-            
+
             <Select
               style={{ width: 200 }}
               placeholder={t('SelectCakeType')}
@@ -336,6 +337,7 @@ const DetailEvent: React.FC = () => {
           </button>
         </div>
       </div>
+
       <Link to="/checkout">
         <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
       </Link>
@@ -368,6 +370,7 @@ const DetailEvent: React.FC = () => {
     <div className="flex justify-start">
       <button onClick={() => setActiveTab("description")} className={`px-8 py-2 text-lg ${activeTab === "description" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Description')}</button>
       <button onClick={() => setActiveTab("review")} className={`mx-6 px-8 py-2 text-lg ${activeTab === "review" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Reviews')}</button>
+
     </div>
 
     <div className="mt-8 mr-8 min-h-8 ">
@@ -416,4 +419,6 @@ const DetailEvent: React.FC = () => {
 );
 };
 
+
 export default DetailEvent;
+

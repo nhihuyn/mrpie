@@ -18,6 +18,7 @@
     "SausageCake": "Bánh Xúc Xích",
     "AccompanyingCake": "Bánh Ăn Kèm",
     "Store": "Cửa Hàng",
+    "NewStore":"Cửa hàng mới",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
     "Brand": "Thương Hiệu",
@@ -88,6 +89,9 @@
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
     "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
+    "AllEvent":"Tất cả",
+    "OngoingEvent":"Đang diễn ra",
+    "EndedEvent":"Đã kết thúc",
     "Email": "Email",
     "RetypePassword": "Nhập lại mật khẩu",
     "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
@@ -111,4 +115,5 @@
     "Search": "Tìm kiếm",
     "Already have account": "Bạn đã có tài khoản?"
 }
+
 
