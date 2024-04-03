@@ -264,7 +264,7 @@ const DetailEvent: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-200 justify-center items-center"  
-        style={{ backgroundImage: `url(${bg_vegan})`, backgroundSize: 'cover', minHeight: '100vh', position: 'relative' }}>
+        style={{ backgroundImage: `url(${bg_vegan})`, backgroundSize: 'cover', minHeight: '80vh', position: 'relative' }}>
         
         <div className="w-full lg:ml-40 p-8 text-white justify-center items-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">Vegan Thai Cury</h1>
