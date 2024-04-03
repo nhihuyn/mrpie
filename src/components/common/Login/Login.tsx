@@ -3,6 +3,7 @@ import { Alert } from 'antd';
 import { ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const { t } = useTranslation();
@@ -102,7 +103,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-container mx-auto max-w-xl mt-40 px-4">
+    <div className="login-container mx-auto max-w-xl mt-32 mb-14 px-4">
       {showAlert && (
         <motion.div
           initial={{ opacity: 0, x: 200 }} 
@@ -144,7 +145,7 @@ const Login: React.FC = () => {
         </motion.div>
       )}
 
-      <p className="text-center sm:text-4xl text-2xl px-20 mb-10">{t('Login')}</p>
+      <p className="text-center text-3xl px-20 mb-10">{t('Login')}</p>
       <form onSubmit={validateForm} className="flex flex-col text-sm">
         <div className="form-group mb-6 flex flex-col">
           <label htmlFor="username" className="block mb-2">
@@ -154,8 +155,8 @@ const Login: React.FC = () => {
             type="text"
             id="username"
             name="username"
-            className={`w-full px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
-            ${usernameError ? 'border-pink-500 text-pink-600' : ''}
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
+            ${usernameError ? 'border-red-500 text-red-500' : ''}
             `}
             placeholder={t('Username')}
             value={username}
@@ -174,8 +175,8 @@ const Login: React.FC = () => {
             type="password"
             id="password"
             name="password"
-            className={`w-full px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
-              passwordError ? 'border-pink-500 text-pink-600' : ''
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
+              passwordError ? 'border-red-500 text-red-500' : ''
             }`}
             placeholder={t('Password')}
             value={password}
@@ -199,24 +200,24 @@ const Login: React.FC = () => {
           </label>
         </div>
         <div className="forgot-password mb-6 text-right">
-          <a href="#" className="text-gray-600 text-sm hover:text-gray-400">
+          <a href="/forgot_password" className="text-gray-400 text-base hover:text-gray-600">
             {t('ForgotPassword')}
           </a>
         </div>
-        <button
-        id="login"
-          type="submit"
-          className="sm:w-full md:w-2/5 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
-          >
-          {t('login')}
-        </button>
-
+          <button
+            id="login"
+            type="submit"
+            className="w-1/2 md:w-2/5 mx-auto bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
+            >
+            {t('Login')}
+          </button>
       </form>
-      <div className="signup-link mt-2 mb-14 w-full md:w-1/3 mx-auto text-center">
+      <div className="signup-link mt-2 w-full md:w-1/3 mx-auto text-center">
         <p>
-          <a href="#" className="text-blue-600 hover:text-blue-400 text-lg">
-            {t('CreateAccount')}
-          </a>
+          <Link to="/register" className="text-blue-400 hover:text-blue-600 text-base">
+              {t('CreateAccount')}
+          </Link>
+          
         </p>
       </div>
     </div>

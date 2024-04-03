@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
     },
   ];
   return (
-    <footer className="bg-red-950 text-white">
+    <footer className="bg-[#2b0200] text-white">
       <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#ffffff19] py-7">
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:px-8 px-5 py-16 ml-4">
           {footerContent.map((el, index) => (

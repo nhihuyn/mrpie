@@ -4,16 +4,21 @@
     "Introduction": "Giới thiệu",
     "INTRODUCTION":"GIỚI THIỆU",
     "Menu": "Thực đơn",
+    "Cart":"Giỏ hàng",
     "Contact": "Liên hệ",
     "Event": "Sự kiện",
+    "EVENT": "SỰ KIỆN",
+    "Promotion":"TÊN SỰ KIỆN PROMOTION",
     "AboutMe": "Giới thiệu",
     "New": "Bánh Mới",
+    "Detail":"Chi tiết",
     "VegetarianCake": "Bánh Chay",
     "CakeOfDay": "Bánh Trong Ngày",
     "SaltineCrackers": "Bánh Mặn",
     "SausageCake": "Bánh Xúc Xích",
     "AccompanyingCake": "Bánh Ăn Kèm",
     "Store": "Cửa Hàng",
+    "NewStore":"Cửa hàng mới",
     "FindStore": "Tìm Cửa Hàng",
     "BrandStory": "Câu Chuyện Về Thương Hiệu",
     "Brand": "Thương Hiệu",
@@ -47,10 +52,19 @@
     "PasswordMismatch":"Mật khẩu không khớp",
     "ProductDescriptionShort":"Mô tả sản phẩm ngắn gọn",
     "SelectCakeType":"Chọn loại bánh",
+    "CakeType":"Phân loại bánh",
     "HotCakes":"Bánh nóng",
     "ColdCakes":"Bánh lạnh",
     "Size":"Kích thước",
     "AddToCart":"Thêm vào giỏ hàng",
+    "ShoppingCart":"Giỏ hàng mua sắm",
+    "Item":"Sản phẩm",
+    "EmptyCart":"Giỏ hàng trống",
+    "DetailItems":"CHI TIẾT SẢN PHẨM",
+    "Quantity":"SỐ LƯỢNG",
+    "Price":"GIÁ",
+    "TempCart":"TẠM TÍNH",
+    "TotalCart":"TỔNG CỘNG",
     "Description":"MÔ TẢ",
     "Reviews":"ĐÁNH GIÁ",
     "ProductInformation":"Thông tin mô tả",
@@ -66,6 +80,7 @@
     "InvalidOrEmptyReviewInformation":"Thông tin chưa hợp lệ hoặc bị bỏ trống",
     "CommentHasBeenSubmitted":"Bình luận đã được gửi",
     "ItemDescription":"Chúng tôi cung cấp đa dạng sản phẩm bánh pie tươi, nướng mới hằng ngày với kích thước bánh",
+    "Delete":"Xóa",
     "Cancel":"Hủy",
     "Error":"Lỗi !",
     "Success":"Thành công !",
@@ -74,9 +89,10 @@
     "Find a store": "Tìm Kiếm Cửa Hàng",
     "Brand story": "Thương Hiệu",
     "Customer service center": "Trung Tâm Dịch Vụ Khách Hàng",
-
+    "AllEvent":"Tất cả",
+    "OngoingEvent":"Đang diễn ra",
+    "EndedEvent":"Đã kết thúc",
     "Email": "Email",
-
     "RetypePassword": "Nhập lại mật khẩu",
     "Email valid (example@gmail.com)": "Email phù hợp (example@gmail.com)",
     "Not space character": "Không kí tự khoảng trắng",
@@ -90,8 +106,6 @@
     "Business": "Tổ chức",
     "Register": "Đăng Ký",
     "Already have account": "Bạn đã có tài khoản?",
-
-
     "Easy to use and user friendly": "Dễ dàng sử dụng thân thiện với người dùng",
     "Fast delivery": "Giao hàng nhanh chóng",
     "Save costs and experience good service": "Tiết kiệm chi phí và trải nghiệm dịch vụ tốt",
@@ -99,6 +113,8 @@
     "Search for nearby stores": "Tìm kiếm cửa hàng gần đây",
     "Mr.Pie store is nearby!": "Cửa hàng Mr.Pie gần đây!",
     "Search": "Tìm kiếm",
+
+    
     
 
     "Check shopping cart": "Kiểm tra giỏ hàng",
@@ -110,15 +126,11 @@
     "Receive orders via Ahamove": "Nhận món qua Ahamove",
     "Check your order": "Kiểm tra đơn hàng",
     "Order cost": "Giá trị đơn hàng",
-    "Quantity": "Số lượng",
     "Shipping fee": "Phí vận chuyển",
     "Total": "Tổng tiền",
     "Shipping information": "Thông tin vận chuyển",
     "Address": "Địa chỉ nhận hàng",
     "Processing": "Đang xử lí",
     "Receive your order at the store": "Nhận món tại cửa hàng"
-    
-    
-
     
 }

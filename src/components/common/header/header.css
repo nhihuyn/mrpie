@@ -6,3 +6,6 @@ li.ant-menu-overflow-item.ant-menu-item {
 .ant-menu-title-content {
     margin-right: 15px ;
 }
+:where(.css-dev-only-do-not-override-1ae8k9u).ant-menu-horizontal {
+    border-bottom: 0;
+}

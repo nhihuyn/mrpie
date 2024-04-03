@@ -29,7 +29,7 @@ export default function CustomSlider() {
   return (
     <div className="">
       <div className="flex md:gap-8 md:ml-8  gap-0 ml-2 justify-center items-center">
-        <div className="w-[300px] ml-8 hidden md:block">
+        <div className="w-[250px] ml-8 hidden md:block">
           <Event
             // id={
             // data[currentSlide === 0 ? data.length - 1 : currentSlide - 1].id

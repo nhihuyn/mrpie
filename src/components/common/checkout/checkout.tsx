@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import "./checkout.css";
+import { CheckOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -10,8 +11,7 @@ import {
   qrCode,
 } from "../../../assets/images/index";
 
-import "./checkout.css";
-import { CheckOutlined, ArrowLeftOutlined } from "@ant-design/icons";
+
 
 const Checkout: React.FC = () => {
   const { t } = useTranslation();

@@ -43,7 +43,7 @@ const ChangePasswd: React.FC = () => {
   };
 
   return (
-    <div className="change-password-container mx-auto max-w-xl mt-40 px-4">
+    <div className="change-password-container mx-auto max-w-xl mt-32 mb-14 px-4">
       {showAlert && (
         <motion.div
           initial={{ opacity: 0, x: 200 }} 
@@ -85,7 +85,7 @@ const ChangePasswd: React.FC = () => {
         </motion.div>
       )}
 
-      <p className="text-center sm:text-4xl text-2xl mb-10">{t('ChangePassword')}</p>
+      <p className="text-center text-3xl mb-10">{t('ChangePassword')}</p>
       <form onSubmit={handleSubmit} className="flex flex-col text-sm">
         <div className={`form-group mt-4 mb-6 px-5 flex flex-col ${showAlert ? 'border-red-500' : ''}`}>
           <label htmlFor="newPassword" className="block mb-2"></label>
@@ -126,13 +126,13 @@ const ChangePasswd: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="sm:w-full md:w-1/2 mt-8 mx-auto bg-blue-500 hover:bg-gray-500 text-white text-lg py-2 px-8 rounded-lg transition duration-300 mb-2"
+          className="sm:w-full md:w-1/2 mt-8 mx-auto bg-blue-500 text-white text-lg py-2 px-8 rounded-lg transition duration-300 mb-2"
         >
           {t('ChangePassword')}
         </button>
       </form>
-      <div className="cancel-text text-center">
-        <p><a href="#" className="hover:text-gray-600 text-gray-500 text-lg ">{t('Cancel')}</a></p>
+      <div className="cancel-text text-center mt-2">
+        <p><a href="#" className="text-gray-400 text-base hover:text-gray-600">{t('Cancel')}</a></p>
       </div>
     </div>
   );

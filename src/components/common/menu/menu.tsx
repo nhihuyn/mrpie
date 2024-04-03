@@ -102,14 +102,14 @@ const Menu: React.FC = () => {
         </div>
         <div className="lg:flex justify-end items-center font-semibold text-md hidden  lg:mr-8 lg:mt-4 mt-2">
           <div className="w-full flex justify-end  ">
-            <a href="/" className="text-black hover:underline ">
+            <a href="/" className="text-black hover:underline">
               Xem thêm
             </a>
           </div>
         </div>
         <div className="lg:flex justify-end mr-8 items-center mt-8  hidden">
-          <Title level={4} className="text-semibold text-xl text-zinc-300">
-            Hiện thị :
+          <Title level={4} className="text-semibold text-base text-zinc-300">
+            Hiển thị :
           </Title>
           <div className="bg-[#F5F5F5] text-lg border-4 w-36 rounded-3xl p-2 ml-4 flex items-center justify-center ">
             <ConfigProvider
