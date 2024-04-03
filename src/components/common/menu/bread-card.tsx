@@ -12,8 +12,8 @@ interface BreadCardProps {
     key: number;
     title: string;
     ratings: number;
-    price: string;
-    bestPrice: string;
+    price: number;
+    bestPrice: number;
     description: string;
     size?: string;
     img: string;

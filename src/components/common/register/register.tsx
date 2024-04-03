@@ -203,7 +203,7 @@ const RegisterForm = () => {
               {t("Already have account")}
               <Link to="/login" >
                 <span className="text-md font-bold text-[#1890FF] cursor-pointer">
-                  <a> {t("Login")}</a>
+                  {t("Login")}
                 </span>
               </Link>
             </p>

@@ -17,15 +17,11 @@ const breadlist = [
     ratings: 4.5,
     price: 35000,
     bestPrice: 45000,
-    description: [
-      "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-      "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-      "ultricies eget, tempor sit amet, ante..",
-    ],
-
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
     size: "small",
-    images: bakery1,
+    img: bakery1,
     time: "2011:12:31",
+    eventTitle: "30%"
   },
   {
     id: "2",
@@ -34,13 +30,11 @@ const breadlist = [
     ratings: 2.5,
     price: 35000,
     bestPrice: 45000,
-    description: [
-      "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-      "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-      "ultricies eget, tempor sit amet, ante..",
-    ],
-    images: bakery1,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
     time: "2019:99:90",
+    eventTitle: "30%"
   },
   {
     id: "3",
@@ -49,13 +43,11 @@ const breadlist = [
     ratings: 4,
     price: 35000,
     bestPrice: 45000,
-    description: [
-      "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-      "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-      "ultricies eget, tempor sit amet, ante..",
-    ],
-    images: bakery1,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
     time: "2011:12:31",
+    eventTitle: "30%"
   },
   {
     id: "4",
@@ -64,13 +56,11 @@ const breadlist = [
     ratings: 4,
     price: 35000,
     bestPrice: 45000,
-    description: [
-      "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-      "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-      "ultricies eget, tempor sit amet, ante..",
-    ],
-    images: bakery1,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
     time: "8888:88:88",
+    eventTitle: "30%"
   },
   {
     id: "5",
@@ -79,13 +69,11 @@ const breadlist = [
     ratings: 4,
     price: 35000,
     bestPrice: 45000,
-    description: [
-      "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-      "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-      "ultricies eget, tempor sit amet, ante..",
-    ],
-    images: bakery1,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
     time: "9999:99:99",
+    eventTitle: "30%"
   },
 ];
 
