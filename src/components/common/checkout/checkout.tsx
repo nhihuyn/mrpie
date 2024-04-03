@@ -22,7 +22,7 @@ const Checkout: React.FC = () => {
     t("Order status"),
   ];
 
-  const feeShippingStatus = ["Miễn Phí", "10.000 VND"];
+  const feeShippingStatus = [t('Free'), "10.000 VND"];
 
   const [currentStep, setCurrentStep] = useState(3);
   const [currentMethod, setCurrentMethod] = useState(1);
@@ -179,7 +179,7 @@ const Checkout: React.FC = () => {
                       <p className="font-semibold text-md md:text-lg">
                         Bread 4P's
                       </p>
-                      <p className="text-sm md:text-md">{t("Quantity")}: 1</p>
+                      <p className="text-sm md:text-md">{t("Order Quantity")}: 1</p>
                       <p className="font-semibold text-md md:text-lg">
                         10.000 VND
                       </p>
@@ -196,7 +196,7 @@ const Checkout: React.FC = () => {
                       <p className="font-semibold text-md md:text-lg">
                         Pizza 4P's
                       </p>
-                      <p className="text-sm md:text-md">{t("Quantity")}: 1</p>
+                      <p className="text-sm md:text-md">{t("Order Quantity")}: 1</p>
                       <p className="font-semibold text-md md:text-lg">
                         10.000 VND
                       </p>

@@ -115,8 +115,6 @@
     "Search": "Tìm kiếm",
 
     
-    
-
     "Check shopping cart": "Kiểm tra giỏ hàng",
     "Proceed with payment": "Tiến hành thanh toán",
     "Payment Methods": "Phương thức thanh toán",
@@ -131,6 +129,7 @@
     "Shipping information": "Thông tin vận chuyển",
     "Address": "Địa chỉ nhận hàng",
     "Processing": "Đang xử lí",
-    "Receive your order at the store": "Nhận món tại cửa hàng"
+    "Receive your order at the store": "Nhận món tại cửa hàng",
+    "Order Quantity": "Số lượng"
     
 }

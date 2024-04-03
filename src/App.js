@@ -15,7 +15,7 @@ import Mainpage from "./components/common/mainpage/mainpage";
 import Header from "./components/common/header/header";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
-import Event from "./components/common/event/Event";
+
 import CartDetail from "./components/common/P10/CartDetail"
 
 
