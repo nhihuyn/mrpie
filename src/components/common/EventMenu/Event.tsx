@@ -54,12 +54,12 @@ const Eventmenu: React.FC = () => {
     <div className="intro-container min-h-screen">
       <div className="breadcrumb-container bg-black text-white p-4">
       
-          <Link to="/menu" className="text-white">
+          <Link to="/mainpage" className="text-white hover:text-gray-300">
             {t('Home')}
           </Link>
           <RightOutlined className="text-sm" />
           <strong> 
-            <Link to="/eventmenu" className="text-white">
+            <Link to="/eventmenu" className="text-white hover:text-gray-300">
               {t('Event')}
             </Link>
           </strong>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan } from '../../../assets/images/index';
+import { vegan, bg_vegan,badge } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
