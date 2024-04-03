@@ -1,14 +1,15 @@
 
 import React, { useState } from 'react';
-import { HeartOutlined, ExclamationCircleOutlined, RightOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
 import { vegan, bg_vegan } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 
+const DetailEvent: React.FC = () => {
 
-const Detail: React.FC = () => {
   const { t } = useTranslation();
 
   const [count, setCount] = useState(1);
@@ -135,6 +136,28 @@ const Detail: React.FC = () => {
 
   return (
     <div className="bg-orange-100 min-h-screen">
+
+{count < 2 && (
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 200 }}
+          transition={{ duration: 0.8 }}
+          className="fixed top-10 right-2 md:right-10 z-50"
+        >
+          <Alert
+            message={
+              <span>
+                <ExclamationCircleOutlined style={{ color: 'orange' }} /> {t('Warning')}{' '}
+              </span>
+            }
+            description={t('AddMoreProductsForDiscount')}
+            type="warning"
+            closable
+          />
+        </motion.div>
+      )}
+
      {showAlert && (
   <motion.div
     initial={{ opacity: 0, x: 200 }} 
@@ -250,14 +273,7 @@ const Detail: React.FC = () => {
 
           <div className="flex items-center mb-6">
             <p className="text-sm md:text-base mr-2">{t('Phân loại')}:</p>
-            {/* <select 
-              className="bg-gray-200 text-black p-2 px-6 rounded-md mr-4"
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-                <option value="">{t('SelectCakeType')}</option>
-                <option value="category1">{t('HotCakes')}</option>
-                <option value="category2">{t('ColdCakes')}</option>
-            </select> */}
+
             <Select
               style={{ width: 200 }}
               placeholder={t('SelectCakeType')}
@@ -322,18 +338,39 @@ const Detail: React.FC = () => {
         </div>
       </div>
 
-      <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
+      <Link to="/checkout">
+        <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
+      </Link>
     </div>
 
-    <div className="w-full md:w-1/2 flex flex-col items-center md:ml-20 md:mt-28 relative z-20">
-      <img src={vegan} alt="Bánh" className="w-3/5 md:w-auto" />
+    <div className="lg:mr-40 md:p-8 text-white justify-center items-center relative">
+  <div className="flex justify-center md:justify-end">
+    <div className="flex flex-col items-end relative">
+      <img src={vegan} alt="Bánh" className="relative z-10 w-2/3" />
+      <div className="absolute top-0 right-0 xl:mt-10 xl:mr-2 z-20">
+        <div className="relative w-20 h-20 ">
+          <img src={badge} alt="Discount" className=" object-cover" />
+          <div className="absolute inset-0 flex justify-center items-center">
+          <span className="text-yellow-300 text-lg italic" style={{ fontFamily: 'Shadows Into Light' }}>20% off</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <div className="flex flex-col items-end">
+    <ThunderboltOutlined className="text-yellow-300 " style={{ fontSize: '100px'}} />
+    <div className="absolute top-0 right-0  md:mt-10 md:mr-2 z-20">
+        
+      </div>
+    </div>
+  </div>
+  </div> 
   </div>
 
   <div className="py-4 px-8 md:py-8 md:px-48">
     <div className="flex justify-start">
-      <button onClick={() => setActiveTab("description")} className={`px-8 py-2 ${activeTab === "description" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Description')}</button>
-      <button onClick={() => setActiveTab("review")} className={`mx-6 px-8 py-2 ${activeTab === "review" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Reviews')}</button>
+      <button onClick={() => setActiveTab("description")} className={`px-8 py-2 text-lg ${activeTab === "description" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Description')}</button>
+      <button onClick={() => setActiveTab("review")} className={`mx-6 px-8 py-2 text-lg ${activeTab === "review" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Reviews')}</button>
+
     </div>
 
     <div className="mt-8 mr-8 min-h-8 ">
@@ -382,4 +419,6 @@ const Detail: React.FC = () => {
 );
 };
 
-export default Detail;
+
+export default DetailEvent;
+
