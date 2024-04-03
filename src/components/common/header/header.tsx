@@ -132,7 +132,7 @@ const Header: React.FC = () => {
         <Link to={"/login"}>
           <UserOutlined className="mr-5 text-2xl text-black"/>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/cart"}>
           <ShoppingCartOutlined className="text-2xl text-black"/>
         </Link>
       </div>
