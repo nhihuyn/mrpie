@@ -6,7 +6,7 @@ import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
-import Intro from "./components/common/Introduce/Intro";
+import Intro from "./components/common/introduce/introduction";
 import Event from "./components/common/EventMenu/Event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
