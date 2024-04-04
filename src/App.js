@@ -14,6 +14,7 @@ import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
 import CartDetail from "./components/common/P10/CartDetail"
+import Contact from "./components/common/contact/Contact";
 
 
 function App() {
