@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Rate, Alert, Select } from 'antd';
-import { vegan, bg_vegan, badge } from '../../../assets/images/index';
+import { vegan, bg_vegan,badge } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
@@ -260,9 +260,26 @@ const DetailEvent: React.FC = () => {
   </motion.div>
 )}
 
-      <div className="bg-black text-white p-4">
-        <p>{t('Home')} <RightOutlined className="text-sm"/> {t('Menu')} <RightOutlined  className="text-sm"/>  {t('ColdCakes')} <RightOutlined  className="text-sm"/>  <strong>Vegan Thai Cury</strong></p>
-      </div>
+              <div className="breadcrumb-container bg-black text-white p-4">
+              
+                <Link to="/mainpage" className="text-white hover:text-gray-300">
+                  {t('Home')}
+                </Link>
+              <RightOutlined className="text-sm" />
+                <Link to="/menu" className="text-white hover:text-gray-300">
+                  {t('Menu')}
+                 </Link>
+              <RightOutlined className="text-sm" />
+                <Link to="/menu" className="text-white hover:text-gray-300">
+                  {t('ColdCakes')}
+                </Link>
+              <RightOutlined className="text-sm" />
+              <strong> 
+                <Link to="/" className="text-white hover:text-gray-300">
+                  Very Thai Cury
+                </Link>
+              </strong>
+          </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-200 justify-center items-center"  
         style={{ backgroundImage: `url(${bg_vegan})`, backgroundSize: 'cover', minHeight: '100vh', position: 'relative' }}>

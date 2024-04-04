@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 interface CustomSliderProps {
   title: string;
   image: string;
-  size: Number;
-  IsStore:boolean;
-  location:string;
-  IsEvent:boolean;
+  size?: Number;
+  IsStore?:boolean;
+  location?:string;
+  IsEvent?:boolean;
 }
 
-const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false,location,IsEvent = false }) => {
+const Event: React.FC<CustomSliderProps> = ({ title, image, size = 100,IsStore = false,location,IsEvent = false }) => {
   return (
     <div
-      className={`bg-[#F0FDFF] h-full w-[${size}px]`}
+      className={`bg-[#F0FDFF] h-full w-[${size}px] rounded-lg`}
     >
       <div className="relative">
         <div
@@ -28,8 +28,8 @@ const Event: React.FC<CustomSliderProps> = ({ title, image, size,IsStore = false
             className="absolute inset-0 object-cover w-full h-full"
           />
         </div>
-        <div className="flex justify-center absolute -bottom-4 left-0 right-0">
-          <Link to="/event">
+        <div className="flex justify-center absolute bottom-5 left-0 right-0">
+          <Link to="/promotion">
             <Button className="h-10 w-32 text-white font-semibold flex items-center justify-center shadow-3xl bg-gradient-to-r from-[#EBA2D0]  to-[#CA8EEE] rounded-3xl px-4 py-2">
               More Detail
             </Button>

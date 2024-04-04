@@ -3,11 +3,11 @@ import { Alert, Space } from "antd"; // Import Ant Design components
 import { Radio } from "antd";
 import { useTranslation } from "react-i18next";
 
-import UsernameField from "./components/usernameField";
+import UsernameField from "./components/UsernameField";
 import PasswordField from "./components/passwordField";
 import EmailField from "./components/emailField";
-import FullnameField from "./components/fullnameField";
-import PhoneNumField from "./components/phoneNumField";
+import FullnameField from "./components/FullnameField";
+import PhoneNumField from "./components/PhoneNumField";
 
 
 import "./register.css";
@@ -203,7 +203,7 @@ const RegisterForm = () => {
               {t("Already have account")}
               <Link to="/login" >
                 <span className="text-md font-bold text-[#1890FF] cursor-pointer">
-                  <a> {t("Login")}</a>
+                  {t("Login")}
                 </span>
               </Link>
             </p>

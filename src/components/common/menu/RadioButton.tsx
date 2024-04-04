@@ -34,22 +34,22 @@ const RadioButton: React.FC = () => {
           className="text-2xl font-semibold"
           size="middle"
         >
-          <Radio value={1} className="text-base" defaultChecked={true}>
+          <Radio value={1} className="text-base items-center" defaultChecked={true}>
             Bánh trong ngày
           </Radio>
-          <Radio value={2} className="text-base">
+          <Radio value={2} className="text-base items-center">
             Bánh ngọt
           </Radio>
-          <Radio value={3} className="text-base">
+          <Radio value={3} className="text-base items-center">
             Bánh mặn
           </Radio>
-          <Radio value={4} className="text-base">
+          <Radio value={4} className="text-base items-center">
             Bánh chay
           </Radio>
-          <Radio value={5} className="text-base">
+          <Radio value={5} className="text-base items-center">
             Bánh xúc xích
           </Radio>
-          <Radio value={6} className="text-base">
+          <Radio value={6} className="text-base items-center">
             Bánh ăn kèm
           </Radio>
         </Space>

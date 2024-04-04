@@ -1,14 +1,89 @@
 import React from "react";
-import { Typography } from "antd";
+import { Typography, ConfigProvider, Select } from "antd";
 
-import CustomSlider from "./CustomSlider";
-import "./menu.css";
-import { ConfigProvider } from "antd";
-
-import BreadCard from "./BreadCard";
-import pie1 from "../../../assets/images/bakery1.png";
-import { Select } from "antd";
+import CustomSlider from "./custom-slider";
+import BreadCard from "./bread-card";
 import SideBar from "./SideBar";
+
+import "./menu.css";
+import { bakery1 } from "../../../assets/images";
+import { Link } from "react-router-dom";
+
+const breadlist = [
+  {
+    id: "1",
+    key: 1,
+    title: "Bánh Pie Táo",
+    ratings: 4.5,
+    price: 35000,
+    bestPrice: 45000,
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    size: "small",
+    img: bakery1,
+    time: "2011:12:31",
+    eventTitle: "30%"
+  },
+  {
+    id: "2",
+    key: 2,
+    title: "Bánh Pie Táo",
+    ratings: 2.5,
+    price: 35000,
+    bestPrice: 45000,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
+    time: "2019:99:90",
+    eventTitle: "30%"
+  },
+  {
+    id: "3",
+    key: 3,
+    title: "Bánh Pie Táo",
+    ratings: 4,
+    price: 35000,
+    bestPrice: 45000,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
+    time: "2011:12:31",
+    eventTitle: "30%"
+  },
+  {
+    id: "4",
+    key: 4,
+    title: "Bánh Pie Táo",
+    ratings: 4,
+    price: 35000,
+    bestPrice: 45000,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
+    time: "8888:88:88",
+    eventTitle: "30%"
+  },
+  {
+    id: "5",
+    key: 5,
+    title: "Bánh Pie Táo",
+    ratings: 4,
+    price: 35000,
+    bestPrice: 45000,
+    size: "small",
+    description: "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante..",
+    img: bakery1,
+    time: "9999:99:99",
+    eventTitle: "30%"
+  },
+];
+
+const options = [
+  { value: "3", label: "3 Món" },
+  { value: "6", label: "6 Món" },
+  { value: "9", label: "9 Món" },
+  { value: "12", label: "12 Món" },
+];
+
 const Menu: React.FC = () => {
   const { Title } = Typography;
 
@@ -16,81 +91,6 @@ const Menu: React.FC = () => {
     console.log(`selected ${value}`);
   };
 
-  const breadlist = [
-    {
-      id: "1",
-      title: "Bánh Pie Táo",
-      Ratings: 4.5,
-      price: 35000,
-      description: [
-        "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-        "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-        "ultricies eget, tempor sit amet, ante..",
-      ],
-
-      size: "small",
-      images: pie1,
-      time: "2011:12:31",
-    },
-    {
-      id: "2",
-      title: "Bánh Pie Táo",
-      Ratings: 2.5,
-      price: 35000,
-      description: [
-        "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-        "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-        "ultricies eget, tempor sit amet, ante..",
-      ],
-      images: pie1,
-      time: "2019:99:90",
-    },
-    {
-      id: "3",
-      title: "Bánh Pie Táo",
-      Ratings: 4,
-      price: 35000,
-      description: [
-        "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-        "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-        "ultricies eget, tempor sit amet, ante..",
-      ],
-      images: pie1,
-      time: "2011:12:31",
-    },
-    {
-      id: "4",
-      title: "Bánh Pie Táo",
-      Ratings: 4,
-      price: 35000,
-      description: [
-        "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-        "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-        "ultricies eget, tempor sit amet, ante..",
-      ],
-      images: pie1,
-      time: "8888:88:88",
-    },
-    {
-      id: "5",
-      title: "Bánh Pie Táo",
-      Ratings: 4,
-      price: 35000,
-      description: [
-        "Pellentesque habitant morbi tristique senectus et netus et malesuad  ",
-        "fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ",
-        "ultricies eget, tempor sit amet, ante..",
-      ],
-      images: pie1,
-      time: "9999:99:99",
-    },
-  ];
-  const options = [
-    { value: "3", label: "3 Món" },
-    { value: "6", label: "6 Món" },
-    { value: "9", label: "9 Món" },
-    { value: "12", label: "12 Món" },
-  ];
   return (
     <div className="flex w-full ">
       <div className="w-1/5  bg-[#F5F3F0] hidden lg:block ">
@@ -102,15 +102,13 @@ const Menu: React.FC = () => {
         </div>
         <div className="lg:flex justify-end items-center font-semibold text-md hidden  lg:mr-8 lg:mt-4 mt-2">
           <div className="w-full flex justify-end  ">
-            <a href="/" className="text-black hover:underline">
+            <Link to="/event" className="text-black hover:underline">
               Xem thêm
-            </a>
+            </Link>
           </div>
         </div>
         <div className="lg:flex justify-end mr-8 items-center mt-8  hidden">
-          <Title level={4} className="text-semibold text-base text-zinc-300">
-            Hiển thị :
-          </Title>
+          <Title level={4} className="text-semibold text-base text-zinc-300">Hiển thị :</Title>
           <div className="bg-[#F5F5F5] text-lg border-4 w-36 rounded-3xl p-2 ml-4 flex items-center justify-center ">
             <ConfigProvider
               theme={{
