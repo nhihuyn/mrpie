@@ -6,7 +6,7 @@ import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
-import Intro from "./components/common/Introduce/Intro";
+import Intro from "./components/common/introduce/introduction";
 import EventMenu from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
@@ -38,6 +38,7 @@ function App() {
             <Route path="/checkout" element={<Checkout/>} /> 
             {/* <Route path="/event" element={<Event/>} />  */}
             <Route path="/cart" element={<CartDetail/>} /> 
+            <Route path="/contact" element={<Contact/>} /> 
           </Routes>
      </Layout>
     </Router>

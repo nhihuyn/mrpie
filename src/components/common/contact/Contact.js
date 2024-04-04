@@ -1,54 +1,110 @@
-import React, { useState } from "react";
-import MapStore from "./map-store";
+import React,{ useState } from "react";
+import './popup.css';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
-  const data = [
-    {
-      id: 1,
-      name: "Tên chi nhánh 01",
-      address:
-        "135 Hai Bà Trưng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh , Vietnam",
-    },
-    {
-      id: 2,
-      name: "Tên chi nhánh 02",
-      address:
-        "Ruby Home 1, 92 Đ. Nguyễn Hữu Cảnh, Saigon Pearl, Bình Thạnh, Thành phố Hồ Chí Minh 70000, Vietnam",
-    },
-    {
-      id: 3,
-      name: "Tên chi nhánh 03",
-      address: "63 Nguyễn Cứ Thành Phố Hồ Chí Minh",
-    },
+    const data = [
+      {
+        id: 1,
+        name: "Tên chi nhánh 01",
+        address:
+          "135 Hai Bà Trưng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh , Vietnam",
+        contact:"02-722-0238",
+        time:"09:00 ~ 24:00",
+      },
+      {
+        id: 2,
+        name: "Tên chi nhánh 02",
+        address:
+          "Ruby Home 1, 92 Đ. Nguyễn Hữu Cảnh, Saigon Pearl, Bình Thạnh, Thành phố Hồ Chí Minh 70000, Vietnam",
+        contact:"02-722-0238",
+        time:"09:00 ~ 24:00",
+      },
+      {
+        id: 3,
+        name: "Tên chi nhánh 03",
+        address: "63 Nguyễn Cứ Thành Phố Hồ Chí Minh",
+        contact:"02-722-0238",
+        time:"09:00 ~ 24:00",
+      },
+  
+      {
+        id: 4,
+        name: "Tên chi nhánh 06",
+        address:
+          "603a Đ. Lũy Bán Bích, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+        contact:"02-722-0238",
+        time:"09:00 ~ 24:00",
+      },
+      {
+        id: 5,
+        name: "Tên chi nhánh 07",
+        address:
+          "318/1 Trịnh Đình Trọng, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+          contact:"02-722-0238",
+          time:"09:00 ~ 24:00",
+      },
+      {
+        id: 9,
+        name: "Tên chi nhánh 06",
+        address:
+          "250 Trịnh Đình Trọng, Phú Trung, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+          contact:"02-722-0238",
+          time:"09:00 ~ 24:00",
+      },
+  
+      {
+        id: 11,
+        name: "Tên chi nhánh 08",
+        address:
+          "07 Công trường Lam Sơn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh 710212, Vietnam",
+          contact:"02-722-0238",
+        time:"09:00 ~ 24:00",
+      },
+    ];
+  
 
-    {
-      id: 4,
-      name: "Tên chi nhánh 06",
-      address:
-        "603a Đ. Lũy Bán Bích, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
-    },
-    {
-      id: 5,
-      name: "Tên chi nhánh 07",
-      address:
-        "318/1 Trịnh Đình Trọng, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
-    },
-    {
-      id: 9,
-      name: "Tên chi nhánh 06",
-      address:
-        "250 Trịnh Đình Trọng, Phú Trung, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
-    },
+  const [showModal, setShowModal] = useState(false);
+  const [selectedStore, setSelectedStore] = useState(null);
 
-    {
-      id: 11,
-      name: "Tên chi nhánh 08",
-      address:
-        "07 Công trường Lam Sơn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh 710212, Vietnam",
-    },
-  ];
-  const [nearbyStores, setNearbyStores] = useState([]);
-  const [currentLocation, setCurrentLocation] = useState(null);
+  const handleClick = (store) => {
+    setSelectedStore(store);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedStore(null);
+  };
+
+  const Modal = ({ handleClose, show, data }) => {
+    const showHideClassName = show ? "modal display-block" : "modal display-none";
+
+  
+    return (
+        
+        <motion.div className={showHideClassName} 
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <motion.section className="modal-main" 
+        initial={{ scale: 0.5 }} animate={{ scale: 1 }} exit={{ scale: 0.8 }}>
+          {data && ( 
+            <motion.div className="bg-orange-50 flex flex-col h-full" >
+              <div className="flex bg-white justify-between font-bold">
+                <h2 className="text-xl py-4 ml-4">{data.name}</h2>
+                <button onClick={handleClose} className="mr-4">X</button>
+              </div>
+              <div className="flex flex-col text-base bg-white justify-center py-16 px-10 mx-10 my-auto">
+                <p className="mb-2"><span className="text-gray-500 font-semibold">Địa chỉ :</span> {data.address}</p>
+                <p className="mb-2"><span className="text-gray-500 font-semibold">Liên lạc :</span> {data.contact}</p>
+                <p><span className="text-gray-500 font-semibold">Giờ mở cửa :</span> {data.time}</p>
+              </div>
+            </motion.div>
+          )}
+        </motion.section>
+      </motion.div>
+    );
+  };
+
 
   // const handleOnClick = () => {
   //   console.log("first");
@@ -113,7 +169,7 @@ const Contact = () => {
     <div className="flex w-full ">
       {/*MAP*/}
       <div className="w-4/5 h-[1000px]">
-        <MapStore data={nearbyStores} currentLocation={currentLocation} />
+        {/* <MapStore data={nearbyStores} currentLocation={currentLocation} /> */}
       </div>
       {/*right sidebar*/}
       <div className="w-1/5">
@@ -152,23 +208,27 @@ const Contact = () => {
           </div>
         </div>
         {/*store list*/}
-        <div className="bg-[#F2EBE6] overflow-y-auto max-h-[800px] pl-4 pr-2 pt-4">
-          <h1 className="text-red-500 font-bold text-lg">
-            Danh sách 10 kết quả tìm kiếm
-          </h1>
-          {nearbyStores.map((el, index) => (
-            <div
-              key={el.id}
-              // onClick={() => handleOnClick(el.address)}
-              className="mt-4 bg-white text-black cursor-pointer font-semibold flex flex-col p-3 hover:opacity-75"
-            >
-              <span className="text-[14px]">{el.name}</span>
-              <span className="text-[14px]">{el.address}</span>
-            </div>
-          ))}
-        </div>
+
+    
+      <div className="bg-[#F2EBE6] overflow-y-auto max-h-[800px] pl-4 pr-2 pt-4">
+        <h1 className="text-red-500 font-bold text-lg">
+          Danh sách 10 kết quả tìm kiếm
+        </h1>
+        {data.map((store) => (
+          <div
+            key={store.id}
+            onClick={() => handleClick(store)}
+            className="mt-4 bg-white text-black cursor-pointer font-semibold flex flex-col p-3 hover:opacity-75"
+          >
+            <span className="text-[14px]">{store.name}</span>
+            <span className="text-[14px]">{store.address}</span>
+          </div>
+        ))}
       </div>
     </div>
-  );
+    <Modal show={showModal} handleClose={handleClose} data={selectedStore} />
+  </div>
+  
+);
 };
 export default Contact;
