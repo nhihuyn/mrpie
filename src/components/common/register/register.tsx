@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 
 import UsernameField from "./components/UsernameField";
 import PasswordField from "./components/passwordField";
-import EmailField from "./components/EmailField";
+import EmailField from "./components/emailField";
 import FullnameField from "./components/FullnameField";
 import PhoneNumField from "./components/PhoneNumField";
 
 
-import "./Register.css";
+import "./register.css";
 import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
