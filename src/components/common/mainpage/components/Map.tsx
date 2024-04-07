@@ -5,7 +5,7 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 
-import "./map.css";
+import "./Map.css";
 
 const containerStyle = {
   width: "100%",
