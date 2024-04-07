@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-
 import { Carousel } from 'antd'
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsUp,
