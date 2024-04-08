@@ -1,13 +1,60 @@
 import React, { useState } from "react"
-import Map from "../mainpage/components/map"
+// import Map from "../mainpage/components/map"
+import MapStore from "./map-store";
 
+const data = [
+  {
+    id: 1,
+    name: "Tên chi nhánh 01",
+    address:
+      "135 Hai Bà Trưng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh , Vietnam",
+  },
+  {
+    id: 2,
+    name: "Tên chi nhánh 02",
+    address:
+      "Ruby Home 1, 92 Đ. Nguyễn Hữu Cảnh, Saigon Pearl, Bình Thạnh, Thành phố Hồ Chí Minh 70000, Vietnam",
+  },
+  {
+    id: 3,
+    name: "Tên chi nhánh 03",
+    address: "63 Nguyễn Cứ Thành Phố Hồ Chí Minh",
+  },
+
+  {
+    id: 4,
+    name: "Tên chi nhánh 06",
+    address:
+      "603a Đ. Lũy Bán Bích, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+  },
+  {
+    id: 5,
+    name: "Tên chi nhánh 07",
+    address:
+      "318/1 Trịnh Đình Trọng, Hoà Thanh, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+  },
+  {
+    id: 9,
+    name: "Tên chi nhánh 06",
+    address:
+      "250 Trịnh Đình Trọng, Phú Trung, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+  },
+
+  {
+    id: 11,
+    name: "Tên chi nhánh 08",
+    address:
+      "07 Công trường Lam Sơn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh 710212, Vietnam",
+  },
+];
 const Contact = () => {
     const [nearbyStores, setNearbyStores] = useState([]);
     return (
         <div className="flex w-full ">
         {/*MAP*/}
         <div className="w-4/5 h-[1000px]">
-          <Map/>
+          {/* <Map/> */}
+          <MapStore/>
         </div>
         {/*right sidebar*/}
         <div className="w-1/5">
@@ -50,7 +97,7 @@ const Contact = () => {
             <h1 className="text-red-500 font-bold text-lg">
               Danh sách 10 kết quả tìm kiếm
             </h1>
-            {nearbyStores.map((el, index) => (
+            {data.map((el, index) => (
               <div
                 key={el.id}
                 // onClick={() => handleOnClick(el.address)}
