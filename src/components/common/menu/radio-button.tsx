@@ -1,11 +1,13 @@
 import { Radio, ConfigProvider, Space } from "antd";
 import React, { useState } from "react";
 import type { RadioChangeEvent } from "antd";
+import { useTranslation } from "react-i18next";
 const RadioButton: React.FC = () => {
   const onChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
+  const { t } = useTranslation();
   const [value, setValue] = useState(1);
   return (
     <ConfigProvider
@@ -34,7 +36,11 @@ const RadioButton: React.FC = () => {
           className="text-2xl font-semibold"
           size="middle"
         >
-          <Radio value={1} className="text-base items-center" defaultChecked={true}>
+          <Radio
+            value={1}
+            className="text-base items-center"
+            defaultChecked={true}
+          >
             Bánh trong ngày
           </Radio>
           <Radio value={2} className="text-base items-center">
