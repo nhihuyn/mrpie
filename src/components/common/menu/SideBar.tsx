@@ -35,8 +35,8 @@ const SideBar = ({status,setStatus}) => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative md:static w-full h-full">
-      <div className=" absolute top-0 right-0 p-2 cursor-pointer   " onClick={()=>{
+    <div className="relative md:static w-full h-full  ">
+      <div className=" absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden  " onClick={()=>{
         return setStatus(false);
       }}>
         <CloseOutlined style={{ fontSize: 24, fontWeight: "bold" }} />
