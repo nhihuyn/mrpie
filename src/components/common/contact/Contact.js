@@ -221,7 +221,7 @@ const Contact = () => {
             className="mt-4 bg-white text-black cursor-pointer font-semibold flex flex-col p-3 hover:opacity-75"
           >
             <span className="text-[14px]">{store.name}</span>
-            <span className="text-[14px]">{store.address}</span>
+            <span className="text-[14px]">{store.address}</span>z
           </div>
         ))}
       </div>
