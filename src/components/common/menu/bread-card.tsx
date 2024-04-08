@@ -34,7 +34,7 @@ const BreadCard: React.FC<BreadCardProps> = ({ data }) => {
           key={index}
           className="flex items-center ml-8 mb-14 mt-14 md:flex-row flex-col"
         >
-          <div className="w-80 h-80 ml-2  md:mr-0  ">
+          <div className="w-80 h-80   md:mr-0  ">
             <Item item={el} width={350} height={350} isShow={true} />
           </div>
           {/**product card */}

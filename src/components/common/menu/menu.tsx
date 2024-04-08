@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Typography, ConfigProvider, Select } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+
 
 import CustomSlider from "./custom-slider";
 import BreadCard from "./bread-card";
@@ -92,6 +94,12 @@ const options = [
 
 const Menu: React.FC = () => {
   const { Title } = Typography;
+  const [showSideBar, setShowSideBar] = useState(true);
+
+  const activateSideBar = () =>{
+    setShowSideBar(!showSideBar)
+  }
+  
 
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
@@ -135,13 +143,16 @@ const Menu: React.FC = () => {
       text: "24 Món",
     },
   ];
+
   const { t } = useTranslation();
   return (
-    <div className="flex w-full justify-center ">
+    <div className="relative md:static flex w-full justify-center ">
       {/* Sidebar -search - ratio button - tag*/}
-      <div className="w-1/5 bg-[#F5F3F0] hidden md:block pr-1">
-        <SideBar />
+      <div className={`absolute md:static  w-full  z-30 md:w-1/5 bg-[#F5F3F0] hidden md:block pr-1 ${showSideBar === true && 'show_sidebar' }`}>
+        <SideBar status={showSideBar}  setStatus={setShowSideBar} />
       </div>
+
+      
       {/* main screen*/}
       <div className="w-4/5 ">
         {/* event slider*/}
@@ -168,6 +179,14 @@ const Menu: React.FC = () => {
               defaultValue={6}
             />
           </div>
+        </div>
+        {/* Menu button */}
+        <div className="w-28 h-10 mt-4 bg-green-500 rounded-full flex justify-around items-center shadow-lg cursor-pointer md:hidden " onClick={activateSideBar}>
+          <MenuOutlined
+            size={20}
+            style={{ fontSize: 24, fontWeight: "bold", color: "white" }}
+          />
+          <p className="font-semibold text-white text-lg">Menu</p>
         </div>
         <div className="md:ml-8">
           <BreadCard data={breadlist} />
