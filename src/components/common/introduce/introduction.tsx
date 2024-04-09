@@ -74,7 +74,9 @@ const Introduction = () => {
                     <img
                       src={breads}
                       alt="Breads"
+
                       className="absolute z-40 size-32 xl:size-40 2xl:size-52 top-0 left-0 2xl:-translate-y-28 2xl:-translate-x-28  xl:-translate-x-20 xl:-translate-y-20 -translate-x-12 -translate-y-16"
+
                     />
 
                     {/* Shape triangle */}
@@ -87,7 +89,9 @@ const Introduction = () => {
                   <img
                     src={breakfast}
                     alt="breakfast"
+
                     className="rounded-xl shadow-lg  w-72 h-44 md:w-full md:h-full xl:w-3/4 xl:h-3/4 "
+
                   />
                 </div>
               </div>
@@ -106,7 +110,9 @@ const Introduction = () => {
                   <img
                     src={cookie}
                     alt="cookie"
+
                     className=" w-96 h-44 md:w-full md:h-full xl:w-3/4 xl:h-3/4 rotate-12"
+
                   />
                 </div>
 
@@ -128,8 +134,10 @@ const Introduction = () => {
                     {/* Card image */}
                     <img
                       src={food}
+
                       alt="Food"
                       className="absolute rounded-xl shadow-lg z-40 size-32 xl:size-40 2xl:size-52  left-0 top-0 translate-x-44 md:translate-x-40 xl:translate-x-48 2xl:translate-x-64  md:-translate-y-36 -translate-y-24"
+
                     />
 
                     {/* Shape triangle */}
@@ -256,9 +264,11 @@ const Introduction = () => {
 
                     {/* Card image */}
                     <img
+
                       src={stawberry}
                       alt="strawberry"
                       className="absolute z-40 size-32 xl:size-40 2xl:size-52 top-0 left-0 2xl:translate-y-32 2xl:-translate-x-32  xl:-translate-x-20 xl:-translate-y-20 -translate-x-12 -translate-y-16"
+
                     />
 
                     {/* Shape triangle */}
@@ -267,6 +277,7 @@ const Introduction = () => {
                 </div>
 
                 {/* Right image content */}
+
                 <div className="hiddenItemRight w-full md:w-1/2 h-full  flex justify-start pt-4 md:pt-12 pl-6 md:pl-12">
                   <img
                     src={cake}
