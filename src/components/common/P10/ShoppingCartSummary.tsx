@@ -74,6 +74,7 @@ const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProdu
       setCurrentPage(newTotalPages);   
     }
   };
+ 
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

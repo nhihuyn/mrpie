@@ -1,19 +1,21 @@
+
 import "./App.css";
-import DetailProduct from "./components/common/detail-product/detailProduct";
 import { Route, BrowserRouter as Router , Routes} from "react-router-dom";
 import Menu from "./components/common/menu/menu";
 import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
+import Intro from "./components/common/introduce/introduction";
+import EventMenu from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
-import Mainpage from "./components/common/mainpage/mainpage";
-import Header from "./components/common/header/header";
-import Intro from './components/common/Introduce/Intro';
+import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
 import Event from "./components/common/event/Event";
 import CartDetail from "./components/common/P10/CartDetail";
+import Promotion from "./components/common/Promotion/promotion";
+import Contact from "./components/common/contact/contact";
 
 function App() {
   return (
@@ -26,12 +28,17 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
-            <Route path="/contact" element={<Intro/>} />
-            <Route path="/detail" element={<DetailEvent/>} /> 
+            <Route path="/intro" element={<Intro/>} />
+            <Route path="/eventmenu" element={<EventMenu/>} />
+            <Route path="/aboutMe" element={<Intro/>} />
+            <Route path="/detail/:productId" element={<DetailEvent/>} /> 
+            <Route path="/mainpage" element={<Mainpage/>} />
+            <Route path="/promotion" element={<Promotion/>} /> 
             <Route path="/menu" element={<Menu/>} /> 
             <Route path="/checkout" element={<Checkout/>} /> 
-            <Route path="/event" element={<Event/>} /> 
+            {/* <Route path="/event" element={<Event/>} />  */}
             <Route path="/cart" element={<CartDetail/>} /> 
+            <Route path="/contact" element={<Contact/>} /> 
           </Routes>
      </Layout>
     </Router>

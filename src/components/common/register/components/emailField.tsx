@@ -7,7 +7,7 @@ const EmailField = ({ status, setStatus }) => {
   const { t } = useTranslation();
   const email = useRef("");
   const checkEmail = (email) => {
-    const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "i");
+    const emailRegex = new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/, "i");
     return email.match(emailRegex);
   };
 

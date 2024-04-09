@@ -1,14 +1,15 @@
 
 import React, { useState } from 'react';
-import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Rate, Alert, Select } from 'antd';
 import { vegan, bg_vegan,badge } from '../../../assets/images/index';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { HeartOutlined, ExclamationCircleOutlined, RightOutlined,ThunderboltOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
 const DetailEvent: React.FC = () => {
+
   const { t } = useTranslation();
 
   const [count, setCount] = useState(1);
@@ -136,7 +137,7 @@ const DetailEvent: React.FC = () => {
   return (
     <div className="bg-orange-100 min-h-screen">
 
-{count < 2 && (
+      {count < 2 && (
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
@@ -158,25 +159,25 @@ const DetailEvent: React.FC = () => {
       )}
 
      {showAlert && (
-  <motion.div
-    initial={{ opacity: 0, x: 200 }} 
-    animate={{ opacity: 1, x: 0 }} 
-    exit={{ opacity: 0, x: 200 }} 
-    transition={{ duration: 0.8 }} 
-    className="fixed top-10 right-2 md:right-10 z-50"
-  >
-    <Alert
-      message={
-        <span>
-          <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
-        </span>
-      }
-      description={t('PleaseSelectCakeAndSize')}
-      type="error"
-      closable
-      onClose={() => setShowAlert(false)}
-    />
-  </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 200 }} 
+        animate={{ opacity: 1, x: 0 }} 
+        exit={{ opacity: 0, x: 200 }} 
+        transition={{ duration: 0.8 }} 
+        className="fixed top-10 right-2 md:right-10 z-50"
+      >
+        <Alert
+          message={
+            <span>
+              <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
+            </span>
+          }
+          description={t('PleaseSelectCakeAndSize')}
+          type="error"
+          closable
+          onClose={() => setShowAlert(false)}
+        />
+      </motion.div>
 )}
 
 
@@ -259,9 +260,26 @@ const DetailEvent: React.FC = () => {
   </motion.div>
 )}
 
-      <div className="bg-black text-white p-4">
-        <p>{t('Home')} <RightOutlined className="text-sm"/> {t('Menu')} <RightOutlined  className="text-sm"/>  {t('ColdCakes')} <RightOutlined  className="text-sm"/>  <strong>Vegan Thai Cury</strong></p>
-      </div>
+              <div className="breadcrumb-container bg-black text-white p-4">
+              
+                <Link to="/mainpage" className="text-white hover:text-gray-300">
+                  {t('Home')}
+                </Link>
+              <RightOutlined className="text-sm" />
+                <Link to="/menu" className="text-white hover:text-gray-300">
+                  {t('Menu')}
+                 </Link>
+              <RightOutlined className="text-sm" />
+                <Link to="/menu" className="text-white hover:text-gray-300">
+                  {t('ColdCakes')}
+                </Link>
+              <RightOutlined className="text-sm" />
+              <strong> 
+                <Link to="/" className="text-white hover:text-gray-300">
+                  Very Thai Cury
+                </Link>
+              </strong>
+          </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-200 justify-center items-center"  
         style={{ backgroundImage: `url(${bg_vegan})`, backgroundSize: 'cover', minHeight: '80vh', position: 'relative' }}>
@@ -272,7 +290,7 @@ const DetailEvent: React.FC = () => {
 
           <div className="flex items-center mb-6">
             <p className="text-sm md:text-base mr-2">{t('Phân loại')}:</p>
-            
+
             <Select
               style={{ width: 200 }}
               placeholder={t('SelectCakeType')}
@@ -336,6 +354,7 @@ const DetailEvent: React.FC = () => {
           </button>
         </div>
       </div>
+
       <Link to="/checkout">
         <button onClick={handleAddToCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-4 rounded-3xl mt-4">{t('AddToCart')} <RightOutlined className="text-sm"/></button>
       </Link>
@@ -368,6 +387,7 @@ const DetailEvent: React.FC = () => {
     <div className="flex justify-start">
       <button onClick={() => setActiveTab("description")} className={`px-8 py-2 text-lg ${activeTab === "description" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Description')}</button>
       <button onClick={() => setActiveTab("review")} className={`mx-6 px-8 py-2 text-lg ${activeTab === "review" ? "text-red-500 border-b-2 border-red-500 font-bold" : "text-gray-500"}`}>{t('Reviews')}</button>
+
     </div>
 
     <div className="mt-8 mr-8 min-h-8 ">
@@ -416,4 +436,6 @@ const DetailEvent: React.FC = () => {
 );
 };
 
+
 export default DetailEvent;
+

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Alert } from 'antd';
+import { Alert,Button,Modal } from 'antd';
 import ShoppingCartSummary from "./ShoppingCartSummary";
 
 const CartDetail: FunctionComponent = () => {
@@ -25,6 +25,7 @@ const CartDetail: FunctionComponent = () => {
   const [productCount, setProductCount] = useState(initialProducts.length);
   const [showCartEmptyAlert, setShowCartEmptyAlert] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
 
   const handleRemoveProduct = (productId: number) => {
@@ -34,6 +35,13 @@ const CartDetail: FunctionComponent = () => {
     if (updatedProducts.length === 0) {
         setTotalPrice(0);
       }
+  };
+
+  const handleRemoveAllProducts = () => {
+    setProducts([]);
+    setProductCount(0);
+    setTotalPrice(0);
+    setShowConfirmModal(false); 
   };
 
   const handleCheckout = () => {
@@ -46,7 +54,6 @@ const CartDetail: FunctionComponent = () => {
       }, 2000); 
     }
   };
- 
 
   return (
     <div className="intro-container min-h-screen">
@@ -56,7 +63,34 @@ const CartDetail: FunctionComponent = () => {
 
       <div className="title-container">
         <h1 className="mt-8 ml-10 text-2xl">{t('ShoppingCart')}</h1>
-        <p className="mr-10 mt-10 text-right text-xl font-bold">{productCount} {t('Item')}</p>
+        
+        <div className="md:mr-10 justify-center mt-10 text-right text-xl font-bold flex items-center md:justify-end"> {/* Use flexbox */}
+          <p className=" mr-5">{productCount} {t('Item')}</p>
+          <Button 
+            style={{ lineHeight: '1' }}
+            className="bg-red-500 text-white px-10 py-2 rounded-3xl "
+            onClick={() => setShowConfirmModal(true)}
+          >
+            {t('DeleteAll')}
+          </Button>
+        </div>
+        
+              {/* Confirm Modal */}
+              <Modal
+                title={t('Notification')}
+                visible={showConfirmModal}
+                onCancel={() => setShowConfirmModal(false)}
+                footer={[
+                  <Button key="cancel" onClick={() => setShowConfirmModal(false)}>
+                    {t('Cancel')}
+                  </Button>,
+                  <Button key="confirm" type="primary" danger onClick={handleRemoveAllProducts}>
+                    {t('Confirm')}
+                  </Button>,
+                  ]}
+                >
+                <p>{t('ConfirmDeleteAll')}</p>
+              </Modal>
 
         {products.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 py-8 md:ml-10 md:mr-10 font-bold">
@@ -92,34 +126,42 @@ const CartDetail: FunctionComponent = () => {
             <p className="mb-2">{t('TempCart')}: {totalPrice.toLocaleString()} vnd</p>
             <p className="mb-2 font-bold">{t('TotalCart')}: {totalPrice.toLocaleString()} vnd</p>
 
-            <motion.div
-              initial={{ opacity: 0, x: 200 }} 
-              animate={{ opacity: showCartEmptyAlert ? 1 : 0, x: showCartEmptyAlert ? 0 : 200 }} 
-              exit={{ opacity: 0, x: 200 }} 
-              transition={{ duration: 0.8 }} 
-              className="fixed top-10 right-2 md:right-10 z-50"
-            >
-              {showCartEmptyAlert && (
-                <Alert
-                  message={
-                    <span>
-                      <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
-                    </span>
-                  }
-                  description={t('EmptyCart')}
-                  type="error"
-                  closable
-                  onClose={() => setShowCartEmptyAlert(false)}
-                />
-              )}
-            </motion.div>
-
+              <motion.div
+                initial={{ opacity: 0, x: 200 }} 
+                animate={{ opacity: showCartEmptyAlert ? 1 : 0, x: showCartEmptyAlert ? 0 : 200 }} 
+                exit={{ opacity: 0, x: 200 }} 
+                transition={{ duration: 0.8 }} 
+                className="fixed top-10 right-2 md:right-10 z-50"
+              >
+                {showCartEmptyAlert && (
+                  <Alert
+                    message={
+                      <span>
+                        <ExclamationCircleOutlined style={{ color: 'red' }} /> {t('Error')}{' '}
+                      </span>
+                    }
+                    description={t('EmptyCart')}
+                    type="error"
+                    closable
+                    onClose={() => setShowCartEmptyAlert(false)}
+                  />
+                )}
+                
+              </motion.div>
             {products.length > 0 ? (
               <Link to="/checkout">
-                <button onClick={handleCheckout} className="bg-red-500 text-white px-10 py-2 rounded-3xl">{t('Order')}</button>
+                <Button 
+                onClick={handleCheckout} className="bg-red-500 text-white px-10 py-2 rounded-3xl"
+                style={{ lineHeight: '1' }}
+                >{t('Order')}
+                
+                </ Button>
               </Link>
             ) : (
-              <button onClick={handleCheckout} className="bg-red-500 text-white px-10 py-2 rounded-3xl">{t('Order')}</button>
+              <Button onClick={handleCheckout} 
+              className="bg-red-500 text-white px-10 py-2 rounded-3xl"
+              style={{ lineHeight: '1' }}
+              >{t('Order')}</Button>
             )}
           </div>
         </div>

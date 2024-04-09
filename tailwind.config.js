@@ -24,7 +24,13 @@ module.exports =withMT({
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '.5' },
         },
+      },
+      fontFamily: {
+        'Yellowtail': ['YELLOWTAIL','cursive'],
+        'JosefinSans': ['JOSEFINSANS','cursive'],
+        'AlfaSlabOne': ['ALFASLABONE','regular']
       }
+      
     },
   },
   plugins: [],
