@@ -16,10 +16,17 @@ import Event from "./components/common/event/Event";
 import CartDetail from "./components/common/P10/CartDetail";
 import Promotion from "./components/common/Promotion/promotion";
 import Contact from "./components/common/contact/contact";
+// import Event from "./components/common/event";
+// import { QueryClientProvider } from '@tanstack/react-query';
+// import { queryClient } from './react-query';
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 function App() {
+  const queryClient = new QueryClient()
   return (
+    
     <Router>
+      <QueryClientProvider client={queryClient}>
       <Layout>
           <Routes>
             <Route path="/" element={<Mainpage/>} />
@@ -41,6 +48,7 @@ function App() {
             <Route path="/contact" element={<Contact/>} /> 
           </Routes>
      </Layout>
+     </QueryClientProvider>
     </Router>
   );
 }
