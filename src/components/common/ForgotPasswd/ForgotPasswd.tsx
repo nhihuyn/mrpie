@@ -16,7 +16,8 @@ const ForgotPasswd: React.FC = () => {
 
     const emailInput = event.currentTarget.email as HTMLInputElement;
 
-    const emailRegex = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
+    const emailRegex = new RegExp(/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/);
+
     if (!emailRegex.test(emailInput.value)) {
       setEmailError(true);
       setErrorMessage(t('InvalidEmail'));

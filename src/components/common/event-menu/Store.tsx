@@ -1,5 +1,5 @@
 import React from 'react';
-import Event from '../event-menu/event';
+import Eventmenu from './event';
 import { motion } from 'framer-motion';
 import event from '../../../assets/images/Event.jpg';
 import event1 from '../../../assets/images/Event_1.jpg';
@@ -14,15 +14,15 @@ const Store = () => {
         className="mt-8 grid items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
       >
         
-              <Event image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
-              <Event image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event1} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
+              <Eventmenu image={event3} size={350} IsStore = {true} location='Hai Bà Trưng, Quận 1,TP.HCM'/>
           
         
       </motion.div>

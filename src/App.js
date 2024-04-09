@@ -6,19 +6,27 @@ import Layout from "./components/Layout/layout";
 import ChangePasswd from './components/common/ChangePasswd/ChangePasswd';
 import Login from './components/common/Login/Login';
 import ForgotPassword from './components/common/ForgotPasswd/ForgotPasswd';
-import Intro from "./components/common/Introduce/Intro";
-import EventMenu from "./components/common/event-menu/event";
+import Intro from "./components/common/introduce/introduction";
+import Event from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
-import CartDetail from "./components/common/P10/CartDetail"
+import CartDetail from "./components/common/P10/CartDetail";
+import Contact from "./components/common/contact/contact";
+// import Event from "./components/common/event";
+// import { QueryClientProvider } from '@tanstack/react-query';
+// import { queryClient } from './react-query';
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 
 function App() {
+  const queryClient = new QueryClient()
   return (
+    
     <Router>
+      <QueryClientProvider client={queryClient}>
       <Layout>
           <Routes>
             <Route path="/" element={<Mainpage/>} />
@@ -28,7 +36,7 @@ function App() {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot_password" element={<ForgotPassword/>} />
             <Route path="/intro" element={<Intro/>} />
-            <Route path="/eventmenu" element={<EventMenu/>} />
+            <Route path="/eventmenu" element={<Event/>} />
             <Route path="/aboutMe" element={<Intro/>} />
             <Route path="/detail/:productId" element={<DetailEvent/>} /> 
             <Route path="/mainpage" element={<Mainpage/>} />
@@ -37,8 +45,10 @@ function App() {
             <Route path="/checkout" element={<Checkout/>} /> 
             {/* <Route path="/event" element={<Event/>} />  */}
             <Route path="/cart" element={<CartDetail/>} /> 
+            <Route path="/contact" element={<Contact/>} /> 
           </Routes>
      </Layout>
+     </QueryClientProvider>
     </Router>
   );
 }
