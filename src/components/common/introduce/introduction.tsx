@@ -52,7 +52,7 @@ const Introduction = () => {
                     {/* Card image */}
                     <img
                       src={breads}
-                      alt="Breads image"
+                      alt="Breads"
                       className="absolute z-40 size-52 top-0 left-0 -translate-x-28 -translate-y-28"
                     />
 
@@ -65,7 +65,7 @@ const Introduction = () => {
                 <div className="w-1/2 h-full sm:pl-8 sm:pt-12">
                   <img
                     src={breakfast}
-                    alt="breakfast image"
+                    alt="breakfast"
                     className="rounded-xl shadow-lg w-full "
                   />
                 </div>
@@ -87,7 +87,7 @@ const Introduction = () => {
                 <div className="w-1/2 h-full sm:pr-8 sm:pt-12">
                   <img
                     src={cookie}
-                    alt="cookie image"
+                    alt="cookie"
                     className="w-full rotate-12"
                   />
                 </div>
@@ -109,7 +109,7 @@ const Introduction = () => {
                     {/* Card image */}
                     <img
                       src={food}
-                      alt="Breads image"
+                      alt="Breads"
                       className="absolute z-40 size-40 rounded-xl shadow-lg top-0 left-0 translate-x-64 -translate-y-24"
                     />
 
@@ -145,7 +145,7 @@ const Introduction = () => {
 
                     <img
                       src={barley}
-                      alt="Breads image"
+                      alt="Breads"
                       className="absolute z-40 size-56 top-0 left-0 -translate-x-36   rounded-full shadow-lg"
                     />
 
@@ -156,7 +156,7 @@ const Introduction = () => {
 
                 {/* Right image content */}
                 <div className="w-1/2 h-full sm:pl-12 sm:pt-12">
-                  <img src={baker} alt="baker image" className=" w-full " />
+                  <img src={baker} alt="baker" className=" w-full " />
                 </div>
               </div>
 

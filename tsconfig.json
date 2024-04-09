@@ -21,6 +21,7 @@
     "noImplicitAny": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
       "~ui/*": ["./src/components-ui/*"],
       "~actions/*": ["./src/actions/*"],
@@ -39,9 +40,7 @@
       "~utils/*": ["./src/utils/*"],
     }
   },
-  "include": [
-    "src/**/*.ts"
-    ],
+  "include": ["next-env.d.ts", "twin.d.ts", "**/*.ts"],
   "exclude": [
     "storybook-static",
     "node_modules",

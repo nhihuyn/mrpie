@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 // import Map from "../mainpage/components/map"
 import MapStore from "./map-store";
 
@@ -48,7 +48,7 @@ const data = [
   },
 ];
 const Contact = () => {
-    const [nearbyStores, setNearbyStores] = useState([]);
+    // const [nearbyStores, setNearbyStores] = useState([]);
     return (
         <div className="flex w-full ">
         {/*MAP*/}
