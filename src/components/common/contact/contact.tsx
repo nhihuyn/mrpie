@@ -91,11 +91,7 @@ const Contact: React.FC = () => {
     setSelectedStore(null);
     setIsOpen(false);
   };
-  const handleOutsideClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  };
+ 
   const Modal = ({ onClose, isOpen, data }) => {
     return (
       <motion.div

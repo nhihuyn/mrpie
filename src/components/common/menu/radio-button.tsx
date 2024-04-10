@@ -1,13 +1,11 @@
 import { Radio, ConfigProvider, Space } from "antd";
 import React, { useState } from "react";
 import type { RadioChangeEvent } from "antd";
-import { useTranslation } from "react-i18next";
 const RadioButton: React.FC = () => {
   const onChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
-  const { t } = useTranslation();
   const [value, setValue] = useState(1);
   return (
     <ConfigProvider

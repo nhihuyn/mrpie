@@ -18,11 +18,10 @@ const Event: React.FC<CustomSliderProps> = ({
   IsStore = false,
   location,
   IsEvent = false,
-  height = 400,
 }) => {
   const { t } = useTranslation();
   return (
-    <div className={`bg-[#F0FDFF] h-[${height}px] w-[${size}px] rounded-lg`}>
+    <div className={`bg-[#F0FDFF]  w-[${size}px] rounded-lg`}>
       <div className="relative">
         {/** event */}
         <div

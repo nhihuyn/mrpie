@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Typography } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 
@@ -84,32 +84,20 @@ const breadlist = [
   },
 ];
 
-const options = [
-  { value: "3", label: "3 Món" },
-  { value: "6", label: "6 Món" },
-  { value: "9", label: "9 Món" },
-  { value: "12", label: "12 Món" },
-];
-
 const Menu: React.FC = () => {
   const { Title } = Typography;
-  const [showSideBar, setShowSideBar] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const activateSideBar = () => {
-    setShowSideBar(!showSideBar);
+  const onOpen = () => {
+    setIsOpen(!isOpen);
+    console.log("isOpen --------", isOpen);
   };
 
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
-  const [sort, setSort] = useState("");
-  const changeValue = useCallback(
-    (value) => {
-      setSort(value);
-    },
-    [sort]
-  );
-  const sorts = [
+  const [select, setSelect] = useState("");
+  const changeValue = useCallback((value) => {
+    setSelect(value);
+  }, []);
+  const selected = [
     {
       id: 1,
       value: 3,
@@ -141,15 +129,17 @@ const Menu: React.FC = () => {
       text: "24 Món",
     },
   ];
-
+  console.log("isOpen >>>>>", isOpen);
   const { t } = useTranslation();
   return (
     <div className="relative md:static flex w-full justify-center h-full ">
       {/* Sidebar -search - ratio button - tag*/}
       <div
-        className={`absolute  h-full pb-2 w-full z-30 md:w-1/5 bg-[#F5F3F0]   pr-1 `}
+        className={`absolute md:static md:block  h-full md:h-auto pb-2 w-full z-30 md:w-1/5 bg-[#F5F3F0] pr-1 ${
+          isOpen === true ? "block" : "hidden"
+        }`}
       >
-        <SideBar status={showSideBar} setStatus={setShowSideBar} />
+        <SideBar isOpen={isOpen} SetIsOpen={setIsOpen} />
       </div>
 
       {/* main screen*/}
@@ -159,37 +149,43 @@ const Menu: React.FC = () => {
           <CustomSlider />
         </div>
         {/* container*/}
-        <div className="lg:flex justify-end items-center font-semibold text-md hidden  lg:mr-8 lg:mt-4 mt-2">
+        <div className="md:flex justify-end items-center font-semibold text-md hidden  md:mr-8 md:mt-4 mt-2">
           <div className="w-full flex justify-end  ">
             <Link to="/event" className="text-black hover:underline">
               {t("Xem thêm")}
             </Link>
           </div>
         </div>
-        <div className="lg:flex justify-end mr-8 items-center mt-8  hidden">
-          <Title level={4} className="text-semibold text-base text-zinc-300">
-            {t("Hiển thị :")}
-          </Title>
-          <div className="bg-[#F5F5F5] text-lg border-4 w-36 rounded-3xl p-2 ml-4 flex items-center justify-center ">
-            <InputSelect
-              changeValue={changeValue}
-              value={sort}
-              options={sorts}
-              defaultValue={6}
+        <div className="flex md:justify-end justify-between pr-2  items-center mt-8 pb-2 ">
+          <div
+            className="w-28 h-12  border-4 border-red-500  left-0 bg-red-500 rounded-full flex justify-around items-center shadow-lg cursor-pointer md:hidden "
+            onClick={onOpen}
+          >
+            <MenuOutlined
+              size={20}
+              style={{ fontSize: 24, fontWeight: "bold", color: "white" }}
             />
+            <span className="font-semibold text-white text-lg">Menu</span>
+          </div>
+          <div className="flex items-center">
+            <Title
+              level={4}
+              className="text-semibold md:block hidden text-base text-zinc-300"
+            >
+              {t("Hiển thị :")}
+            </Title>
+            <div className="bg-[#F5F5F5] text-lg border-4 w-28 rounded-3xl p-2 ml-4 flex items-center justify-center ">
+              <InputSelect
+                changeValue={changeValue}
+                value={select}
+                options={selected}
+                defaultValue={6}
+              />
+            </div>
           </div>
         </div>
         {/* Menu button */}
-        <div
-          className="w-28 h-10 mt-4 bg-green-500 rounded-full flex justify-around items-center shadow-lg cursor-pointer md:hidden "
-          onClick={activateSideBar}
-        >
-          <MenuOutlined
-            size={20}
-            style={{ fontSize: 24, fontWeight: "bold", color: "white" }}
-          />
-          <p className="font-semibold text-white text-lg">Menu</p>
-        </div>
+
         <div className="md:ml-8">
           <BreadCard data={breadlist} />
         </div>

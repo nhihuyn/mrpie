@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Input } from "antd";
 import { SearchOutlined, CloseOutlined } from "@ant-design/icons";
 import RadioButton from "./radio-button";
@@ -6,7 +6,7 @@ import TagContent from "./tag-content";
 import "../menu/menu.css";
 import { useTranslation } from "react-i18next";
 
-const SideBar = ({ status, setStatus }) => {
+const SideBar = ({ isOpen, SetIsOpen }) => {
   const { Title } = Typography;
   const [searching, setSearching] = useState("");
 
@@ -33,17 +33,20 @@ const SideBar = ({ status, setStatus }) => {
     },
   ];
   const { t } = useTranslation();
-
+  const onClose = () => {
+    return SetIsOpen(false);
+  };
+  // useEffect(() => {
+  //   console.log("first");
+  // }, [isOpen]);
   return (
     <div className=" w-full h-full ">
-      {/* <div
-        className=" absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden  "
-        // onClick={() => {
-        //   return setStatus(false);
-        // }}
+      <div
+        className="absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden "
+        onClick={onClose}
       >
         <CloseOutlined style={{ fontSize: 24, fontWeight: "bold" }} />
-      </div> */}
+      </div>
       <Title level={4} className="ml-8 mt-8  text-md">
         {t("SEARCH")}
       </Title>
@@ -51,7 +54,7 @@ const SideBar = ({ status, setStatus }) => {
         <Input
           size="large"
           placeholder="Search..."
-          className="rounded-3xl  ml-4 h-8  font-semibold text-xl"
+          className="rounded-3xl py-0  ml-4 h-8  font-semibold text-xl"
           value={searching}
           onChange={(e) => setSearching(e.target.value)}
           suffix={<SearchOutlined onClick={handleSearch} />}
