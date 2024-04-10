@@ -130,6 +130,10 @@
     "Processing": "Đang xử lí",
     "Receive your order at the store": "Nhận món tại cửa hàng",
     "Order Quantity": "Số lượng",
-    "Field is required": "Trường này là bắt buộc"
+    "English": "Tiếng anh",
+    "Vietnamese": "Tiếng việt",
+    "User Profile": "Hồ sơ",
+    "Order History": "Lịch sử đơn hàng",
+    "Logout": "Đăng xuất"
+    
 }
-

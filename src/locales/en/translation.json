@@ -71,7 +71,7 @@
     "PleaseSelectCakeAndSize":"Please Select Cake And Size",
     "ProductAddedToFavorites":"Product Added To Favorites",
     "AddMoreProductsForDiscount":"Add 1 More Product For Discount",
-    "AddMoreProductsForDiscount":"Add 1 More Product For Discount",
+
     "ProductAddedToCart":"Product Added To Cart",
     "YourRating":"Your Rating",
     "InvalidOrEmptyReviewInformation":"Invalid Or Empty Review Information",
@@ -127,5 +127,11 @@
     "Address": "Address",
     "Processing": "Processing",
     "Receive your order at the store": "Receive your order at the store",
-    "Order Quantity": "Order quantity"
+    "Order Quantity": "Order quantity",
+
+    "English": "English",
+    "Vietnamese": "Vietnamese",
+    "User Profile": "User Profile",
+    "Order History": "Order History",
+    "Logout": "Logout"
 }
