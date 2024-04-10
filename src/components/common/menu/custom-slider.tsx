@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Carousel } from "antd";
 
-import Event from "./event";
+import Event from "./Event";
 
 import { bakery1 } from "../../../assets/images";
 
