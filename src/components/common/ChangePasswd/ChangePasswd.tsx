@@ -132,7 +132,7 @@ const ChangePasswd: React.FC = () => {
         </button>
       </form>
       <div className="cancel-text text-center mt-2">
-        <p><a href="#" className="text-gray-400 text-base hover:text-gray-600">{t('Cancel')}</a></p>
+        <p><a href="/" className="text-gray-400 text-base hover:text-gray-600">{t('Cancel')}</a></p>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   robot,
   zaloLogo,
@@ -17,11 +17,11 @@ const Chatbox = () => {
     <>
       <div className="fixed  top-12 md:top-1/2 right-0 p-1 md:transform md:-translate-y-1/2 flex flex-col justify-end items-end">
         <div className="size-10 md:size-12 ring-4 ring-light-blue-700 bg-white rounded-full flex justify-center items-center shadow-lg cursor-pointer">
-          <img src={zaloLogo} className="size-7 md:size-8" />
+          <img src={zaloLogo} alt="zalo" className="size-7 md:size-8" />
         </div>
 
         <div className="relative  mt-4 size-10 md:size-12 ring-4 ring-red-700 bg-white rounded-full flex justify-center items-center shadow-lg cursor-pointer" onClick={openChatbox}>
-          <img src={robot} className="size-7 md:size-8" />
+          <img src={robot} alt="robot" className="size-7 md:size-8" />
         </div>
         {isOpenChatbox && (<div className="sticky top-0 mt-2 mr-6">
           <div className=" w-72 md:w-80 h-80 md:h-96 bg-white rounded-xl">

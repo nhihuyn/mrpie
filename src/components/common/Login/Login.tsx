@@ -5,8 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+import useLoginForm from './login-form';
+
 const Login: React.FC = () => {
   const { t } = useTranslation();
+  const { onSubmit, inputs } = useLoginForm()
 
   let isValidate;
   const [showAlert, setShowAlert] = useState(false);
@@ -144,17 +147,24 @@ const Login: React.FC = () => {
           />
         </motion.div>
       )}
-
       <p className="text-center text-3xl px-20 mb-10">{t('Login')}</p>
-      <form onSubmit={validateForm} className="flex flex-col text-sm">
+      <form onSubmit={onSubmit} className="flex flex-col text-sm">
         <div className="form-group mb-6 flex flex-col">
           <label htmlFor="username" className="block mb-2">
             
           </label>
-          <input
+          <input 
+            placeholder="Bill"
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
+            ${usernameError ? 'border-red-500 text-red-500' : ''}
+            `} 
+            {...inputs.username}
+          />
+          {/* <input
             type="text"
             id="username"
-            name="username"
+            // name="username"
+            {...register("username")}
             className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500
             ${usernameError ? 'border-red-500 text-red-500' : ''}
             `}
@@ -162,7 +172,7 @@ const Login: React.FC = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             ref={usernameRef}
-          />
+          /> */}
           {usernameError && (
             <p className="text-red-500 text-sm ml-3 ">{usernameError}</p>
           )}
@@ -171,10 +181,17 @@ const Login: React.FC = () => {
           <label htmlFor="password" className="block mb-2">
             
           </label>
-          <input
+          <input 
+            className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
+                passwordError ? 'border-red-500 text-red-500' : ''
+              }`} placeholder="Bill" 
+              {...inputs.password}
+          />
+          {/* <input
             type="password"
             id="password"
-            name="password"
+            // name="password"
+            {...register("password")}
             className={`w-full text-sm px-4 py-3 border-2 border-gray rounded-md placeholder-gray-400 focus:outline-none focus:border-blue-500 ${
               passwordError ? 'border-red-500 text-red-500' : ''
             }`}
@@ -182,7 +199,7 @@ const Login: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             ref={passwordRef}
-          />
+          /> */}
           {passwordError && (
             <p className="text-red-500 text-sm ml-3 ">{passwordError}</p>
           )}
@@ -205,6 +222,7 @@ const Login: React.FC = () => {
           </a>
         </div>
           <button
+            // onClick={() => onSubmit()}
             id="login"
             type="submit"
             className="w-1/2 md:w-2/5 mx-auto bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center"
