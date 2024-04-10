@@ -6,7 +6,7 @@ import TagContent from "./tag-content";
 import "../menu/menu.css";
 import { useTranslation } from "react-i18next";
 
-const SideBar = ({status,setStatus}) => {
+const SideBar = ({ status, setStatus }) => {
   const { Title } = Typography;
   const [searching, setSearching] = useState("");
 
@@ -35,12 +35,15 @@ const SideBar = ({status,setStatus}) => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative md:static w-full h-full  ">
-      <div className=" absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden  " onClick={()=>{
-        return setStatus(false);
-      }}>
+    <div className=" w-full h-full ">
+      {/* <div
+        className=" absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden  "
+        // onClick={() => {
+        //   return setStatus(false);
+        // }}
+      >
         <CloseOutlined style={{ fontSize: 24, fontWeight: "bold" }} />
-      </div>
+      </div> */}
       <Title level={4} className="ml-8 mt-8  text-md">
         {t("SEARCH")}
       </Title>
