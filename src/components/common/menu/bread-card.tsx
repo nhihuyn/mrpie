@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import SizeButton from "./Sizebutton";
-import { renderStarFromNumber,formatPrice,formatMoney } from "../../../utils/helpers";
-import Item from "../detail-product/item/Item";
-
+import SizeButton from "./size-button";
+import {
+  renderStarFromNumber,
+  formatPrice,
+  formatMoney,
+} from "../../../utils/helpers";
+import Item from "../detail-product/item/item";
 
 interface BreadCardProps {
   data: {
@@ -18,7 +21,7 @@ interface BreadCardProps {
     size?: string;
     img: string;
     time: string;
-    eventTitle: string,
+    eventTitle: string;
   }[];
 }
 
@@ -36,7 +39,7 @@ const BreadCard: React.FC<BreadCardProps> = ({ data }) => {
               alt="img1"
               className="object-cover w-full h-full"
             /> */}
-            <Item item={el} width={350} height={350} isShow={true}/>
+            <Item item={el} width={350} height={350} isShow={true} />
           </div>
           <div className="md:gap-4  md:ml-[80px] ml-2 md:w-auto w-80 mt-4   flex justify-start flex-col ">
             <span className="font-bold md:text-3xl text-2xl ">{el.title}</span>
@@ -64,8 +67,8 @@ const BreadCard: React.FC<BreadCardProps> = ({ data }) => {
             <div className="mt-4 md:flex gap-4 items-center ">
               <div className="md:flex hidden">
                 <Link to="/cart">
-                <button
-                  className="
+                  <button
+                    className="
                       text-white 
                       flex 
                       items-center 
@@ -92,9 +95,9 @@ const BreadCard: React.FC<BreadCardProps> = ({ data }) => {
                       hover:before:left-0 
                       hover:before:w-full
                       text-lg"
-                >
-                  <span className="relative">Add to cart</span>
-                </button>
+                  >
+                    <span className="relative">Add to cart</span>
+                  </button>
                 </Link>
               </div>
 

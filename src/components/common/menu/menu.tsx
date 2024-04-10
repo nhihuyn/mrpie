@@ -3,7 +3,7 @@ import { Typography, ConfigProvider, Select } from "antd";
 
 import CustomSlider from "./custom-slider";
 import BreadCard from "./bread-card";
-import SideBar from "./SideBar";
+import SideBar from "./side-bar";
 
 import "./menu.css";
 import { bakery1 } from "../../../assets/images";

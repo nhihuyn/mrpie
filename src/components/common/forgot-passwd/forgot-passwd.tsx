@@ -16,7 +16,7 @@ const ForgotPasswd: React.FC = () => {
 
     const emailInput = event.currentTarget.email as HTMLInputElement;
 
-    const emailRegex = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
+    const emailRegex = new RegExp(/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/);
     if (!emailRegex.test(emailInput.value)) {
       setEmailError(true);
       setErrorMessage(t('InvalidEmail'));
@@ -51,7 +51,7 @@ const ForgotPasswd: React.FC = () => {
             type="email"
             id="email"
             name="email"
-            className={`sm:w-full text-sm px-2 py-3 text-sm border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${emailError ? 'border-red-500' : ''}`}
+            className={`sm:w-full text-sm px-2 py-3  border-2 rounded-lg placeholder-gray-400 focus:outline-none focus:border-blue-500 ${emailError ? 'border-red-500' : ''}`}
             placeholder={t('EmailAddress')}
           />
           {emailError && (
@@ -60,7 +60,7 @@ const ForgotPasswd: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="sm:w-full md:w-1/2 mx-auto mb-0 mt-4 bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center">
+          className="sm:w-full md:w-1/2 mx-auto mt-4 bg-blue-500 text-white text-lg py-3 px-8 rounded-lg transition duration-300 mb-6 flex justify-center">
           {t('ResetPassword')}
         </button>
 

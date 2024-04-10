@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Typography, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import RadioButton from "./RadioButton";
-import TagContent from "./TagContent";
+import RadioButton from "./radio-button";
+import TagContent from "./tag-content";
 import "../menu/menu.css";
 const SideBar: React.FC = () => {
   const { Title } = Typography;
