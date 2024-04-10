@@ -13,7 +13,8 @@ import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from './components/common/Detail/Detail';
 import Promotion from "./components/common/Promotion/promotion";
-import CartDetail from "./components/common/P10/CartDetail"
+import CartDetail from "./components/common/P10/CartDetail";
+import GuestInfo from "./components/common/guestInfo/guest-info";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/checkout" element={<Checkout/>} /> 
             {/* <Route path="/event" element={<Event/>} />  */}
             <Route path="/cart" element={<CartDetail/>} /> 
+            <Route path="/guest_info" element={<GuestInfo/>}/>
           </Routes>
      </Layout>
     </Router>
