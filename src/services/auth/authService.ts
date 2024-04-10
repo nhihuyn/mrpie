@@ -1,4 +1,4 @@
-import { client } from "./client";
+import { client } from "../client/client";
 
 export interface LoginData {
     email: string;
@@ -39,15 +39,18 @@ export interface ChangePasswordSuccess {
     user_id: string,
 }
 
+export interface LoginDatas
+{ [k: string]: FormDataEntryValue; }
 
-export const loginRequest = (login: LoginData) => 
-    client.post<ErrorResponse | LoginSuccessResponse>("/login", { login });
+
+export const loginRequest = (login: LoginDatas) => 
+    client.post<ErrorResponse | LoginSuccessResponse>("/login", login);
 
 export const registerRequest = (user: { name: string, email: string, phone: number, password: string, rePassword: string}) =>
     client.post<ErrorResponse | RegisterSuccessResponse>("/register", { user })
 
 export const recoverPassword = (email: string ) =>
-    client.post<ErrorResponse | RecoverPasswordSuccess>("recoverPassword", { email })
+    client.post<ErrorResponse | RecoverPasswordSuccess>("/recoverPassword", { email })
 
 export const changePassword = (data: ChangePasswordData) =>
-    client.put<ErrorResponse | ChangePasswordSuccess>("user/password", data)
+    client.put<ErrorResponse | ChangePasswordSuccess>("/user/password", data)

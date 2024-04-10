@@ -13,31 +13,39 @@ import Mainpage from "./components/common/mainpage/main-page";
 import DetailEvent from "./components/common/Detail/Detail";
 import Promotion from "./components/common/Promotion/promotion";
 import CartDetail from "./components/common/P10/CartDetail";
-import Contact from "./components/common/contact/contac.tsx";
+import Contact from "./components/common/contact/contact";
+// import Event from "./components/common/event";
+// import { QueryClientProvider } from '@tanstack/react-query';
+// import { queryClient } from './react-query';
+import { QueryClient, QueryClientProvider } from "react-query";
+
 function App() {
+  const queryClient = new QueryClient();
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Mainpage />} />
-          <Route path="/products/:productId" element={<Menu />} />
-          <Route path="/change_password" element={<ChangePasswd />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/forgot_password" element={<ForgotPassword />} />
-          <Route path="/intro" element={<Intro />} />
-          <Route path="/eventmenu" element={<EventMenu />} />
-          <Route path="/aboutMe" element={<Intro />} />
-          <Route path="/detail/:productId" element={<DetailEvent />} />
-          <Route path="/mainpage" element={<Mainpage />} />
-          <Route path="/promotion" element={<Promotion />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/checkout" element={<Checkout />} />
-          {/* <Route path="/event" element={<Event/>} />  */}
-          <Route path="/cart" element={<CartDetail />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Mainpage />} />
+            <Route path="/products/:productId" element={<Menu />} />
+            <Route path="/change_password" element={<ChangePasswd />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterForm />} />
+            <Route path="/forgot_password" element={<ForgotPassword />} />
+            <Route path="/intro" element={<Intro />} />
+            <Route path="/eventmenu" element={<EventMenu />} />
+            <Route path="/aboutMe" element={<Intro />} />
+            <Route path="/detail/:productId" element={<DetailEvent />} />
+            <Route path="/mainpage" element={<Mainpage />} />
+            <Route path="/promotion" element={<Promotion />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/checkout" element={<Checkout />} />
+            {/* <Route path="/event" element={<Event/>} />  */}
+            <Route path="/cart" element={<CartDetail />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Layout>
+      </QueryClientProvider>
     </Router>
   );
 }
