@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
-import RadioButton from "./RadioButton";
-import TagContent from "./TagContent";
+import { SearchOutlined, CloseOutlined } from "@ant-design/icons";
+import RadioButton from "./radio-button";
+import TagContent from "./tag-content";
 import "../menu/menu.css";
-const SideBar: React.FC = () => {
+import { useTranslation } from "react-i18next";
+
+const SideBar = ({ isOpen, SetIsOpen }) => {
   const { Title } = Typography;
   const [searching, setSearching] = useState("");
 
@@ -30,17 +32,29 @@ const SideBar: React.FC = () => {
       title: "DonkeyDonkey",
     },
   ];
-
+  const { t } = useTranslation();
+  const onClose = () => {
+    return SetIsOpen(false);
+  };
+  // useEffect(() => {
+  //   console.log("first");
+  // }, [isOpen]);
   return (
-    <div className="w-full h-full   ">
+    <div className=" w-full h-full ">
+      <div
+        className="absolute top-0 right-0 p-2 cursor-pointer  block  md:hidden "
+        onClick={onClose}
+      >
+        <CloseOutlined style={{ fontSize: 24, fontWeight: "bold" }} />
+      </div>
       <Title level={4} className="ml-8 mt-8  text-md">
-        SEARCH
+        {t("SEARCH")}
       </Title>
       <div className="mt-5 mr-8 ml-3">
         <Input
           size="large"
           placeholder="Search..."
-          className="rounded-3xl  ml-4 h-8  font-semibold text-xl"
+          className="rounded-3xl py-0  ml-4 h-8  font-semibold text-xl"
           value={searching}
           onChange={(e) => setSearching(e.target.value)}
           suffix={<SearchOutlined onClick={handleSearch} />}
@@ -48,12 +62,12 @@ const SideBar: React.FC = () => {
       </div>
       <div className="mt-14">
         <Title className="ml-8 mt-8" level={4}>
-          CATEGORIES
+          {t("CATEGORIES")}
         </Title>
         <RadioButton />
       </div>
       <div className="mt-14 ml-8 gap-3  ">
-        <Title level={4}>TAG</Title>
+        <Title level={4}> {t("TAG")}</Title>
         <TagContent data={data} />
       </div>
     </div>

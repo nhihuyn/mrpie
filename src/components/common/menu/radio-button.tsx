@@ -34,7 +34,11 @@ const RadioButton: React.FC = () => {
           className="text-2xl font-semibold"
           size="middle"
         >
-          <Radio value={1} className="text-base items-center" defaultChecked={true}>
+          <Radio
+            value={1}
+            className="text-base items-center"
+            defaultChecked={true}
+          >
             Bánh trong ngày
           </Radio>
           <Radio value={2} className="text-base items-center">
