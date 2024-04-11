@@ -2,19 +2,19 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Menu from "./components/common/menu/menu";
 import Layout from "./components/Layout/layout";
-import ChangePasswd from "./components/common/ChangePasswd/ChangePasswd";
-import Login from "./components/common/login/Login";
-import ForgotPassword from "./components/common/ForgotPasswd/ForgotPasswd";
+import ChangePasswd from "./components/common/change-password/change-password";
+import Login from "./components/common/login/login";
+import ForgotPassword from "./components/common/forgot-password/forgot-password";
 import Intro from "./components/common/introduce/introduction";
 import EventMenu from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
-import DetailEvent from "./components/common/detail/Detail";
+import DetailEvent from "./components/common/detail/detail";
 import Promotion from "./components/common/promotion/promotion";
-import CartDetail from "./components/common/P10/CartDetail";
+import CartDetail from "./components/common/cart/cart-detail";
 
-import GuestInfo from "./components/common/guestInfo/guest-info";
+import GuestInfo from "./components/common/guest-info/guest-info";
 
 import Contact from "./components/common/contact/contact";
 // import Event from "./components/common/event";
