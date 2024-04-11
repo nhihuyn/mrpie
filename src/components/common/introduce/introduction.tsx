@@ -238,10 +238,12 @@ const Introduction = () => {
                 </div>
               </div>
 
+
               {/* Icon on vertical bar */}
               <div className="rounded-full bg-[#F58847] border-[#F2EBE6] border-4 size-8 md:size-12 absolute left-0 md:left-1/2 -translate-y-4 sm:translate-y-8 transform  -translate-x-1/2 flex items-center justify-center"></div>
             </div>
           </div>
+
 
           {/* Event 5 */}
           <div className="hiddenItem mt-6 sm:mt-0  mb-12">

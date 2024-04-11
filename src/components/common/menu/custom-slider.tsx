@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Carousel } from "antd";
+
+
 import Event from "./Event";
+
+
 import { bakery1 } from "../../../assets/images";
 
 export default function CustomSlider() {
