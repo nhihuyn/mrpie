@@ -4,7 +4,7 @@ import { MenuOutlined } from "@ant-design/icons";
 
 import CustomSlider from "./custom-slider";
 import BreadCard from "./bread-card";
-import SideBar from "./sidebar";
+import SideBar from "./SideBar";
 import { useTranslation } from "react-i18next";
 import "./menu.css";
 import { bakery1 } from "../../../assets/images";

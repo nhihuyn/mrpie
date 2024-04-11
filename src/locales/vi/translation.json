@@ -133,45 +133,5 @@
     "User Profile": "Hồ sơ",
     "Order History": "Lịch sử đơn hàng",
     "Logout": "Đăng xuất"
-    
-
-    "RetypePassword": "Retype password",
-    "Email valid (example@gmail.com)": "Email valid (example@gmail.com)",
-    "Not space character": "Not valid space character",
-    "Retype password match": "Password not match",
-    "Input from 2 to 64 character": "Input from 2 to 64 character",
-    "Input from 7 to 64 character": "Input from 7 to 64 character",
-    "Valid phonenumber": "Valid phone number",
-    "Fullname": "Fullname",
-    "Business name": "Business name",
-    "Personal": "Personal",
-    "Business": "Business",
-    "Register": "Register",
-    "Already have account": "Already have account ?",
-    "Easy to use and user friendly": "Easy to use and user friendly",
-    "Fast delivery": "Fast delivery",
-    "Save costs and experience good service": "Save costs and experience good service",
-    "Selling products": "Selling products",
-    "Search for nearby stores": "Search for nearby stores",
-    "Mr.Pie store is nearby!": "Mr.Pie store is nearby!",
-    "Search": "Search",
-  
-    "Check shopping cart": "Check shopping cart",
-    "Proceed with payment": "Proceed with payment",
-    "Payment Methods": "Payment Methods",
-    "Order status": "Order status",
-    "Free": "Free",
-    "Payment": "Payment",
-    "Receive orders via Ahamove": "Receive orders via Ahamove",
-    "Check your order": "Check your order",
-    "Order cost": "Order cost",
-  
-    "Shipping fee": "Shipping fee",
-    "Total": "Total",
-    "Shipping information": "Shipping information",
-    "Address": "Address",
-    "Processing": "Processing",
-    "Receive your order at the store": "Receive your order at the store",
-    "Order Quantity": "Order quantity"
   }
 
