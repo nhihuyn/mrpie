@@ -2,17 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-import SizeButton from "./Sizebutton";
+import SizeButton from "./SizeButton";
 import { renderStarFromNumber,formatPrice,formatMoney } from "../../../utils/helpers";
 import Item from "../detail-product/item/Item";
 
 
-import {
-  renderStarFromNumber,
-  formatPrice,
-  formatMoney,
-} from "../../../utils/helpers";
-import Item from "../detail-product/item/Item";
 import { useTranslation } from "react-i18next";
 
 interface BreadCardProps {

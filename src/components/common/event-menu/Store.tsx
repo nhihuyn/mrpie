@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Event from '../event-menu/event';
+import Event from '../menu/Event';
 import { motion } from 'framer-motion';
 import event from '../../../assets/images/Event.jpg';
 import event1 from '../../../assets/images/Event_1.jpg';
