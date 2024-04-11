@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Alert, Button, Modal } from 'antd';
-import ShoppingCartSummary from "./ShoppingCartSummary";
+import ShoppingCartSummary from "./shopping-cart-summary";
 
 const CartDetail: FunctionComponent = () => {
   const { t } = useTranslation();

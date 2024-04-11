@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-import SizeButton from "./SizeButton";
+import SizeButton from "./side-button";
 import { renderStarFromNumber,formatPrice,formatMoney } from "../../../utils/helpers";
 import Item from "../detail-product/item/Item";
 
