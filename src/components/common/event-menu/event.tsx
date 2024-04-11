@@ -107,9 +107,9 @@ const Eventmenu: React.FC = () => {
         </div>
 
         {showScrollButton && (
-          <div className="fixed bottom-0 left-0 right-0 mx-auto">
-            <div className="flex justify-center mt-8 mb-4">
-              <button onClick={scrollToBottom} className="bg-black hover:bg-blue-700 text-white font-bold py-2 px-10 lg:ml-7 rounded-xl">
+          <div className="fixed bottom-0 left-0 right-0 ">
+            <div className="flex justify-around mt-8 mb-4">
+              <button onClick={scrollToBottom} className="bg-black hover:bg-blue-700 text-white font-bold md:ml-14 py-2 px-10 lg:ml-7 rounded-xl">
                 <DownOutlined />
               </button>
             </div>

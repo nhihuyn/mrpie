@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import UsernameField from "./components/usernameField";
 import PasswordField from "./components/passwordField";
-import EmailField from "./components/emailField";
+import EmailField from "./components/fullnameField";
 import FullnameField from "./components/fullnameField";
 import PhoneNumField from "./components/phoneNumField";
 

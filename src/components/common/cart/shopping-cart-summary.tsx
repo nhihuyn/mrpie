@@ -17,18 +17,16 @@ interface Props {
   updateTotalPrice: (totalPrice: number) => void;
 }
 
-const ShoppingCartSummary: FunctionComponent<Props> = ({
-  products,
-  onRemoveProduct,
-  updateTotalPrice,
-}) => {
-  const [counts, setCounts] = useState<{ [key: number]: number }>(() => {
-    const initialCounts: { [key: number]: number } = {};
-    products.forEach((product) => {
-      initialCounts[product.id] = 1;
-    });
-    return initialCounts;
-  });
+
+const ShoppingCartSummary: FunctionComponent<Props> = ({ products, onRemoveProduct, updateTotalPrice }) => {
+  
+  const initialCounts = products.reduce((counts, product) => {
+    counts[product.id] = 1;
+    return counts;
+  }, {});
+
+  const [counts, setCounts] = useState<{ [key: number]: number }>(initialCounts);
+
   const backgroundColors = ["bg-blue-50", "bg-yellow-50"];
 
   const { t } = useTranslation();

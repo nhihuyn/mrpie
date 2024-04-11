@@ -6,7 +6,7 @@ import ChangePasswd from "./components/common/change-password/change-password";
 import Login from "./components/common/login/login";
 import ForgotPassword from "./components/common/forgot-password/forgot-password";
 import Intro from "./components/common/introduce/introduction";
-import EventMenu from "./components/common/event-menu/event";
+import Event from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
@@ -35,15 +35,16 @@ function App() {
             <Route path="/change_password" element={<ChangePasswd />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterForm />} />
-            <Route path="/forgot_password" element={<ForgotPassword />} />
-            <Route path="/intro" element={<Intro />} />
-            <Route path="/eventmenu" element={<EventMenu />} />
-            <Route path="/aboutMe" element={<Intro />} />
-            <Route path="/detail/:productId" element={<DetailEvent />} />
-            <Route path="/mainpage" element={<Mainpage />} />
-            <Route path="/promotion" element={<Promotion />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/forgot_password" element={<ForgotPassword/>} />
+            <Route path="/intro" element={<Intro/>} />
+            <Route path="/eventmenu" element={<Event/>} />
+            <Route path="/aboutMe" element={<Intro/>} />
+            <Route path="/detail/:productId" element={<DetailEvent/>} /> 
+            <Route path="/mainpage" element={<Mainpage/>} />
+            <Route path="/promotion" element={<Promotion/>} /> 
+            <Route path="/menu" element={<Menu/>} /> 
+            <Route path="/checkout" element={<Checkout/>} /> 
+
             {/* <Route path="/event" element={<Event/>} />  */}
 
             <Route path="/cart" element={<CartDetail/>} /> 
