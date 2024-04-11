@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Carousel } from "antd";
 
 import Event from "./Event";
@@ -18,53 +17,43 @@ export default function CustomSlider() {
   const [previousSlide, setPreviousSlide] = useState(
     data[data.length - 1].image
   );
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
   const onChange = (currentSlide) => {
     setPreviousSlide(
       data[currentSlide === 0 ? data.length - 1 : currentSlide - 1].image
     );
-    setCurrentSlide(currentSlide);
+    // setCurrentSlide(currentSlide);
   };
   return (
-    <div className="">
-      <div className="flex md:gap-8 md:ml-8  gap-0 ml-2 justify-center items-center">
-        <div className="w-[250px] ml-8 hidden md:block">
-          <Event
-            // id={
-            // data[currentSlide === 0 ? data.length - 1 : currentSlide - 1].id
-            // }
-            title={
-              data[currentSlide === 0 ? data.length - 1 : currentSlide - 1]
-                .title
-            }
-            image={previousSlide}
-            // size="small"
-          />
+    <div className="w-full">
+      <div className="flex justify-between items-center  h-full">
+        {/**Small image  */}
+        <div className="w-[900px] md:flex flex-col justify-center items-center  hidden">
+          <div className="w-[400px] ">
+            <Event image={previousSlide} size={400} IsEvent={true} />
+          </div>
         </div>
-        <div className="w-[700px] sm:ml-14 hidden   ml-0 mr-0 lg:block ">
-          <Carousel afterChange={onChange} autoplay>
-            {data.map((el, index) => (
-              <div className="" key={el.id}>
-                <Event
-                  // id={el.id}
-                  title={el.title}
-                  image={el.image}
-                  // size="big"
-                />
-              </div>
-            ))}
-          </Carousel>
+        {/** Event carousel  */}
+        <div className="w-[1350px] md:flex hidden flex-col justify-center items-center">
+          <div className="w-[750px] ">
+            <Carousel afterChange={onChange} autoplay>
+              {data.map((el, index) => (
+                <div className="" key={el.id}>
+                  <Event image={el.image} size={750} IsEvent={true} />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
-        <div className="w-[300px] ml-16 lg:hidden ">
+        {/**Carousel for responsive */}
+      </div>
+
+      <div className="w-full flex justify-center items-center md:hidden  my-auto ">
+        <div className="w-[400px]">
           <Carousel autoplay>
             {data.map((el, index) => (
               <div className="" key={el.id}>
-                <Event
-                  // id={el.id}
-                  title={el.title}
-                  image={el.image}
-                  // size="small"
-                />
+                <Event image={el.image} size={400} IsEvent={true} />
               </div>
             ))}
           </Carousel>

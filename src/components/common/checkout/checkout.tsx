@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./checkout.css";
 import { CheckOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
+import ProcessBar from "./components/processBar";
 
 import {
   pizza,
@@ -24,7 +25,7 @@ const Checkout: React.FC = () => {
 
   const feeShippingStatus = [t('Free'), "10.000 VND"];
 
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentStep, setCurrentStep] = useState(2);
   const [currentMethod, setCurrentMethod] = useState(1);
   const [feeShipping, setFeeShipping] = useState("Miễn Phí");
 
@@ -47,32 +48,7 @@ const Checkout: React.FC = () => {
   return (
     <div className="h-full md:h-dvh w-full bg-[#F2EBE6]">
       <div className=" w-full   h-1/5  flex justify-center items-center">
-        <div className="w-[95%] md:w-[97%] mt-4 md:mt-0 p-4 md:p-0 bg-white h-[90%] rounded-xl">
-          {/* Process Stepper Bar */}
-          <div className="flex justify-center items-center h-full">
-            {steps?.map((step, i) => (
-              <div
-                key={i}
-                className={`step-item ${currentStep === i + 1 && "active"} ${
-                  i + 1 < currentStep && "complete"
-                } `}
-              >
-                <div className="step">
-                  {i + 1 < currentStep ? (
-                    <CheckOutlined
-                      style={{ fontSize: "20px", fontWeight: "bold" }}
-                    />
-                  ) : (
-                    i + 1
-                  )}
-                </div>
-                <p className="text-black font-semibold mt-1 p-2 md:p-0 text-center text-md ">
-                  {step}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ProcessBar currentStep={currentStep} steps={steps}/>
       </div>
       <div className="w-full h-4/5 flex flex-col md:flex-row mt-4 md:my-0 ">
         <div className=" w-full md:w-2/3 h-full flex justify-center items-center ">
@@ -161,7 +137,7 @@ const Checkout: React.FC = () => {
         <div className="w-full md:w-1/3 h-full flex justify-center items-center mt-4 md:mt-0 mr-1 md:mr-4">
           <div className=" w-[95%] h-[95%]  flex flex-col justify-center items-center">
             <div className="w-full h-[75%] flex justify-center items-center mb-4">
-              <div className=" w-full h-full  rounded-xl bg-white p-2">
+              <div className=" w-full h-full flex flex-col justify-around  rounded-xl bg-white p-2">
                 {/* Header Kiem tra don hang */}
                 <div className="w-full  flex items-center border-b-2 ">
                   <h2 className="font-bold text-2xl py-2 ml-2">
@@ -223,7 +199,7 @@ const Checkout: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="w-full  border-t-2 mt-2 p-3">
+                <div className="w-full   border-t-2 mt-2 p-3">
                   <div className="flex justify-between items-center ">
                     <p className="font-bold text-2xl text-black">
                       {t("Total")}
