@@ -3,7 +3,7 @@ import { RightOutlined, DownOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import EventList from './event-list';
-import Store from './store';
+import Store from './STORE';
 
 const Eventmenu: React.FC = () => {
   const [activeTab, setActiveTab] = useState("event");
