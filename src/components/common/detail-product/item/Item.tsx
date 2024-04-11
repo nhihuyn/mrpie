@@ -6,7 +6,7 @@ import {  ShoppingCartOutlined, SearchOutlined, HeartOutlined } from '@ant-desig
 
 import { bakery1
  } from "../../../../assets/images";
-import Notification from "../../notification/notification";
+import Notification from "../../notifications/notifications";
 const { Title } = Typography;
 
 interface ItemProps {
