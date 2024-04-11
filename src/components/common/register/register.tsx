@@ -9,7 +9,6 @@ import EmailField from "./components/fullnameField";
 import FullnameField from "./components/fullnameField";
 import PhoneNumField from "./components/phoneNumField";
 
-
 import "./register.css";
 import { Link } from "react-router-dom";
 
@@ -22,13 +21,15 @@ const RegisterForm = () => {
   const [bussinessRole, setBussinessRole] = useState(false);
 
   const [usernameStatus, setUsernameStatus] = useState("");
-  const [passwordStatus, setPasswordStatus] = useState("");
+  const [passwordStatus, setPasswordStatus] = useState({
+    spaceCheck: "",
+    lengthCheck: "",
+  });
   const [confirmPasswordStatus, setConfirmPasswordStatus] = useState("");
   const [emailStatus, setEmailStatus] = useState("");
   const [fullnameStatus, setFullnameStatus] = useState("");
   const [phonenumStatus, setPhonenumStatus] = useState("");
 
-  
   const showAlert = (isFormValid) => {
     let timeoutId; // Declare timeoutId inside the function
     if (isFormValid) {
@@ -80,8 +81,8 @@ const RegisterForm = () => {
 
       setPasswordStatus((prev) => {
         return {
-          spaceCheck: prev.spaceCheck === "valid" ? "valid" : "invalid",
-          lengthCheck: prev.lengthCheck === "valid" ? "valid" : "invalid",
+          spaceCheck: prev?.spaceCheck === "valid" ? "valid" : "invalid",
+          lengthCheck: prev?.lengthCheck === "valid" ? "valid" : "invalid",
         };
       });
 
@@ -197,11 +198,10 @@ const RegisterForm = () => {
             </div>
           </div>
 
-
           <div className="mt-6 flex justify-center items-center">
             <p>
               {t("Already have account")}
-              <Link to="/login" >
+              <Link to="/login">
                 <span className="text-md font-bold text-[#1890FF] cursor-pointer">
                   {t("Login")}
                 </span>
