@@ -41,9 +41,9 @@ const Item: React.FC<ItemProps> = ({ item, width = 200, height = 200, isShow = f
     const hdIsFavorite = (item) => {
         setFavoriteItem((prev) => [...prev, { id: item.key, title: item.title }]);
     }
-    console.log("isHovered", isHovered)
-    console.log("actived", actived)
-    console.log("actived", item)
+    // console.log("isHovered", isHovered)
+    // console.log("actived", actived)
+    // console.log("actived", item)
     return (
         <div className="relative ">
             {
