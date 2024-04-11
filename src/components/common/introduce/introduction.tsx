@@ -76,6 +76,7 @@ const Introduction = () => {
                       alt="Breads"
 
                       className="absolute z-40 size-32 xl:size-40 2xl:size-52 top-0 left-0 2xl:-translate-y-28 2xl:-translate-x-28  xl:-translate-x-20 xl:-translate-y-20 -translate-x-12 -translate-y-16"
+
                     />
 
                     {/* Shape triangle */}
@@ -88,7 +89,9 @@ const Introduction = () => {
                   <img
                     src={breakfast}
                     alt="breakfast"
+
                     className="rounded-xl shadow-lg  w-72 h-44 md:w-full md:h-full xl:w-3/4 xl:h-3/4 "
+
                   />
                 </div>
               </div>
@@ -235,10 +238,12 @@ const Introduction = () => {
                 </div>
               </div>
 
+
               {/* Icon on vertical bar */}
               <div className="rounded-full bg-[#F58847] border-[#F2EBE6] border-4 size-8 md:size-12 absolute left-0 md:left-1/2 -translate-y-4 sm:translate-y-8 transform  -translate-x-1/2 flex items-center justify-center"></div>
             </div>
           </div>
+
 
           {/* Event 5 */}
           <div className="hiddenItem mt-6 sm:mt-0  mb-12">
@@ -281,7 +286,6 @@ const Introduction = () => {
                     alt="cake"
                     className="  w-72 h-72 md:w-full md:h-full xl:w-3/4 xl:h-3/4"
                   />
-
                 </div>
               </div>
 
