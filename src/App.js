@@ -3,15 +3,15 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Menu from "./components/common/menu/menu";
 import Layout from "./components/Layout/layout";
 import ChangePasswd from "./components/common/change-password/change-password";
-import Login from "./components/common/login/login";
+import Login from "./components/common/logins/logins";
 import ForgotPassword from "./components/common/forgot-password/forgot-password";
 import Intro from "./components/common/introduce/introduction";
 import EventMenu from "./components/common/event-menu/event";
 import RegisterForm from "./components/common/register/register";
 import Checkout from "./components/common/checkout/checkout";
 import Mainpage from "./components/common/mainpage/main-page";
-import DetailEvent from "./components/common/detail/detail";
-import Promotion from "./components/common/promotion/promotion";
+import DetailEvent from "./components/common/details/details";
+import Promotion from "./components/common/promotions/promotions";
 import CartDetail from "./components/common/cart/cart-detail";
 
 import GuestInfo from "./components/common/guest-info/guest-info";
