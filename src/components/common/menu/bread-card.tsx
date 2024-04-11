@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SizeButton from "./sizebutton";
+
+import SizeButton from "./SizeButton";
+
 import {
   renderStarFromNumber,
   formatPrice,
